@@ -1,0 +1,366 @@
+====================================================================================================
+NASA BATTERY DATASET - MISSING TIMESTAMP DETECTION REPORT
+Generated: 2026-03-10 16:34:33
+====================================================================================================
+
+Expected logging interval: 1.0 second
+Gap definition: > 1.5 seconds
+
+
+FOLDER: regular_alt_batteries
+------------------------------------------------------------
+
+File: battery00.csv (64.47 MB)
+  Rows: 1,101,244
+  Time range: 0 to 1079483 seconds
+  Duration: 12.49 days (299.9 hours)
+  Data completeness: 102.0200%
+  Expected points: 1,079,484
+  Actual points: 1,101,244
+  Missing points estimate: -21,760
+  Interval stats: mean=0.980s, median=0.976s, std=0.044s
+  Interval range: [0.008, 2.061] seconds
+  GAP ANALYSIS:
+    Total gaps: 6
+    Total gap time: 0.000 hours
+    Missing time percent: 0.000400%
+    Max gap: 0.000 hours (2 seconds)
+    Mean gap: 1.8 seconds
+    Gap distribution:
+      1-10s: 6
+      10-60s: 0
+      1-5m: 0
+      5-30m: 0
+      30m+: 0
+
+File: battery01.csv (307.63 MB)
+  Rows: 4,918,193
+  Time range: 0 to 4951798 seconds
+  Duration: 57.31 days (1375.5 hours)
+  Data completeness: 99.3200%
+  Expected points: 4,951,798
+  Actual points: 4,918,193
+  Missing points estimate: 33,605
+  Interval stats: mean=1.007s, median=1.001s, std=0.052s
+  Interval range: [0.028, 1.542] seconds
+  GAP ANALYSIS:
+    Total gaps: 1
+    Total gap time: 0.000 hours
+    Missing time percent: 0.000000%
+    Max gap: 0.000 hours (2 seconds)
+    Mean gap: 1.5 seconds
+    Gap distribution:
+      1-10s: 1
+      10-60s: 0
+      1-5m: 0
+      5-30m: 0
+      30m+: 0
+
+File: battery10.csv (52.91 MB)
+  Rows: 907,341
+  Time range: 0 to 888182 seconds
+  Duration: 10.28 days (246.7 hours)
+  Data completeness: 102.1600%
+  Expected points: 888,183
+  Actual points: 907,341
+  Missing points estimate: -19,158
+  Interval stats: mean=0.979s, median=0.975s, std=0.044s
+  Interval range: [0.031, 1.420] seconds
+  No significant gaps detected
+
+File: battery11.csv (302.99 MB)
+  Rows: 4,914,864
+  Time range: 0 to 4951138 seconds
+  Duration: 57.30 days (1375.3 hours)
+  Data completeness: 99.2700%
+  Expected points: 4,951,139
+  Actual points: 4,914,864
+  Missing points estimate: 36,275
+  Interval stats: mean=1.007s, median=1.002s, std=0.053s
+  Interval range: [0.052, 1.471] seconds
+  No significant gaps detected
+
+File: battery20.csv (11.81 MB)
+  Rows: 207,391
+  Time range: 0 to 203451 seconds
+  Duration: 2.35 days (56.5 hours)
+  Data completeness: 101.9400%
+  Expected points: 203,452
+  Actual points: 207,391
+  Missing points estimate: -3,939
+  Interval stats: mean=0.981s, median=0.980s, std=0.044s
+  Interval range: [0.139, 2.095] seconds
+  GAP ANALYSIS:
+    Total gaps: 1
+    Total gap time: 0.000 hours
+    Missing time percent: 0.000500%
+    Max gap: 0.000 hours (2 seconds)
+    Mean gap: 2.1 seconds
+    Gap distribution:
+      1-10s: 1
+      10-60s: 0
+      1-5m: 0
+      5-30m: 0
+      30m+: 0
+
+File: battery21.csv (24.93 MB)
+  Rows: 530,718
+  Time range: 0 to 519642 seconds
+  Duration: 6.01 days (144.3 hours)
+  Data completeness: 102.1300%
+  Expected points: 519,643
+  Actual points: 530,718
+  Missing points estimate: -11,075
+  Interval stats: mean=0.979s, median=0.975s, std=0.044s
+  Interval range: [0.066, 1.267] seconds
+  No significant gaps detected
+
+File: battery22.csv (164.86 MB)
+  Rows: 2,690,545
+  Time range: 0 to 2695259 seconds
+  Duration: 31.20 days (748.7 hours)
+  Data completeness: 99.8300%
+  Expected points: 2,695,260
+  Actual points: 2,690,545
+  Missing points estimate: 4,715
+  Interval stats: mean=1.002s, median=0.995s, std=0.052s
+  Interval range: [0.078, 1.417] seconds
+  No significant gaps detected
+
+File: battery23.csv (79.77 MB)
+  Rows: 1,344,130
+  Time range: 0 to 1353175 seconds
+  Duration: 15.66 days (375.9 hours)
+  Data completeness: 99.3300%
+  Expected points: 1,353,176
+  Actual points: 1,344,130
+  Missing points estimate: 9,046
+  Interval stats: mean=1.007s, median=1.001s, std=0.050s
+  Interval range: [0.097, 1.297] seconds
+  No significant gaps detected
+
+File: battery30.csv (34.12 MB)
+  Rows: 597,316
+  Time range: 0 to 582428 seconds
+  Duration: 6.74 days (161.8 hours)
+  Data completeness: 102.5600%
+  Expected points: 582,428
+  Actual points: 597,316
+  Missing points estimate: -14,888
+  Interval stats: mean=0.975s, median=0.972s, std=0.043s
+  Interval range: [0.081, 1.487] seconds
+  No significant gaps detected
+
+File: battery31.csv (199.91 MB)
+  Rows: 3,341,603
+  Time range: 0 to 3342337 seconds
+  Duration: 38.68 days (928.4 hours)
+  Data completeness: 99.9800%
+  Expected points: 3,342,337
+  Actual points: 3,341,603
+  Missing points estimate: 734
+  Interval stats: mean=1.000s, median=0.994s, std=0.051s
+  Interval range: [0.103, 1.344] seconds
+  No significant gaps detected
+
+File: battery40.csv (43.22 MB)
+  Rows: 753,257
+  Time range: 0 to 737886 seconds
+  Duration: 8.54 days (205.0 hours)
+  Data completeness: 102.0800%
+  Expected points: 737,887
+  Actual points: 753,257
+  Missing points estimate: -15,370
+  Interval stats: mean=0.980s, median=0.977s, std=0.045s
+  Interval range: [0.105, 1.453] seconds
+  No significant gaps detected
+
+File: battery41.csv (172.53 MB)
+  Rows: 2,926,443
+  Time range: 0 to 2928690 seconds
+  Duration: 33.90 days (813.5 hours)
+  Data completeness: 99.9200%
+  Expected points: 2,928,690
+  Actual points: 2,926,443
+  Missing points estimate: 2,247
+  Interval stats: mean=1.001s, median=0.994s, std=0.051s
+  Interval range: [0.129, 1.427] seconds
+  No significant gaps detected
+
+File: battery50.csv (46.56 MB)
+  Rows: 791,869
+  Time range: 0 to 775296 seconds
+  Duration: 8.97 days (215.4 hours)
+  Data completeness: 102.1400%
+  Expected points: 775,297
+  Actual points: 791,869
+  Missing points estimate: -16,572
+  Interval stats: mean=0.979s, median=0.976s, std=0.044s
+  Interval range: [0.131, 1.482] seconds
+  No significant gaps detected
+
+File: battery51.csv (111.19 MB)
+  Rows: 1,822,787
+  Time range: 0 to 1828969 seconds
+  Duration: 21.17 days (508.1 hours)
+  Data completeness: 99.6600%
+  Expected points: 1,828,970
+  Actual points: 1,822,787
+  Missing points estimate: 6,183
+  Interval stats: mean=1.003s, median=0.996s, std=0.052s
+  Interval range: [0.156, 1.483] seconds
+  No significant gaps detected
+
+File: battery52.csv (89.97 MB)
+  Rows: 1,510,563
+  Time range: 0 to 1507638 seconds
+  Duration: 17.45 days (418.8 hours)
+  Data completeness: 100.1900%
+  Expected points: 1,507,638
+  Actual points: 1,510,563
+  Missing points estimate: -2,925
+  Interval stats: mean=0.998s, median=0.993s, std=0.048s
+  Interval range: [0.144, 1.281] seconds
+  No significant gaps detected
+
+FOLDER: recommissioned_batteries
+------------------------------------------------------------
+
+File: battery02.csv (123.3 MB)
+  Rows: 2,069,667
+  Time range: 0 to 2095710 seconds
+  Duration: 24.26 days (582.1 hours)
+  Data completeness: 98.7600%
+  Expected points: 2,095,710
+  Actual points: 2,069,667
+  Missing points estimate: 26,043
+  Interval stats: mean=1.013s, median=1.006s, std=0.052s
+  Interval range: [0.002, 1.433] seconds
+  No significant gaps detected
+
+File: battery03.csv (132.58 MB)
+  Rows: 2,161,444
+  Time range: 0 to 2210055 seconds
+  Duration: 25.58 days (613.9 hours)
+  Data completeness: 97.8000%
+  Expected points: 2,210,056
+  Actual points: 2,161,444
+  Missing points estimate: 48,612
+  Interval stats: mean=1.022s, median=1.018s, std=0.048s
+  Interval range: [0.055, 1.455] seconds
+  No significant gaps detected
+
+File: battery12.csv (198.22 MB)
+  Rows: 3,041,084
+  Time range: 0 to 3081639 seconds
+  Duration: 35.67 days (856.0 hours)
+  Data completeness: 98.6800%
+  Expected points: 3,081,639
+  Actual points: 3,041,084
+  Missing points estimate: 40,555
+  Interval stats: mean=1.013s, median=1.006s, std=0.052s
+  Interval range: [0.027, 1.414] seconds
+  No significant gaps detected
+
+File: battery24.csv (199.36 MB)
+  Rows: 3,285,619
+  Time range: 0 to 3315639 seconds
+  Duration: 38.38 days (921.0 hours)
+  Data completeness: 99.0900%
+  Expected points: 3,315,640
+  Actual points: 3,285,619
+  Missing points estimate: 30,021
+  Interval stats: mean=1.009s, median=1.002s, std=0.051s
+  Interval range: [0.052, 1.468] seconds
+  No significant gaps detected
+
+File: battery25.csv (135.36 MB)
+  Rows: 2,169,910
+  Time range: 0 to 2218452 seconds
+  Duration: 25.68 days (616.2 hours)
+  Data completeness: 97.8100%
+  Expected points: 2,218,453
+  Actual points: 2,169,910
+  Missing points estimate: 48,543
+  Interval stats: mean=1.022s, median=1.018s, std=0.048s
+  Interval range: [0.112, 1.399] seconds
+  No significant gaps detected
+
+File: battery32.csv (105.41 MB)
+  Rows: 1,829,938
+  Time range: 0 to 1855800 seconds
+  Duration: 21.48 days (515.5 hours)
+  Data completeness: 98.6100%
+  Expected points: 1,855,800
+  Actual points: 1,829,938
+  Missing points estimate: 25,862
+  Interval stats: mean=1.014s, median=1.007s, std=0.053s
+  Interval range: [0.103, 1.394] seconds
+  No significant gaps detected
+
+File: battery33.csv (140.6 MB)
+  Rows: 2,353,426
+  Time range: 0 to 2381767 seconds
+  Duration: 27.57 days (661.6 hours)
+  Data completeness: 98.8100%
+  Expected points: 2,381,767
+  Actual points: 2,353,426
+  Missing points estimate: 28,341
+  Interval stats: mean=1.012s, median=1.006s, std=0.052s
+  Interval range: [0.078, 1.424] seconds
+  No significant gaps detected
+
+File: battery53.csv (67.32 MB)
+  Rows: 1,139,972
+  Time range: 0 to 1157847 seconds
+  Duration: 13.40 days (321.6 hours)
+  Data completeness: 98.4600%
+  Expected points: 1,157,847
+  Actual points: 1,139,972
+  Missing points estimate: 17,875
+  Interval stats: mean=1.016s, median=1.009s, std=0.053s
+  Interval range: [0.144, 1.309] seconds
+  No significant gaps detected
+
+FOLDER: second_life_batteries
+------------------------------------------------------------
+
+File: battery13.csv (104.0 MB)
+  Rows: 1,736,149
+  Time range: 0 to 1747330 seconds
+  Duration: 20.22 days (485.4 hours)
+  Data completeness: 99.3600%
+  Expected points: 1,747,330
+  Actual points: 1,736,149
+  Missing points estimate: 11,181
+  Interval stats: mean=1.006s, median=1.004s, std=0.043s
+  Interval range: [0.092, 1.362] seconds
+  No significant gaps detected
+
+File: battery36.csv (208.51 MB)
+  Rows: 3,394,365
+  Time range: 0 to 3382891 seconds
+  Duration: 39.15 days (939.7 hours)
+  Data completeness: 100.3400%
+  Expected points: 3,382,892
+  Actual points: 3,394,365
+  Missing points estimate: -11,473
+  Interval stats: mean=0.997s, median=0.997s, std=0.041s
+  Interval range: [0.162, 1.402] seconds
+  No significant gaps detected
+
+File: battery54.csv (122.32 MB)
+  Rows: 1,989,458
+  Time range: 0 to 2002672 seconds
+  Duration: 23.18 days (556.3 hours)
+  Data completeness: 99.3400%
+  Expected points: 2,002,672
+  Actual points: 1,989,458
+  Missing points estimate: 13,214
+  Interval stats: mean=1.007s, median=1.004s, std=0.042s
+  Interval range: [0.161, 1.346] seconds
+  No significant gaps detected
+
+====================================================================================================
+END OF REPORT
+====================================================================================================
