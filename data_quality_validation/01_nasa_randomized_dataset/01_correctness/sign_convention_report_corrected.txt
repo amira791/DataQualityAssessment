@@ -1,0 +1,137 @@
+====================================================================================================
+NASA BATTERY DATASET - SIGN CONVENTION REPORT (CORRECTED)
+Generated: 2026-03-10 16:24:05
+====================================================================================================
+
+DOCUMENTATION:
+- mode = -1 : discharge
+- mode = 0 : rest
+- mode = 1 : charge
+- current_load : 'discharge current'
+
+NOTE: The documentation does NOT specify sign convention.
+This report OBSERVES the actual convention used.
+
+
+FOLDER: regular_alt_batteries
+------------------------------------------------------------
+Overall sign convention: positive
+
+
+File: battery00.csv (64.47 MB)
+  Rows: 1,101,244
+  ERROR: 'all_positive'
+
+File: battery01.csv (307.63 MB)
+  Rows: 4,918,193
+  ERROR: 'all_positive'
+
+File: battery10.csv (52.91 MB)
+  Rows: 907,341
+  ERROR: 'all_positive'
+
+File: battery11.csv (302.99 MB)
+  Rows: 4,914,864
+  ERROR: 'all_positive'
+
+File: battery20.csv (11.81 MB)
+  Rows: 207,391
+  ERROR: 'all_positive'
+
+File: battery21.csv (24.93 MB)
+  Rows: 530,718
+  ERROR: 'all_positive'
+
+File: battery22.csv (164.86 MB)
+  Rows: 2,690,545
+  ERROR: 'all_positive'
+
+File: battery23.csv (79.77 MB)
+  Rows: 1,344,130
+  ERROR: 'all_positive'
+
+File: battery30.csv (34.12 MB)
+  Rows: 597,316
+  ERROR: 'all_positive'
+
+File: battery31.csv (199.91 MB)
+  Rows: 3,341,603
+  ERROR: 'all_positive'
+
+File: battery40.csv (43.22 MB)
+  Rows: 753,257
+  ERROR: 'all_positive'
+
+File: battery41.csv (172.53 MB)
+  Rows: 2,926,443
+  ERROR: 'all_positive'
+
+File: battery50.csv (46.56 MB)
+  Rows: 791,869
+  ERROR: 'all_positive'
+
+File: battery51.csv (111.19 MB)
+  Rows: 1,822,787
+  ERROR: 'all_positive'
+
+File: battery52.csv (89.97 MB)
+  Rows: 1,510,563
+  ERROR: 'all_positive'
+
+FOLDER: recommissioned_batteries
+------------------------------------------------------------
+Overall sign convention: positive
+
+
+File: battery02.csv (123.3 MB)
+  Rows: 2,069,667
+  ERROR: 'all_positive'
+
+File: battery03.csv (132.58 MB)
+  Rows: 2,161,444
+  ERROR: 'all_positive'
+
+File: battery12.csv (198.22 MB)
+  Rows: 3,041,084
+  ERROR: 'all_positive'
+
+File: battery24.csv (199.36 MB)
+  Rows: 3,285,619
+  ERROR: 'all_positive'
+
+File: battery25.csv (135.36 MB)
+  Rows: 2,169,910
+  ERROR: 'all_positive'
+
+File: battery32.csv (105.41 MB)
+  Rows: 1,829,938
+  ERROR: 'all_positive'
+
+File: battery33.csv (140.6 MB)
+  Rows: 2,353,426
+  ERROR: 'all_positive'
+
+File: battery53.csv (67.32 MB)
+  Rows: 1,139,972
+  ERROR: 'all_positive'
+
+FOLDER: second_life_batteries
+------------------------------------------------------------
+Overall sign convention: positive
+
+
+File: battery13.csv (104.0 MB)
+  Rows: 1,736,149
+  ERROR: 'all_positive'
+
+File: battery36.csv (208.51 MB)
+  Rows: 3,394,365
+  ERROR: 'all_positive'
+
+File: battery54.csv (122.32 MB)
+  Rows: 1,989,458
+  ERROR: 'all_positive'
+
+====================================================================================================
+END OF REPORT
+====================================================================================================
