@@ -7,11 +7,11 @@ base_path = r"C:\Users\admin\Desktop\DR2\11 All Datasets\03 CALCE Battery Datase
 def find_aging_data():
     """Search for files that might contain multiple cycles"""
     
-    print("🔍 SEARCHING FOR AGING DATA (multiple cycles)")
+    print(" SEARCHING FOR AGING DATA (multiple cycles)")
     print("="*70)
     
     for sample in ['Sample 01', 'Sample 02']:
-        print(f"\n📁 {sample}:")
+        print(f"\n {sample}:")
         print("-"*40)
         
         sample_path = Path(base_path) / sample

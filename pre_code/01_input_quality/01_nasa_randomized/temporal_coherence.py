@@ -13,6 +13,10 @@ def analyze_battery_file(file_path):
     """
     Analyze a single battery CSV file for capacity degradation
     """
+    """
+    This function reads a battery CSV file, extracts discharge cycles, calculates capacities,
+    and analyzes capacity degradation over time.
+    """
     print(f"Analyzing: {file_path.name}")
     
     try:
@@ -164,10 +168,10 @@ for folder in ['regular_alt_batteries', 'recommissioned_batteries', 'second_life
                         'num_cycles': len(capacities),
                         'df': df
                     }
-                    print(f"  ✅ {csv_file.name}: {len(capacities)} discharge cycles extracted")
+                    print(f"   {csv_file.name}: {len(capacities)} discharge cycles extracted")
                 else:
                     failed_files.append(csv_file.name)
-                    print(f"  ❌ {csv_file.name}: Could not extract discharge cycles")
+                    print(f"   {csv_file.name}: Could not extract discharge cycles")
             else:
                 failed_files.append(csv_file.name)
 
@@ -273,15 +277,15 @@ for battery_name, data in all_batteries.items():
     print(f"   Loss: {loss_percentage:.1f}%, Rate: {degradation_rate:.3f} Ah/day")
     
     if violations:
-        print(f"   📊 {len(violations)} non-monotonic points at 5% tolerance:")
+        print(f"    {len(violations)} non-monotonic points at 5% tolerance:")
         severe_count = len([v for v in violations if v['increase_pct'] > 10])
         moderate_count = len([v for v in violations if 5 < v['increase_pct'] <= 10])
         if severe_count > 0:
-            print(f"      🔴 {severe_count} severe (>10%)")
+            print(f"       {severe_count} severe (>10%)")
         if moderate_count > 0:
-            print(f"      🟡 {moderate_count} moderate (5-10%)")
+            print(f"      {moderate_count} moderate (5-10%)")
         for v in violations[:2]:  # Show first 2 violations
-            emoji = "🔴" if v['increase_pct'] > 10 else "🟡"
+            emoji = "" if v['increase_pct'] > 10 else "🟡"
             print(f"      {emoji} Cycle {v['cycle']}: +{v['increase_pct']:.1f}%")
 
 # Create summary dataframe
@@ -303,20 +307,20 @@ if results:
     medium_quality = summary_df[(~summary_df['criteria_met_5pct']) & (summary_df['max_violation_pct'] <= 8) & (summary_df['num_violations_5pct'] <= 3)]
     low_quality = summary_df[(~summary_df['criteria_met_5pct']) & ((summary_df['max_violation_pct'] > 8) | (summary_df['num_violations_5pct'] > 3))]
     
-    print(f"\n📊 BATTERY QUALITY CLASSIFICATION:")
-    print(f"   ✅ High Quality (no violations >5%): {len(high_quality)} batteries")
-    print(f"   ⚠️  Medium Quality (minor violations): {len(medium_quality)} batteries")
-    print(f"   ❌ Low Quality (significant violations): {len(low_quality)} batteries")
+    print(f"\n BATTERY QUALITY CLASSIFICATION:")
+    print(f"    High Quality (no violations >5%): {len(high_quality)} batteries")
+    print(f"     Medium Quality (minor violations): {len(medium_quality)} batteries")
+    print(f"    Low Quality (significant violations): {len(low_quality)} batteries")
     
     # List high quality batteries
     if len(high_quality) > 0:
-        print(f"\n✅ HIGH QUALITY BATTERIES (Recommended for analysis):")
+        print(f"\n HIGH QUALITY BATTERIES (Recommended for analysis):")
         for _, row in high_quality.iterrows():
             print(f"   • {row['battery']}: {row['num_cycles']} cycles, {row['loss_percentage']:.1f}% loss")
     
     # List medium quality batteries
     if len(medium_quality) > 0:
-        print(f"\n⚠️  MEDIUM QUALITY BATTERIES (Use with caution):")
+        print(f"\n MEDIUM QUALITY BATTERIES (Use with caution):")
         for _, row in medium_quality.iterrows():
             print(f"   • {row['battery']}: {row['num_violations_5pct']} violations, max {row['max_violation_pct']:.1f}%")
     
@@ -330,7 +334,7 @@ if results:
         folder_high = folder_data[folder_data['criteria_met_5pct']]
         print(f"\n{folder}:")
         print(f"  Total: {len(folder_data)}")
-        print(f"  ✅ High quality: {len(folder_high)}/{len(folder_data)}")
+        print(f"   High quality: {len(folder_high)}/{len(folder_data)}")
         print(f"  Avg loss: {folder_data['loss_percentage'].mean():.1f}%")
         print(f"  Avg violations: {folder_data['num_violations_5pct'].mean():.1f}")
     
@@ -391,13 +395,13 @@ if results:
         
         # Determine quality class for title
         if battery_name in high_quality['battery'].values:
-            quality = "✅ HIGH QUALITY"
+            quality = " HIGH QUALITY"
             color = 'green'
         elif battery_name in medium_quality['battery'].values:
-            quality = "⚠️ MEDIUM"
+            quality = " MEDIUM"
             color = 'orange'
         else:
-            quality = "❌ LOW QUALITY"
+            quality = " LOW QUALITY"
             color = 'red'
         
         short_name = os.path.basename(battery_name)
@@ -421,20 +425,20 @@ if results:
     print("RECOMMENDATIONS FOR DATASET USAGE")
     print('='*60)
     print(f"\nBased on the analysis with 5% practical tolerance:")
-    print(f"\n📌 For high-precision analysis (e.g., model calibration):")
+    print(f"\n For high-precision analysis (e.g., model calibration):")
     print(f"   Use the {len(high_quality)} high quality batteries:")
     for _, row in high_quality.iterrows():
         print(f"   - {row['battery']}")
     
-    print(f"\n📌 For general degradation trend analysis:")
+    print(f"\n For general degradation trend analysis:")
     print(f"   Use high + medium quality batteries ({len(high_quality) + len(medium_quality)} total)")
     
-    print(f"\n📌 Batteries to avoid or investigate further:")
+    print(f"\n Batteries to avoid or investigate further:")
     for _, row in low_quality.iterrows():
         print(f"   - {row['battery']}: {row['num_violations_5pct']} violations, max {row['max_violation_pct']:.1f}%")
     
 else:
-    print("\n❌ No batteries were successfully analyzed. Please check:")
+    print("\n No batteries were successfully analyzed. Please check:")
     print("1. File paths and permissions")
     print("2. CSV file format and column names")
     print("3. That the files contain discharge cycles (mode = -1)")
