@@ -4,6 +4,10 @@ verify_partial_cycles.py
 This script detects and analyzes partial charge-discharge cycles in the NASA Randomized Battery Dataset.
 Partial cycles are common in real-world applications where batteries are rarely fully depleted or fully charged.
 
+KEY INSIGHT: Rest periods (mode=0) are part of the test protocol but should be IGNORED 
+when identifying cycles. A cycle is defined as a charge segment followed by a discharge segment,
+regardless of rest periods in between.
+
 WHAT WE ANALYZE:
 1. Cycle completeness (full vs partial cycles)
 2. Depth of Discharge (DoD) distribution
@@ -13,7 +17,6 @@ WHAT WE ANALYZE:
 CYCLE DEFINITIONS:
 - Full cycle: Complete charge-discharge sequence with SoC from near 0% to near 100%
 - Partial cycle: Incomplete charge or discharge (doesn't reach full range)
-- Micro-cycle: Very small charge-discharge swings
 """
 
 import os
@@ -43,9 +46,37 @@ def estimate_soc_from_voltage(voltage, vmin=VOLTAGE_MIN_GUESS, vmax=VOLTAGE_MAX_
     soc = (voltage - vmin) / (vmax - vmin) * 100
     return np.clip(soc, 0, 100)
 
+def find_mode_segments(df, mode_value):
+    """
+    Find continuous segments where mode == mode_value.
+    Returns list of (start_idx, end_idx) for each segment.
+    """
+    segments = []
+    in_segment = False
+    start_idx = None
+    
+    for i, row in df.iterrows():
+        if row['mode'] == mode_value and not in_segment:
+            # Start of a new segment
+            in_segment = True
+            start_idx = i
+        elif row['mode'] != mode_value and in_segment:
+            # End of segment
+            in_segment = False
+            if start_idx is not None:
+                segments.append((start_idx, i - 1))
+    
+    # Handle case where segment goes to the end
+    if in_segment and start_idx is not None:
+        segments.append((start_idx, len(df) - 1))
+    
+    return segments
+
 def detect_cycles(df):
     """
-    Detect charge-discharge cycles from mode and voltage data.
+    Detect charge-discharge cycles by pairing charge and discharge segments.
+    Rest periods are IGNORED in cycle definition.
+    
     Returns list of cycles with their characteristics.
     """
     cycles = []
@@ -53,74 +84,71 @@ def detect_cycles(df):
     if 'mode' not in df.columns or 'voltage_charger' not in df.columns:
         return cycles
     
-    # Find transitions between modes
-    mode_changes = df['mode'].diff().fillna(0) != 0
-    change_indices = df.index[mode_changes].tolist()
+    # Find all charge segments and discharge segments
+    charge_segments = find_mode_segments(df, MODE_CHARGE)
+    discharge_segments = find_mode_segments(df, MODE_DISCHARGE)
     
-    # Add start and end indices
-    if len(df) > 0:
-        change_indices = [0] + change_indices + [len(df)-1]
-        change_indices = sorted(set(change_indices))
+    # Pair them in order (1st charge with 1st discharge, etc.)
+    # Note: Some datasets might start with discharge, so we need to handle that
+    min_len = min(len(charge_segments), len(discharge_segments))
     
-    # Identify cycle segments
-    current_cycle = []
-    cycle_start_idx = 0
-    
-    for i in range(1, len(change_indices)):
-        start_idx = change_indices[i-1]
-        end_idx = change_indices[i]
+    for i in range(min_len):
+        charge_start, charge_end = charge_segments[i]
+        discharge_start, discharge_end = discharge_segments[i]
         
-        segment_modes = df.loc[start_idx:end_idx, 'mode'].value_counts()
+        # Get voltage data for this cycle
+        charge_voltages = df.loc[charge_start:charge_end, 'voltage_charger'].dropna()
+        discharge_voltages = df.loc[discharge_start:discharge_end, 'voltage_charger'].dropna()
         
-        # If we have both charge and discharge in this segment, it's a cycle
-        if (MODE_CHARGE in segment_modes.index and MODE_DISCHARGE in segment_modes.index):
-            # Extract cycle data
-            cycle_data = df.loc[start_idx:end_idx].copy()
-            
-            # Get voltage range during this cycle
-            voltages = cycle_data['voltage_charger'].dropna()
-            if len(voltages) > 0:
-                v_min = voltages.min()
-                v_max = voltages.max()
-                
-                # Estimate SoC range
-                soc_min = estimate_soc_from_voltage(v_min)
-                soc_max = estimate_soc_from_voltage(v_max)
-                
-                # Calculate depth of discharge (DoD)
-                dod = soc_max - soc_min if soc_max > soc_min else soc_min - soc_max
-                
-                # Determine if cycle is full or partial
-                is_full = dod >= (SOC_THRESHOLD_FULL * 100)
-                
-                # Get duration
-                if 'time' in cycle_data.columns:
-                    time_col = 'time'
-                elif 'relative_time' in cycle_data.columns:
-                    time_col = 'relative_time'
-                else:
-                    time_col = None
-                
-                duration = None
-                if time_col and len(cycle_data) > 1:
-                    time_vals = cycle_data[time_col].dropna()
-                    if len(time_vals) > 1:
-                        duration = time_vals.max() - time_vals.min()
-                
-                cycles.append({
-                    'start_idx': int(start_idx),
-                    'end_idx': int(end_idx),
-                    'start_time': float(df.iloc[start_idx][time_col]) if time_col and time_col in df.columns else start_idx,
-                    'end_time': float(df.iloc[end_idx][time_col]) if time_col and time_col in df.columns else end_idx,
-                    'duration_seconds': float(duration) if duration else None,
-                    'voltage_min': float(v_min),
-                    'voltage_max': float(v_max),
-                    'soc_min': float(soc_min),
-                    'soc_max': float(soc_max),
-                    'depth_of_discharge': float(dod),
-                    'is_full_cycle': bool(is_full),
-                    'cycle_type': 'full' if is_full else 'partial'
-                })
+        if len(charge_voltages) == 0 or len(discharge_voltages) == 0:
+            continue
+        
+        # Get overall voltage range for this cycle
+        all_voltages = pd.concat([charge_voltages, discharge_voltages])
+        v_min = all_voltages.min()
+        v_max = all_voltages.max()
+        
+        # Estimate SoC range
+        soc_min = estimate_soc_from_voltage(v_min)
+        soc_max = estimate_soc_from_voltage(v_max)
+        
+        # Calculate depth of discharge (DoD)
+        dod = soc_max - soc_min if soc_max > soc_min else soc_min - soc_max
+        
+        # Determine if cycle is full or partial
+        is_full = dod >= (SOC_THRESHOLD_FULL * 100)
+        
+        # Get time information
+        time_col = None
+        if 'time' in df.columns:
+            time_col = 'time'
+        elif 'relative_time' in df.columns:
+            time_col = 'relative_time'
+        
+        cycle_start_time = df.iloc[charge_start][time_col] if time_col and time_col in df.columns else charge_start
+        cycle_end_time = df.iloc[discharge_end][time_col] if time_col and time_col in df.columns else discharge_end
+        
+        duration = None
+        if time_col and time_col in df.columns:
+            duration = float(df.iloc[discharge_end][time_col] - df.iloc[charge_start][time_col])
+        
+        cycles.append({
+            'cycle_number': i + 1,
+            'charge_start_idx': int(charge_start),
+            'charge_end_idx': int(charge_end),
+            'discharge_start_idx': int(discharge_start),
+            'discharge_end_idx': int(discharge_end),
+            'start_time': float(cycle_start_time) if isinstance(cycle_start_time, (int, float)) else 0,
+            'end_time': float(cycle_end_time) if isinstance(cycle_end_time, (int, float)) else 0,
+            'duration_seconds': float(duration) if duration else None,
+            'voltage_min': float(v_min),
+            'voltage_max': float(v_max),
+            'soc_min': float(soc_min),
+            'soc_max': float(soc_max),
+            'depth_of_discharge': float(dod),
+            'is_full_cycle': bool(is_full),
+            'cycle_type': 'full' if is_full else 'partial'
+        })
     
     return cycles
 
@@ -132,6 +160,8 @@ def analyze_partial_cycles(file_path):
         'file': os.path.basename(file_path),
         'file_size_mb': round(os.path.getsize(file_path) / (1024 * 1024), 2),
         'total_rows': 0,
+        'charge_segments': 0,
+        'discharge_segments': 0,
         'cycles_detected': 0,
         'full_cycles': 0,
         'partial_cycles': 0,
@@ -160,6 +190,12 @@ def analyze_partial_cycles(file_path):
         if time_col and df[time_col].dtype == 'object':
             df[time_col] = pd.to_numeric(df[time_col], errors='coerce')
             df = df.sort_values(by=time_col).reset_index(drop=True)
+        
+        # Count segments
+        charge_segments = find_mode_segments(df, MODE_CHARGE)
+        discharge_segments = find_mode_segments(df, MODE_DISCHARGE)
+        results['charge_segments'] = len(charge_segments)
+        results['discharge_segments'] = len(discharge_segments)
         
         # Detect cycles
         cycles = detect_cycles(df)
@@ -225,6 +261,7 @@ def scan_folder(folder_path, folder_name):
     print(f"\n{'='*80}")
     print(f"SCANNING FOLDER: {folder_name}")
     print(f"{'='*80}")
+    print(f"  (Ignoring rest periods in cycle detection)")
     
     folder_results = {
         'folder': folder_name,
@@ -238,7 +275,9 @@ def scan_folder(folder_path, folder_name):
         'summary_stats': {
             'avg_partial_ratio': 0,
             'dod_histogram': {},
-            'file_with_most_partial': None
+            'file_with_most_partial': None,
+            'total_charge_segments': 0,
+            'total_discharge_segments': 0
         }
     }
     
@@ -261,6 +300,8 @@ def scan_folder(folder_path, folder_name):
     
     # Global DoD histogram
     global_dod_hist = {}
+    total_charge_segments = 0
+    total_discharge_segments = 0
     
     for csv_file in sorted(csv_files):
         print(f"  Analyzing: {csv_file.name}")
@@ -271,6 +312,10 @@ def scan_folder(folder_path, folder_name):
             folder_results['files_with_errors'] += 1
             print(f"    ERROR: {results['error']}")
         else:
+            # Accumulate segment counts
+            total_charge_segments += results['charge_segments']
+            total_discharge_segments += results['discharge_segments']
+            
             if results['cycles_detected'] > 0:
                 folder_results['files_with_cycles'] += 1
                 folder_results['total_cycles'] += results['cycles_detected']
@@ -293,7 +338,7 @@ def scan_folder(folder_path, folder_name):
                       f"{results['full_cycles']} full, {results['partial_cycles']} partial")
                 print(f"    Partial cycle ratio: {results.get('partial_cycle_ratio', 0)*100:.1f}%")
             else:
-                print(f"    No cycles detected")
+                print(f"    No cycles detected (Charge segments: {results['charge_segments']}, Discharge segments: {results['discharge_segments']})")
     
     # Calculate summary statistics
     if partial_ratios:
@@ -301,6 +346,8 @@ def scan_folder(folder_path, folder_name):
         folder_results['summary_stats']['max_partial_ratio'] = float(max_partial_ratio)
         folder_results['summary_stats']['file_with_most_partial'] = max_partial_file
         folder_results['summary_stats']['dod_histogram'] = global_dod_hist
+        folder_results['summary_stats']['total_charge_segments'] = total_charge_segments
+        folder_results['summary_stats']['total_discharge_segments'] = total_discharge_segments
     
     return folder_results
 
@@ -309,11 +356,12 @@ def print_summary(all_results):
     Print comprehensive summary of partial cycle analysis.
     """
     print("\n" + "="*100)
-    print("PARTIAL CYCLE ANALYSIS - SUMMARY")
+    print("PARTIAL CYCLE ANALYSIS - SUMMARY (REVISED)")
     print("="*100)
     print("\nCycle detection parameters:")
     print(f"  • Voltage range assumed: {VOLTAGE_MIN_GUESS}V - {VOLTAGE_MAX_GUESS}V")
     print(f"  • Full cycle threshold: {SOC_THRESHOLD_FULL*100}% of voltage range")
+    print(f"  • Rest periods (mode=0) are IGNORED in cycle detection")
     print("="*100)
     
     total_files = 0
@@ -322,6 +370,8 @@ def print_summary(all_results):
     total_cycles = 0
     total_full = 0
     total_partial = 0
+    total_charge_segments = 0
+    total_discharge_segments = 0
     all_partial_ratios = []
     
     # Aggregate histogram
@@ -333,7 +383,9 @@ def print_summary(all_results):
         print(f"  Files checked: {folder_result['files_checked']}")
         print(f"  Files with errors: {folder_result['files_with_errors']}")
         print(f"  Files with cycles: {folder_result['files_with_cycles']}")
-        print(f"  Total cycles: {folder_result['total_cycles']}")
+        print(f"  Total charge segments: {folder_result['summary_stats']['total_charge_segments']}")
+        print(f"  Total discharge segments: {folder_result['summary_stats']['total_discharge_segments']}")
+        print(f"  Total cycles detected: {folder_result['total_cycles']}")
         print(f"    Full cycles: {folder_result['total_full_cycles']}")
         print(f"    Partial cycles: {folder_result['total_partial_cycles']}")
         print(f"  Partial cycle ratio: {folder_result['summary_stats']['avg_partial_ratio']*100:.1f}% average")
@@ -348,6 +400,8 @@ def print_summary(all_results):
         total_cycles += folder_result['total_cycles']
         total_full += folder_result['total_full_cycles']
         total_partial += folder_result['total_partial_cycles']
+        total_charge_segments += folder_result['summary_stats']['total_charge_segments']
+        total_discharge_segments += folder_result['summary_stats']['total_discharge_segments']
         
         if folder_result['summary_stats']['avg_partial_ratio'] > 0:
             all_partial_ratios.append(folder_result['summary_stats']['avg_partial_ratio'])
@@ -355,6 +409,14 @@ def print_summary(all_results):
         # Aggregate histogram
         for range_name, count in folder_result['summary_stats']['dod_histogram'].items():
             total_hist[range_name] = total_hist.get(range_name, 0) + count
+    
+    print("\n" + "="*100)
+    print("SEGMENT ANALYSIS")
+    print("="*100)
+    print(f"Total charge segments across all files: {total_charge_segments}")
+    print(f"Total discharge segments across all files: {total_discharge_segments}")
+    print(f"Maximum possible cycles (if perfectly paired): {min(total_charge_segments, total_discharge_segments)}")
+    print(f"Actual cycles detected: {total_cycles}")
     
     print("\n" + "="*100)
     print("DEPTH OF DISCHARGE (DoD) DISTRIBUTION")
@@ -369,6 +431,8 @@ def print_summary(all_results):
             percentage = (count / total_cycles * 100) if total_cycles > 0 else 0
             bar = '█' * int(percentage / 2)
             print(f"  {range_name:6s} | {count:5d} | {percentage:5.1f}% {bar}")
+    else:
+        print("\nNo cycles detected to calculate DoD distribution.")
     
     print("\n" + "="*100)
     print("FINAL QUALITY ASSESSMENT - PARTIAL CYCLE PRESENCE")
@@ -379,11 +443,22 @@ def print_summary(all_results):
     
     print(f"\nOverall statistics:")
     print(f"  • Total cycles across all files: {total_cycles}")
-    print(f"  • Full cycles: {total_full} ({total_full/total_cycles*100:.1f}%)")
-    print(f"  • Partial cycles: {total_partial} ({total_partial/total_cycles*100:.1f}%)")
+    if total_cycles > 0:
+        print(f"  • Full cycles: {total_full} ({total_full/total_cycles*100:.1f}%)")
+        print(f"  • Partial cycles: {total_partial} ({total_partial/total_cycles*100:.1f}%)")
     
     # Quality assessment based on partial cycle presence
-    if overall_partial_ratio > 0.3:
+    if total_cycles == 0:
+        print("\nRESULT: INCONCLUSIVE")
+        print("="*40)
+        print("No cycles could be detected in the dataset.")
+        print("This may be due to:")
+        print("  • Data format not matching expected pattern")
+        print("  • Missing mode or voltage columns")
+        print("  • Continuous data without clear cycle boundaries")
+        print("\nRecommendation: Manual inspection of files to understand structure.")
+        
+    elif overall_partial_ratio > 0.3:
         print("\nRESULT: EXCELLENT (++)")
         print("="*40)
         print("High presence of partial cycles (>30%):")
@@ -415,20 +490,22 @@ def print_summary(all_results):
         print("  ✗ Dataset uses almost exclusively full cycles")
         print("  ✗ Poor representation of real-world usage")
         print("\nThe dataset POORLY satisfies the partial cycle criterion.")
-        print("Recommendation: Supplement with datasets containing partial cycles")
+        print("Note: This matches the 'accelerated life testing' design where")
+        print("full cycles are used to age batteries quickly.")
 
-def save_report(all_results, output_file="partial_cycles_report.txt"):
+def save_report(all_results, output_file="partial_cycles_report_revised.txt"):
     """
     Save detailed report to file.
     """
     with open(output_file, 'w', encoding='ascii', errors='replace') as f:
         f.write("="*100 + "\n")
-        f.write("NASA BATTERY DATASET - PARTIAL CYCLE ANALYSIS REPORT\n")
+        f.write("NASA BATTERY DATASET - PARTIAL CYCLE ANALYSIS REPORT (REVISED)\n")
         f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
         f.write("="*100 + "\n\n")
         f.write(f"Analysis parameters:\n")
         f.write(f"  Voltage range: {VOLTAGE_MIN_GUESS}V - {VOLTAGE_MAX_GUESS}V\n")
-        f.write(f"  Full cycle threshold: {SOC_THRESHOLD_FULL*100}% of range\n\n")
+        f.write(f"  Full cycle threshold: {SOC_THRESHOLD_FULL*100}% of range\n")
+        f.write(f"  Rest periods (mode=0) are IGNORED in cycle detection\n\n")
         
         for folder_result in all_results:
             f.write(f"\nFOLDER: {folder_result['folder']}\n")
@@ -442,6 +519,9 @@ def save_report(all_results, output_file="partial_cycles_report.txt"):
                     f.write(f"  ERROR: {file_result['error']}\n")
                     continue
                 
+                f.write(f"  Charge segments: {file_result['charge_segments']}\n")
+                f.write(f"  Discharge segments: {file_result['discharge_segments']}\n")
+                
                 if file_result['cycles_detected'] > 0:
                     f.write(f"  Cycles detected: {file_result['cycles_detected']}\n")
                     f.write(f"    Full cycles: {file_result['full_cycles']}\n")
@@ -450,6 +530,9 @@ def save_report(all_results, output_file="partial_cycles_report.txt"):
                     
                     if file_result.get('dod_distribution'):
                         f.write(f"  Depth of Discharge (DoD) distribution:\n")
+                        f.write(f"    Min: {file_result['dod_distribution']['min']:.1f}%, "
+                               f"Max: {file_result['dod_distribution']['max']:.1f}%, "
+                               f"Mean: {file_result['dod_distribution']['mean']:.1f}%\n")
                         for range_name, count in file_result['dod_distribution'].get('histogram', {}).items():
                             if count > 0:
                                 f.write(f"    {range_name}: {count} cycles\n")
@@ -458,7 +541,7 @@ def save_report(all_results, output_file="partial_cycles_report.txt"):
                     if file_result['cycle_details']:
                         f.write(f"  Sample cycles (first 5):\n")
                         for i, cycle in enumerate(file_result['cycle_details'][:5]):
-                            f.write(f"    Cycle {i+1}: {cycle['cycle_type']}, "
+                            f.write(f"    Cycle {cycle['cycle_number']}: {cycle['cycle_type']}, "
                                    f"DoD={cycle['depth_of_discharge']:.1f}%, "
                                    f"voltage [{cycle['voltage_min']:.2f}V - {cycle['voltage_max']:.2f}V]\n")
                 else:
@@ -480,12 +563,13 @@ def main():
     ]
     
     print("="*100)
-    print("NASA RANDOMIZED BATTERY DATASET - PARTIAL CYCLE ANALYSIS")
+    print("NASA RANDOMIZED BATTERY DATASET - PARTIAL CYCLE ANALYSIS (REVISED)")
     print("="*100)
     print("\nAnalyzing charge-discharge cycles for partial cycles:")
     print("  • Detecting full vs partial cycles")
     print("  • Calculating Depth of Discharge (DoD)")
     print("  • Measuring real-world usage representation")
+    print("  • IGNORING rest periods in cycle detection")
     print(f"  • Full cycle threshold: {SOC_THRESHOLD_FULL*100}% of voltage range")
     
     all_results = []
