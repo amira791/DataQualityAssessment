@@ -1,0 +1,2856 @@
+====================================================================================================
+NASA BATTERY DATASET - SIGNAL SMOOTHNESS REPORT (REVISED)
+Generated: 2026-03-11 11:09:37
+====================================================================================================
+
+METHODOLOGY:
+  Statistical outlier detection (>5.0 standard deviations)
+  No assumed thresholds - anomalies are data-relative
+
+
+FOLDER: regular_alt_batteries
+------------------------------------------------------------
+Typical step sizes in this folder:
+  voltage_charger: mean step 0.0016V, std 0.041V
+  voltage_load: mean step 0.0213V, std 0.3362V
+  current_load: mean step 0.0377A, std 0.5751A
+  temperature_battery: mean step 0.0216C, std 0.1456C
+  temperature_mosfet: mean step 0.0194C, std 0.0411C
+  temperature_resistor: mean step 0.013C, std 0.0201C
+
+
+File: battery00.csv (64.47 MB)
+  Rows: 1,101,244
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 1101243
+      Step range: [0.0000, 9.2340]
+      Mean step: 0.0015 ? 0.0487
+      Median step: 0.0000 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.2449
+      Anomalies: 396 (0.036% of steps)
+    voltage_load (V):
+      Steps analyzed: 105831
+      Step range: [0.0000, 8.7290]
+      Mean step: 0.0212 ? 0.3462
+      Median step: 0.0030 (IQR: 0.0010-0.0070)
+      Anomaly threshold: 1.7520
+      Anomalies: 170 (0.1606% of steps)
+    current_load (A):
+      Steps analyzed: 105831
+      Step range: [0.0000, 16.3953]
+      Mean step: 0.0376 ? 0.6279
+      Median step: 0.0045 (IQR: 0.0010-0.0179)
+      Anomaly threshold: 3.1771
+      Anomalies: 161 (0.1521% of steps)
+    temperature_battery (C):
+      Steps analyzed: 1101243
+      Step range: [0.0000, 75.8200]
+      Mean step: 0.0272 ? 0.1666
+      Median step: 0.0080 (IQR: 0.0040-0.0240)
+      Anomaly threshold: 0.8602
+      Anomalies: 42 (0.0038% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 105831
+      Step range: [0.0000, 4.1800]
+      Mean step: 0.0202 ? 0.0454
+      Median step: 0.0100 (IQR: 0.0000-0.0200)
+      Anomaly threshold: 0.2474
+      Anomalies: 111 (0.1049% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 105831
+      Step range: [0.0000, 0.1300]
+      Mean step: 0.0132 ? 0.0194
+      Median step: 0.0100 (IQR: 0.0000-0.0200)
+      Anomaly threshold: 0.1100
+      Anomalies: 86 (0.0813% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 1: 0.000 ? 8.341V (?=8.341V, 171.3?)
+      2. At index 325: 8.340 ? 8.041V (?=0.299V, 6.1?)
+      3. At index 4000: 4.583 ? 5.133V (?=0.550V, 11.3?)
+      4. At index 4341: 6.128 ? 0.000V (?=6.128V, 125.9?)
+      5. At index 4347: 0.000 ? 6.418V (?=6.418V, 131.8?)
+      6. At index 7823: 8.643 ? 8.349V (?=0.294V, 6.0?)
+      7. At index 8446: 8.343 ? 7.320V (?=1.023V, 21.0?)
+      8. At index 9011: 4.917 ? 5.695V (?=0.778V, 16.0?)
+      9. At index 13489: 8.388 ? 7.461V (?=0.927V, 19.0?)
+      10. At index 14051: 4.907 ? 5.691V (?=0.784V, 16.1?)
+    voltage_charger - rate anomalies:
+      1. At index 96357: rate=0.54V/s (threshold=0.37V/s)
+      2. At index 180860: rate=0.78V/s (threshold=0.37V/s)
+      3. At index 185808: rate=2.38V/s (threshold=0.37V/s)
+      4. At index 233499: rate=24.12V/s (threshold=0.37V/s)
+      5. At index 292450: rate=0.40V/s (threshold=0.37V/s)
+    voltage_load - step anomalies:
+      1. At index 325: -0.026 ? 8.329V (?=8.355V, 24.1?)
+      2. At index 8444: 4.814 ? -0.026V (?=8.683V, 25.0?)
+      3. At index 9007: 4.974 ? 4.921V (?=8.729V, 25.2?)
+      4. At index 14046: 5.031 ? 4.965V (?=8.720V, 25.1?)
+      5. At index 18974: 5.069 ? 5.031V (?=8.658V, 24.9?)
+      6. At index 26986: 5.108 ? 5.077V (?=8.690V, 25.0?)
+      7. At index 31325: 5.155 ? 5.120V (?=8.700V, 25.1?)
+      8. At index 36302: 5.200 ? 5.156V (?=8.693V, 25.1?)
+      9. At index 41192: 5.234 ? 5.200V (?=8.687V, 25.0?)
+      10. At index 46031: 5.290 ? 5.243V (?=8.680V, 25.0?)
+    current_load - step anomalies:
+      1. At index 8445: 0.550 ? 0.594A (?=15.700A, 24.9?)
+      2. At index 13487: 16.122 ? 0.548A (?=15.700A, 24.9?)
+      3. At index 14047: 16.144 ? 16.105A (?=15.698A, 24.9?)
+      4. At index 18975: 16.204 ? 16.155A (?=16.395A, 26.1?)
+      5. At index 26987: 16.383 ? 16.344A (?=15.712A, 25.0?)
+      6. At index 31326: 16.234 ? 16.236A (?=15.735A, 25.0?)
+      7. At index 36303: 16.279 ? 16.264A (?=15.733A, 25.0?)
+      8. At index 41193: 16.295 ? 16.280A (?=15.715A, 25.0?)
+      9. At index 46032: 16.344 ? 16.313A (?=15.732A, 25.0?)
+      10. At index 50800: 16.275 ? 16.267A (?=15.758A, 25.0?)
+    temperature_battery - step anomalies:
+      1. At index 1: 0.000 ? 23.059C (?=23.059C, 138.3?)
+      2. At index 4341: 26.915 ? 0.000C (?=26.915C, 161.4?)
+      3. At index 4347: 0.000 ? 22.247C (?=22.247C, 133.4?)
+      4. At index 7823: 30.442 ? 22.867C (?=7.575C, 45.3?)
+      5. At index 27000: 99.825 ? 24.005C (?=75.820C, 455.0?)
+      6. At index 28666: 30.202 ? 23.155C (?=7.047C, 42.1?)
+      7. At index 28944: 24.620 ? 22.706C (?=1.914C, 11.3?)
+      8. At index 58678: 31.844 ? 24.048C (?=7.796C, 46.6?)
+      9. At index 96357: 36.998 ? 23.890C (?=13.108C, 78.5?)
+      10. At index 180860: 36.221 ? 23.689C (?=12.532C, 75.1?)
+    temperature_mosfet - step anomalies:
+      1. At index 13682: 30.960 ? 30.780C (?=0.410C, 8.6?)
+      2. At index 13684: 30.600 ? 30.190C (?=1.020C, 22.0?)
+      3. At index 13685: 30.190 ? 29.970C (?=1.480C, 32.1?)
+      4. At index 13841: 27.990 ? 27.890C (?=0.330C, 6.8?)
+      5. At index 13847: 28.200 ? 28.180C (?=1.190C, 25.7?)
+      6. At index 13871: 28.400 ? 28.380C (?=2.080C, 45.3?)
+      7. At index 18465: 23.900 ? 24.020C (?=0.290C, 5.9?)
+      8. At index 18475: 25.120 ? 25.230C (?=2.070C, 45.1?)
+      9. At index 18534: 29.230 ? 29.170C (?=0.750C, 16.1?)
+      10. At index 18539: 29.630 ? 29.510C (?=2.530C, 55.2?)
+    temperature_resistor - step anomalies:
+      1. At index 26495: 24.730 ? 24.830C (?=0.110C, 5.0?)
+      2. At index 26507: 25.910 ? 26.010C (?=0.110C, 5.0?)
+      3. At index 35794: 25.410 ? 25.510C (?=0.120C, 5.5?)
+      4. At index 60311: 32.000 ? 32.000C (?=0.120C, 5.5?)
+      5. At index 70478: 32.080 ? 32.060C (?=0.110C, 5.0?)
+      6. At index 75422: 32.070 ? 32.070C (?=0.130C, 6.0?)
+      7. At index 155791: 32.060 ? 32.060C (?=0.110C, 5.0?)
+      8. At index 165326: 31.910 ? 31.910C (?=0.110C, 5.0?)
+      9. At index 174717: 32.190 ? 32.200C (?=0.110C, 5.0?)
+      10. At index 231574: 23.120 ? 23.180C (?=0.110C, 5.0?)
+
+File: battery01.csv (307.63 MB)
+  Rows: 4,918,193
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 4918192
+      Step range: [0.0000, 9.2320]
+      Mean step: 0.0017 ? 0.0364
+      Median step: 0.0010 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.1838
+      Anomalies: 2459 (0.05% of steps)
+    voltage_load (V):
+      Steps analyzed: 748077
+      Step range: [0.0000, 8.7560]
+      Mean step: 0.0152 ? 0.2905
+      Median step: 0.0020 (IQR: 0.0010-0.0040)
+      Anomaly threshold: 1.4675
+      Anomalies: 862 (0.1152% of steps)
+    current_load (A):
+      Steps analyzed: 748077
+      Step range: [0.0000, 9.3676]
+      Mean step: 0.0199 ? 0.3053
+      Median step: 0.0048 (IQR: 0.0010-0.0120)
+      Anomaly threshold: 1.5464
+      Anomalies: 862 (0.1152% of steps)
+    temperature_battery (C):
+      Steps analyzed: 4918192
+      Step range: [0.0000, 69.3670]
+      Mean step: 0.0179 ? 0.1191
+      Median step: 0.0080 (IQR: 0.0040-0.0210)
+      Anomaly threshold: 0.6133
+      Anomalies: 128 (0.0026% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 748077
+      Step range: [0.0000, 0.1900]
+      Mean step: 0.0125 ? 0.0204
+      Median step: 0.0100 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.1145
+      Anomalies: 8295 (1.1088% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 748077
+      Step range: [0.0000, 0.1200]
+      Mean step: 0.0064 ? 0.0109
+      Median step: 0.0000 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.0611
+      Anomalies: 5504 (0.7358% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 1: 0.000 ? 7.378V (?=7.378V, 202.5?)
+      2. At index 49777: 7.376 ? 8.400V (?=1.024V, 28.1?)
+      3. At index 53461: 4.732 ? 5.162V (?=0.430V, 11.8?)
+      4. At index 57868: 8.414 ? 7.941V (?=0.473V, 12.9?)
+      5. At index 58827: 4.804 ? 5.265V (?=0.461V, 12.6?)
+      6. At index 63204: 8.409 ? 7.939V (?=0.470V, 12.9?)
+      7. At index 64160: 4.797 ? 5.257V (?=0.460V, 12.6?)
+      8. At index 73458: 8.371 ? 7.864V (?=0.507V, 13.9?)
+      9. At index 74444: 4.842 ? 5.305V (?=0.463V, 12.7?)
+      10. At index 78890: 8.396 ? 7.930V (?=0.466V, 12.7?)
+    voltage_charger - rate anomalies:
+      1. At index 658101: rate=0.79V/s (threshold=0.45V/s)
+      2. At index 663563: rate=1.60V/s (threshold=0.45V/s)
+      3. At index 3300678: rate=0.70V/s (threshold=0.45V/s)
+    voltage_load - step anomalies:
+      1. At index 49779: -0.026 ? 8.539V (?=8.565V, 29.4?)
+      2. At index 57866: 4.911 ? -0.026V (?=8.756V, 30.1?)
+      3. At index 58823: 5.001 ? 4.923V (?=8.750V, 30.1?)
+      4. At index 64155: 5.059 ? 4.989V (?=8.710V, 29.9?)
+      5. At index 74438: 5.165 ? 5.095V (?=8.735V, 30.0?)
+      6. At index 79846: 5.216 ? 5.165V (?=8.732V, 30.0?)
+      7. At index 85194: 5.235 ? 5.194V (?=8.729V, 30.0?)
+      8. At index 90515: 5.289 ? 5.243V (?=8.704V, 29.9?)
+      9. At index 97365: 5.322 ? 5.283V (?=8.718V, 30.0?)
+      10. At index 102703: 5.359 ? 5.321V (?=8.714V, 29.9?)
+    current_load - step anomalies:
+      1. At index 49779: 0.152 ? 2.521A (?=2.369A, 7.7?)
+      2. At index 57867: 0.548 ? 0.590A (?=8.863A, 29.0?)
+      3. At index 63202: 9.540 ? 0.548A (?=8.844A, 28.9?)
+      4. At index 64156: 9.505 ? 9.542A (?=8.853A, 28.9?)
+      5. At index 74439: 9.486 ? 9.488A (?=8.876A, 29.0?)
+      6. At index 79847: 9.511 ? 9.509A (?=8.862A, 29.0?)
+      7. At index 85195: 9.476 ? 9.507A (?=8.881A, 29.0?)
+      8. At index 90516: 9.477 ? 9.469A (?=8.881A, 29.0?)
+      9. At index 97366: 9.454 ? 9.466A (?=8.870A, 29.0?)
+      10. At index 102704: 9.463 ? 9.492A (?=8.860A, 29.0?)
+    temperature_battery - step anomalies:
+      1. At index 1: 0.000 ? 22.733C (?=22.733C, 190.8?)
+      2. At index 105644: 29.414 ? 22.944C (?=6.470C, 54.2?)
+      3. At index 109857: 22.465 ? 0.000C (?=22.465C, 188.5?)
+      4. At index 109859: 0.000 ? 22.626C (?=22.626C, 189.9?)
+      5. At index 159472: 22.894 ? 0.000C (?=22.894C, 192.1?)
+      6. At index 159476: 0.000 ? 22.603C (?=22.603C, 189.7?)
+      7. At index 192002: 32.699 ? 23.239C (?=9.460C, 79.3?)
+      8. At index 253055: 26.651 ? 22.542C (?=4.109C, 34.4?)
+      9. At index 318936: 22.748 ? 0.000C (?=22.748C, 190.9?)
+      10. At index 318941: 0.000 ? 22.434C (?=22.434C, 188.2?)
+    temperature_battery - rate anomalies:
+      1. At index 658101: rate=19.64C/s (threshold=2.41C/s)
+      2. At index 2237589: rate=2.70C/s (threshold=2.41C/s)
+      3. At index 3300678: rate=10.17C/s (threshold=2.41C/s)
+      4. At index 3700645: rate=3.37C/s (threshold=2.41C/s)
+    temperature_mosfet - step anomalies:
+      1. At index 57870: 22.870 ? 22.970C (?=0.120C, 5.3?)
+      2. At index 57871: 22.970 ? 23.090C (?=0.150C, 6.7?)
+      3. At index 57872: 23.090 ? 23.240C (?=0.160C, 7.2?)
+      4. At index 57873: 23.240 ? 23.400C (?=0.170C, 7.7?)
+      5. At index 57874: 23.400 ? 23.570C (?=0.170C, 7.7?)
+      6. At index 57875: 23.570 ? 23.740C (?=0.170C, 7.7?)
+      7. At index 57876: 23.740 ? 23.910C (?=0.170C, 7.7?)
+      8. At index 57877: 23.910 ? 24.080C (?=0.170C, 7.7?)
+      9. At index 57878: 24.080 ? 24.250C (?=0.170C, 7.7?)
+      10. At index 57879: 24.250 ? 24.420C (?=0.160C, 7.2?)
+    temperature_mosfet - rate anomalies:
+      1. At index 113165: rate=0.11C/s (threshold=0.11C/s)
+      2. At index 113166: rate=0.12C/s (threshold=0.11C/s)
+      3. At index 113170: rate=0.12C/s (threshold=0.11C/s)
+      4. At index 249438: rate=0.12C/s (threshold=0.11C/s)
+      5. At index 249461: rate=0.12C/s (threshold=0.11C/s)
+    temperature_resistor - step anomalies:
+      1. At index 90515: 25.840 ? 25.860C (?=0.080C, 6.7?)
+      2. At index 90517: 25.860 ? 25.870C (?=0.070C, 5.8?)
+      3. At index 90518: 25.870 ? 25.880C (?=0.070C, 5.8?)
+      4. At index 90519: 25.880 ? 25.880C (?=0.080C, 6.7?)
+      5. At index 90520: 25.880 ? 25.880C (?=0.070C, 5.8?)
+      6. At index 96434: 25.880 ? 29.850C (?=0.080C, 6.7?)
+      7. At index 96435: 29.850 ? 29.770C (?=0.070C, 5.8?)
+      8. At index 96436: 29.770 ? 29.720C (?=0.070C, 5.8?)
+      9. At index 96444: 29.210 ? 29.150C (?=0.070C, 5.8?)
+      10. At index 97365: 25.910 ? 25.920C (?=0.080C, 6.7?)
+    temperature_resistor - rate anomalies:
+      1. At index 96437: rate=0.06C/s (threshold=0.06C/s)
+      2. At index 96445: rate=0.06C/s (threshold=0.06C/s)
+      3. At index 96447: rate=0.06C/s (threshold=0.06C/s)
+      4. At index 96448: rate=0.06C/s (threshold=0.06C/s)
+      5. At index 96449: rate=0.06C/s (threshold=0.06C/s)
+
+File: battery10.csv (52.91 MB)
+  Rows: 907,341
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 907340
+      Step range: [0.0000, 9.2220]
+      Mean step: 0.0014 ? 0.0365
+      Median step: 0.0000 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.1839
+      Anomalies: 343 (0.0378% of steps)
+    voltage_load (V):
+      Steps analyzed: 89696
+      Step range: [0.0000, 8.7470]
+      Mean step: 0.0214 ? 0.3485
+      Median step: 0.0030 (IQR: 0.0010-0.0070)
+      Anomaly threshold: 1.7638
+      Anomalies: 145 (0.1617% of steps)
+    current_load (A):
+      Steps analyzed: 89696
+      Step range: [0.0000, 16.2408]
+      Mean step: 0.0381 ? 0.6260
+      Median step: 0.0052 (IQR: 0.0010-0.0188)
+      Anomaly threshold: 3.1680
+      Anomalies: 138 (0.1539% of steps)
+    temperature_battery (C):
+      Steps analyzed: 907340
+      Step range: [0.0000, 67.9710]
+      Mean step: 0.0259 ? 0.1840
+      Median step: 0.0080 (IQR: 0.0040-0.0210)
+      Anomaly threshold: 0.9459
+      Anomalies: 37 (0.0041% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 89696
+      Step range: [0.0000, 1.6900]
+      Mean step: 0.0189 ? 0.0324
+      Median step: 0.0100 (IQR: 0.0000-0.0200)
+      Anomaly threshold: 0.1807
+      Anomalies: 554 (0.6176% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 89696
+      Step range: [0.0000, 0.1400]
+      Mean step: 0.0116 ? 0.0168
+      Median step: 0.0100 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.0955
+      Anomalies: 284 (0.3166% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 1: 0.000 ? 8.253V (?=8.253V, 226.2?)
+      2. At index 325: 8.253 ? 7.917V (?=0.336V, 9.2?)
+      3. At index 4006: 4.308 ? 4.895V (?=0.587V, 16.0?)
+      4. At index 4568: 5.900 ? 0.000V (?=5.900V, 161.7?)
+      5. At index 4574: 0.000 ? 6.442V (?=6.442V, 176.5?)
+      6. At index 4916: 6.443 ? 6.671V (?=0.228V, 6.2?)
+      7. At index 8050: 8.634 ? 8.360V (?=0.274V, 7.5?)
+      8. At index 9260: 8.354 ? 7.335V (?=1.019V, 27.9?)
+      9. At index 9828: 4.921 ? 5.738V (?=0.817V, 22.4?)
+      10. At index 14331: 8.401 ? 7.448V (?=0.953V, 26.1?)
+    voltage_charger - rate anomalies:
+      1. At index 233724: rate=3.68V/s (threshold=0.33V/s)
+    voltage_load - step anomalies:
+      1. At index 325: -0.026 ? 8.356V (?=8.382V, 24.0?)
+      2. At index 9258: 4.912 ? -0.026V (?=8.700V, 24.9?)
+      3. At index 9824: 4.992 ? 4.948V (?=8.747V, 25.0?)
+      4. At index 14888: 5.024 ? 4.964V (?=8.740V, 25.0?)
+      5. At index 19841: 5.065 ? 5.020V (?=8.668V, 24.8?)
+      6. At index 27783: 5.102 ? 5.060V (?=8.721V, 25.0?)
+      7. At index 32828: 5.157 ? 5.115V (?=8.721V, 25.0?)
+      8. At index 37813: 5.199 ? 5.166V (?=8.714V, 24.9?)
+      9. At index 42716: 5.220 ? 5.180V (?=8.708V, 24.9?)
+      10. At index 47588: 5.258 ? 5.232V (?=8.703V, 24.9?)
+    current_load - step anomalies:
+      1. At index 9259: 0.550 ? 0.595A (?=15.648A, 24.9?)
+      2. At index 14329: 16.097 ? 0.550A (?=15.657A, 25.0?)
+      3. At index 14889: 16.100 ? 16.075A (?=15.641A, 24.9?)
+      4. At index 19842: 16.125 ? 16.122A (?=15.666A, 25.0?)
+      5. At index 27784: 16.183 ? 16.199A (?=15.651A, 24.9?)
+      6. At index 32829: 16.216 ? 16.200A (?=15.665A, 25.0?)
+      7. At index 37814: 16.219 ? 16.208A (?=15.665A, 25.0?)
+      8. At index 42717: 16.216 ? 16.211A (?=15.679A, 25.0?)
+      9. At index 47589: 16.284 ? 16.205A (?=15.665A, 25.0?)
+      10. At index 52377: 16.272 ? 16.294A (?=15.669A, 25.0?)
+    temperature_battery - step anomalies:
+      1. At index 1: 0.000 ? 22.534C (?=22.534C, 122.3?)
+      2. At index 4568: 25.888 ? 0.000C (?=25.888C, 140.6?)
+      3. At index 4574: 0.000 ? 22.171C (?=22.171C, 120.4?)
+      4. At index 8050: 29.680 ? 22.902C (?=6.778C, 36.7?)
+      5. At index 28892: 41.088 ? 23.570C (?=17.518C, 95.1?)
+      6. At index 29170: 24.678 ? 22.588C (?=2.090C, 11.2?)
+      7. At index 58903: 33.664 ? 24.133C (?=9.531C, 51.7?)
+      8. At index 96582: 41.403 ? 23.963C (?=17.440C, 94.6?)
+      9. At index 181085: 41.252 ? 23.859C (?=17.393C, 94.4?)
+      10. At index 186033: 44.411 ? 22.549C (?=21.862C, 118.7?)
+    temperature_mosfet - step anomalies:
+      1. At index 19300: 23.290 ? 23.390C (?=0.190C, 5.3?)
+      2. At index 19301: 23.390 ? 23.540C (?=0.190C, 5.3?)
+      3. At index 19302: 23.540 ? 23.710C (?=0.210C, 5.9?)
+      4. At index 19303: 23.710 ? 23.900C (?=0.200C, 5.6?)
+      5. At index 19304: 23.900 ? 24.090C (?=0.200C, 5.6?)
+      6. At index 19305: 24.090 ? 24.300C (?=0.200C, 5.6?)
+      7. At index 19306: 24.300 ? 24.500C (?=0.190C, 5.3?)
+      8. At index 19307: 24.500 ? 24.700C (?=0.190C, 5.3?)
+      9. At index 27229: 22.030 ? 22.090C (?=0.190C, 5.3?)
+      10. At index 27230: 22.090 ? 22.210C (?=0.210C, 5.9?)
+    temperature_mosfet - rate anomalies:
+      1. At index 19308: rate=0.19C/s (threshold=0.18C/s)
+      2. At index 19310: rate=0.19C/s (threshold=0.18C/s)
+      3. At index 19311: rate=0.19C/s (threshold=0.18C/s)
+      4. At index 27228: rate=0.19C/s (threshold=0.18C/s)
+      5. At index 27242: rate=0.19C/s (threshold=0.18C/s)
+    temperature_resistor - step anomalies:
+      1. At index 27256: 24.500 ? 24.590C (?=0.100C, 5.3?)
+      2. At index 27260: 24.850 ? 24.950C (?=0.100C, 5.3?)
+      3. At index 32290: 23.180 ? 23.270C (?=0.140C, 7.6?)
+      4. At index 32293: 23.430 ? 23.520C (?=0.100C, 5.3?)
+      5. At index 32298: 23.910 ? 24.010C (?=0.100C, 5.3?)
+      6. At index 32299: 24.010 ? 24.090C (?=0.100C, 5.3?)
+      7. At index 37289: 23.590 ? 23.670C (?=0.100C, 5.3?)
+      8. At index 37292: 23.840 ? 23.930C (?=0.100C, 5.3?)
+      9. At index 37298: 24.380 ? 24.480C (?=0.100C, 5.3?)
+      10. At index 42198: 23.120 ? 23.190C (?=0.100C, 5.3?)
+
+File: battery11.csv (302.99 MB)
+  Rows: 4,914,864
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 4914863
+      Step range: [0.0000, 8.5820]
+      Mean step: 0.0016 ? 0.0336
+      Median step: 0.0010 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.1696
+      Anomalies: 2757 (0.0561% of steps)
+    voltage_load (V):
+      Steps analyzed: 758838
+      Step range: [0.0000, 8.7740]
+      Mean step: 0.0157 ? 0.2894
+      Median step: 0.0020 (IQR: 0.0010-0.0050)
+      Anomaly threshold: 1.4629
+      Anomalies: 865 (0.114% of steps)
+    current_load (A):
+      Steps analyzed: 758838
+      Step range: [0.0000, 9.2715]
+      Mean step: 0.0205 ? 0.3013
+      Median step: 0.0048 (IQR: 0.0010-0.0124)
+      Anomaly threshold: 1.5270
+      Anomalies: 865 (0.114% of steps)
+    temperature_battery (C):
+      Steps analyzed: 4914863
+      Step range: [0.0000, 54.9680]
+      Mean step: 0.0156 ? 0.1145
+      Median step: 0.0080 (IQR: 0.0040-0.0170)
+      Anomaly threshold: 0.5883
+      Anomalies: 138 (0.0028% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 758838
+      Step range: [0.0000, 0.1900]
+      Mean step: 0.0126 ? 0.0199
+      Median step: 0.0100 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.1123
+      Anomalies: 5882 (0.7751% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 758838
+      Step range: [0.0000, 0.1000]
+      Mean step: 0.0045 ? 0.0066
+      Median step: 0.0000 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.0374
+      Anomalies: 2042 (0.2691% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 1: 0.000 ? 8.353V (?=8.353V, 248.7?)
+      2. At index 4575: 4.717 ? 5.168V (?=0.451V, 13.4?)
+      3. At index 5203: 6.175 ? 6.367V (?=0.192V, 5.7?)
+      4. At index 7288: 8.012 ? 7.793V (?=0.219V, 6.5?)
+      5. At index 11503: 8.391 ? 7.864V (?=0.527V, 15.6?)
+      6. At index 12543: 4.781 ? 5.267V (?=0.486V, 14.4?)
+      7. At index 17082: 8.428 ? 7.956V (?=0.472V, 14.0?)
+      8. At index 18123: 4.807 ? 5.278V (?=0.471V, 14.0?)
+      9. At index 22553: 8.425 ? 7.957V (?=0.468V, 13.9?)
+      10. At index 23574: 4.760 ? 5.245V (?=0.485V, 14.4?)
+    voltage_charger - rate anomalies:
+      1. At index 263098: rate=0.89V/s (threshold=0.46V/s)
+      2. At index 1365744: rate=0.68V/s (threshold=0.46V/s)
+    voltage_load - step anomalies:
+      1. At index 922: -0.026 ? 8.497V (?=8.523V, 29.4?)
+      2. At index 11501: 4.907 ? -0.026V (?=8.737V, 30.1?)
+      3. At index 12539: 4.991 ? 4.924V (?=8.774V, 30.3?)
+      4. At index 18118: 5.080 ? 5.020V (?=8.771V, 30.2?)
+      5. At index 23568: 5.115 ? 5.053V (?=8.711V, 30.0?)
+      6. At index 31758: 5.213 ? 5.161V (?=8.757V, 30.2?)
+      7. At index 37249: 5.270 ? 5.215V (?=8.756V, 30.2?)
+      8. At index 42677: 5.284 ? 5.254V (?=8.752V, 30.2?)
+      9. At index 48028: 5.321 ? 5.276V (?=8.746V, 30.2?)
+      10. At index 53329: 5.384 ? 5.348V (?=8.733V, 30.1?)
+    current_load - step anomalies:
+      1. At index 922: 0.152 ? 2.521A (?=2.369A, 7.8?)
+      2. At index 11502: 0.550 ? 0.591A (?=8.483A, 28.1?)
+      3. At index 17080: 9.216 ? 0.550A (?=8.473A, 28.1?)
+      4. At index 18119: 9.167 ? 9.201A (?=8.475A, 28.1?)
+      5. At index 23569: 9.182 ? 9.179A (?=8.797A, 29.1?)
+      6. At index 31759: 9.532 ? 9.543A (?=8.825A, 29.2?)
+      7. At index 37250: 9.512 ? 9.533A (?=8.829A, 29.2?)
+      8. At index 42678: 9.525 ? 9.510A (?=8.850A, 29.3?)
+      9. At index 48029: 9.514 ? 9.516A (?=8.827A, 29.2?)
+      10. At index 53330: 9.500 ? 9.525A (?=8.874A, 29.4?)
+    temperature_battery - step anomalies:
+      1. At index 1: 0.000 ? 22.392C (?=22.392C, 195.4?)
+      2. At index 7288: 28.237 ? 22.752C (?=5.485C, 47.7?)
+      3. At index 26583: 28.596 ? 22.580C (?=6.016C, 52.4?)
+      4. At index 69127: 24.883 ? 0.000C (?=24.883C, 217.1?)
+      5. At index 69131: 0.000 ? 22.653C (?=22.653C, 197.6?)
+      6. At index 70778: 48.979 ? 25.357C (?=23.622C, 206.1?)
+      7. At index 107093: 51.053 ? 22.829C (?=28.224C, 246.3?)
+      8. At index 129243: 24.156 ? 0.000C (?=24.156C, 210.8?)
+      9. At index 129246: 0.000 ? 22.676C (?=22.676C, 197.8?)
+      10. At index 221671: 30.320 ? 23.216C (?=7.104C, 61.9?)
+    temperature_mosfet - step anomalies:
+      1. At index 922: 28.460 ? 28.330C (?=0.130C, 5.9?)
+      2. At index 11506: 22.140 ? 22.250C (?=0.150C, 6.9?)
+      3. At index 11507: 22.250 ? 22.400C (?=0.150C, 6.9?)
+      4. At index 11508: 22.400 ? 22.550C (?=0.150C, 6.9?)
+      5. At index 11509: 22.550 ? 22.700C (?=0.160C, 7.4?)
+      6. At index 11510: 22.700 ? 22.860C (?=0.160C, 7.4?)
+      7. At index 11511: 22.860 ? 23.020C (?=0.170C, 7.9?)
+      8. At index 11512: 23.020 ? 23.190C (?=0.150C, 6.9?)
+      9. At index 11513: 23.190 ? 23.340C (?=0.160C, 7.4?)
+      10. At index 11514: 23.340 ? 23.500C (?=0.150C, 6.9?)
+    temperature_mosfet - rate anomalies:
+      1. At index 11505: rate=0.12C/s (threshold=0.11C/s)
+      2. At index 11530: rate=0.11C/s (threshold=0.11C/s)
+      3. At index 17102: rate=0.12C/s (threshold=0.11C/s)
+      4. At index 17108: rate=0.11C/s (threshold=0.11C/s)
+      5. At index 17110: rate=0.12C/s (threshold=0.11C/s)
+    temperature_resistor - step anomalies:
+      1. At index 922: 30.410 ? 30.340C (?=0.070C, 9.9?)
+      2. At index 923: 30.340 ? 30.250C (?=0.090C, 13.0?)
+      3. At index 924: 30.250 ? 30.150C (?=0.100C, 14.5?)
+      4. At index 925: 30.150 ? 30.060C (?=0.090C, 13.0?)
+      5. At index 926: 30.060 ? 29.960C (?=0.100C, 14.5?)
+      6. At index 927: 29.960 ? 29.860C (?=0.100C, 14.5?)
+      7. At index 928: 29.860 ? 29.770C (?=0.090C, 13.0?)
+      8. At index 929: 29.770 ? 29.690C (?=0.080C, 11.5?)
+      9. At index 930: 29.690 ? 29.610C (?=0.080C, 11.5?)
+      10. At index 931: 29.610 ? 29.530C (?=0.080C, 11.5?)
+
+File: battery20.csv (11.81 MB)
+  Rows: 207,391
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 207390
+      Step range: [0.0000, 8.2430]
+      Mean step: 0.0020 ? 0.0605
+      Median step: 0.0000 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.3044
+      Anomalies: 113 (0.0545% of steps)
+    voltage_load (V):
+      Steps analyzed: 18894
+      Step range: [0.0000, 8.7330]
+      Mean step: 0.0209 ? 0.3424
+      Median step: 0.0020 (IQR: 0.0010-0.0070)
+      Anomaly threshold: 1.7330
+      Anomalies: 29 (0.1535% of steps)
+    current_load (A):
+      Steps analyzed: 18894
+      Step range: [0.0000, 19.1483]
+      Mean step: 0.0407 ? 0.7211
+      Median step: 0.0027 (IQR: 0.0000-0.0178)
+      Anomaly threshold: 3.6464
+      Anomalies: 27 (0.1429% of steps)
+    temperature_battery (C):
+      Steps analyzed: 207390
+      Step range: [0.0000, 64.5990]
+      Mean step: 0.0248 ? 0.2218
+      Median step: 0.0040 (IQR: 0.0000-0.0130)
+      Anomaly threshold: 1.1336
+      Anomalies: 29 (0.014% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 18894
+      Step range: [0.0000, 4.1400]
+      Mean step: 0.0226 ? 0.0733
+      Median step: 0.0100 (IQR: 0.0000-0.0300)
+      Anomaly threshold: 0.3893
+      Anomalies: 22 (0.1164% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 18894
+      Step range: [0.0000, 0.1600]
+      Mean step: 0.0165 ? 0.0221
+      Median step: 0.0100 (IQR: 0.0000-0.0200)
+      Anomaly threshold: 0.1268
+      Anomalies: 92 (0.4869% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 1: 0.000 ? 8.243V (?=8.243V, 136.3?)
+      2. At index 323: 8.243 ? 7.897V (?=0.346V, 5.7?)
+      3. At index 4017: 4.309 ? 4.931V (?=0.622V, 10.3?)
+      4. At index 4394: 5.872 ? 0.000V (?=5.872V, 97.1?)
+      5. At index 4395: 0.000 ? 6.687V (?=6.687V, 110.5?)
+      6. At index 9948: 8.352 ? 7.103V (?=1.249V, 20.6?)
+      7. At index 10423: 4.939 ? 5.872V (?=0.933V, 15.4?)
+      8. At index 15013: 8.397 ? 7.236V (?=1.161V, 19.2?)
+      9. At index 15484: 4.914 ? 5.858V (?=0.944V, 15.6?)
+      10. At index 19966: 8.385 ? 7.214V (?=1.171V, 19.3?)
+    voltage_charger - rate anomalies:
+      1. At index 119846: rate=0.49V/s (threshold=0.46V/s)
+    voltage_load - step anomalies:
+      1. At index 323: -0.026 ? 8.337V (?=8.363V, 24.4?)
+      2. At index 9946: 4.913 ? -0.026V (?=8.687V, 25.3?)
+      3. At index 10419: 4.998 ? 4.945V (?=8.733V, 25.4?)
+      4. At index 15479: 5.023 ? 4.981V (?=8.721V, 25.4?)
+      5. At index 20416: 5.074 ? 5.033V (?=8.650V, 25.2?)
+      6. At index 28372: 5.106 ? 5.069V (?=8.698V, 25.3?)
+      7. At index 33414: 5.130 ? 5.092V (?=8.690V, 25.3?)
+      8. At index 38392: 5.163 ? 5.137V (?=8.681V, 25.3?)
+      9. At index 43285: 5.201 ? 5.184V (?=8.674V, 25.3?)
+      10. At index 48153: 5.222 ? 5.191V (?=8.667V, 25.2?)
+    current_load - step anomalies:
+      1. At index 9947: 0.550 ? 0.595A (?=19.019A, 26.3?)
+      2. At index 15011: 18.594 ? 0.550A (?=19.038A, 26.3?)
+      3. At index 15480: 18.643 ? 18.567A (?=19.004A, 26.3?)
+      4. At index 20417: 18.730 ? 18.672A (?=18.990A, 26.3?)
+      5. At index 28373: 18.775 ? 18.707A (?=18.974A, 26.3?)
+      6. At index 33415: 18.805 ? 18.765A (?=19.112A, 26.4?)
+      7. At index 38393: 18.877 ? 18.813A (?=19.066A, 26.4?)
+      8. At index 43286: 18.899 ? 18.889A (?=19.069A, 26.4?)
+      9. At index 48154: 18.876 ? 18.896A (?=19.062A, 26.4?)
+      10. At index 52934: 18.998 ? 18.910A (?=19.060A, 26.4?)
+    temperature_battery - step anomalies:
+      1. At index 1: 0.000 ? 22.691C (?=22.691C, 102.2?)
+      2. At index 4394: 27.013 ? 0.000C (?=27.013C, 121.7?)
+      3. At index 4395: 0.000 ? 22.691C (?=22.691C, 102.2?)
+      4. At index 5668: 25.377 ? 23.936C (?=1.441C, 6.4?)
+      5. At index 5669: 23.936 ? 26.326C (?=2.390C, 10.7?)
+      6. At index 5703: 24.899 ? 23.705C (?=1.194C, 5.3?)
+      7. At index 5718: 24.783 ? 26.341C (?=1.558C, 6.9?)
+      8. At index 5763: 25.346 ? 26.616C (?=1.270C, 5.6?)
+      9. At index 5960: 25.614 ? 24.283C (?=1.331C, 5.9?)
+      10. At index 5961: 24.283 ? 26.911C (?=2.628C, 11.7?)
+    temperature_mosfet - step anomalies:
+      1. At index 43139: 30.450 ? 30.410C (?=2.170C, 29.3?)
+      2. At index 47909: 31.280 ? 31.240C (?=1.850C, 24.9?)
+      3. At index 47910: 31.240 ? 31.190C (?=0.950C, 12.6?)
+      4. At index 47931: 29.300 ? 29.290C (?=0.400C, 5.1?)
+      5. At index 47935: 29.150 ? 28.930C (?=3.790C, 51.4?)
+      6. At index 48110: 28.060 ? 27.890C (?=1.090C, 14.6?)
+      7. At index 52662: 32.160 ? 32.080C (?=1.740C, 23.4?)
+      8. At index 52663: 32.080 ? 32.090C (?=4.140C, 56.1?)
+      9. At index 57532: 30.490 ? 30.430C (?=0.780C, 10.3?)
+      10. At index 57534: 30.350 ? 30.300C (?=2.580C, 34.9?)
+    temperature_resistor - step anomalies:
+      1. At index 33194: 34.930 ? 34.940C (?=0.150C, 6.1?)
+      2. At index 33195: 34.940 ? 34.960C (?=0.150C, 6.1?)
+      3. At index 101142: 35.460 ? 35.460C (?=0.130C, 5.1?)
+      4. At index 105461: 35.440 ? 22.600C (?=0.140C, 5.6?)
+      5. At index 105464: 22.600 ? 22.620C (?=0.140C, 5.6?)
+      6. At index 105467: 22.660 ? 22.700C (?=0.160C, 6.5?)
+      7. At index 105468: 22.700 ? 22.750C (?=0.130C, 5.1?)
+      8. At index 105469: 22.750 ? 22.800C (?=0.140C, 5.6?)
+      9. At index 105470: 22.800 ? 22.860C (?=0.140C, 5.6?)
+      10. At index 105471: 22.860 ? 22.920C (?=0.150C, 6.1?)
+
+File: battery21.csv (24.93 MB)
+  Rows: 530,718
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 530717
+      Step range: [0.0000, 9.2720]
+      Mean step: 0.0019 ? 0.0741
+      Median step: 0.0000 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.3721
+      Anomalies: 207 (0.039% of steps)
+    voltage_load (V):
+      Steps analyzed: 46598
+      Step range: [0.0000, 8.7610]
+      Mean step: 0.0239 ? 0.3684
+      Median step: 0.0030 (IQR: 0.0010-0.0080)
+      Anomaly threshold: 1.8661
+      Anomalies: 84 (0.1803% of steps)
+    current_load (A):
+      Steps analyzed: 46598
+      Step range: [0.0000, 19.4488]
+      Mean step: 0.0477 ? 0.7940
+      Median step: 0.0047 (IQR: 0.0010-0.0211)
+      Anomaly threshold: 4.0179
+      Anomalies: 80 (0.1717% of steps)
+    temperature_battery (C):
+      Steps analyzed: 530717
+      Step range: [0.0000, 31.8310]
+      Mean step: 0.0150 ? 0.0873
+      Median step: 0.0040 (IQR: 0.0030-0.0120)
+      Anomaly threshold: 0.4516
+      Anomalies: 55 (0.0104% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 46598
+      Step range: [0.0000, 10.4900]
+      Mean step: 0.0249 ? 0.0617
+      Median step: 0.0100 (IQR: 0.0000-0.0300)
+      Anomaly threshold: 0.3332
+      Anomalies: 1 (0.0021% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 46598
+      Step range: [0.0000, 11.7100]
+      Mean step: 0.0226 ? 0.0610
+      Median step: 0.0100 (IQR: 0.0000-0.0300)
+      Anomaly threshold: 0.3276
+      Anomalies: 1 (0.0021% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 4: 0.000 ? 8.352V (?=8.352V, 112.8?)
+      2. At index 4323: 4.724 ? 5.177V (?=0.453V, 6.1?)
+      3. At index 46676: 8.379 ? 7.257V (?=1.122V, 15.1?)
+      4. At index 47157: 4.927 ? 5.752V (?=0.825V, 11.1?)
+      5. At index 51678: 8.426 ? 7.324V (?=1.102V, 14.9?)
+      6. At index 52159: 4.925 ? 5.753V (?=0.828V, 11.2?)
+      7. At index 56695: 8.417 ? 7.311V (?=1.106V, 14.9?)
+      8. At index 57173: 4.931 ? 5.761V (?=0.830V, 11.2?)
+      9. At index 62793: 8.359 ? 7.167V (?=1.192V, 16.1?)
+      10. At index 63270: 4.948 ? 5.779V (?=0.831V, 11.2?)
+    voltage_charger - rate anomalies:
+      1. At index 53226: rate=0.52V/s (threshold=0.43V/s)
+      2. At index 206394: rate=0.89V/s (threshold=0.43V/s)
+      3. At index 237165: rate=1.11V/s (threshold=0.43V/s)
+      4. At index 278557: rate=0.44V/s (threshold=0.43V/s)
+      5. At index 348235: rate=0.64V/s (threshold=0.43V/s)
+    voltage_load - step anomalies:
+      1. At index 642: -0.026 ? 8.484V (?=8.510V, 23.0?)
+      2. At index 46674: 4.923 ? -0.026V (?=8.714V, 23.6?)
+      3. At index 47153: 4.997 ? 4.942V (?=8.761V, 23.7?)
+      4. At index 52154: 5.052 ? 4.995V (?=8.751V, 23.7?)
+      5. At index 57167: 5.112 ? 5.051V (?=8.692V, 23.5?)
+      6. At index 63263: 5.160 ? 5.109V (?=8.735V, 23.6?)
+      7. At index 68311: 5.171 ? 5.119V (?=8.729V, 23.6?)
+      8. At index 73267: 5.232 ? 5.190V (?=8.723V, 23.6?)
+      9. At index 78185: 5.281 ? 5.251V (?=8.685V, 23.5?)
+      10. At index 85249: 5.331 ? 5.283V (?=8.710V, 23.6?)
+    current_load - step anomalies:
+      1. At index 46675: 0.550 ? 0.595A (?=18.965A, 23.8?)
+      2. At index 51676: 18.765 ? 0.550A (?=18.982A, 23.8?)
+      3. At index 52155: 18.838 ? 18.756A (?=18.985A, 23.9?)
+      4. At index 57168: 18.851 ? 18.844A (?=18.975A, 23.8?)
+      5. At index 63264: 18.965 ? 18.918A (?=18.981A, 23.8?)
+      6. At index 68312: 18.966 ? 18.971A (?=18.985A, 23.8?)
+      7. At index 73268: 19.021 ? 18.969A (?=19.001A, 23.9?)
+      8. At index 78186: 19.125 ? 19.030A (?=19.038A, 23.9?)
+      9. At index 85250: 19.103 ? 19.087A (?=19.001A, 23.9?)
+      10. At index 90056: 19.164 ? 19.057A (?=18.993A, 23.9?)
+    temperature_battery - step anomalies:
+      1. At index 4: 0.000 ? 22.580C (?=22.580C, 258.4?)
+      2. At index 456: 22.469 ? 23.201C (?=0.732C, 8.2?)
+      3. At index 457: 23.201 ? 23.967C (?=0.766C, 8.6?)
+      4. At index 481: 23.585 ? 24.821C (?=1.236C, 14.0?)
+      5. At index 46309: 22.836 ? 23.339C (?=0.503C, 5.6?)
+      6. At index 46310: 23.339 ? 24.210C (?=0.871C, 9.8?)
+      7. At index 46312: 24.659 ? 25.388C (?=0.729C, 8.2?)
+      8. At index 46313: 25.388 ? 25.864C (?=0.476C, 5.3?)
+      9. At index 46342: 23.782 ? 24.705C (?=0.923C, 10.4?)
+      10. At index 46343: 24.705 ? 25.202C (?=0.497C, 5.5?)
+    temperature_mosfet - step anomalies:
+      1. At index 125077: 33.380 ? 33.380C (?=10.490C, 169.7?)
+    temperature_resistor - step anomalies:
+      1. At index 125077: 34.560 ? 34.580C (?=11.710C, 191.6?)
+
+File: battery22.csv (164.86 MB)
+  Rows: 2,690,545
+  ERROR: unsupported operand type(s) for -: 'str' and 'str'
+
+File: battery23.csv (79.77 MB)
+  Rows: 1,344,130
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 1344129
+      Step range: [0.0000, 9.2780]
+      Mean step: 0.0017 ? 0.0421
+      Median step: 0.0010 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.2124
+      Anomalies: 532 (0.0396% of steps)
+    voltage_load (V):
+      Steps analyzed: 160348
+      Step range: [0.0000, 8.7660]
+      Mean step: 0.0211 ? 0.3378
+      Median step: 0.0030 (IQR: 0.0010-0.0080)
+      Anomaly threshold: 1.7098
+      Anomalies: 245 (0.1528% of steps)
+    current_load (A):
+      Steps analyzed: 160348
+      Step range: [0.0000, 14.7410]
+      Mean step: 0.0339 ? 0.5552
+      Median step: 0.0048 (IQR: 0.0010-0.0176)
+      Anomaly threshold: 2.8097
+      Anomalies: 233 (0.1453% of steps)
+    temperature_battery (C):
+      Steps analyzed: 1344129
+      Step range: [0.0000, 104.4950]
+      Mean step: 0.0187 ? 0.1604
+      Median step: 0.0080 (IQR: 0.0040-0.0170)
+      Anomaly threshold: 0.8206
+      Anomalies: 38 (0.0028% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 160348
+      Step range: [0.0000, 0.2500]
+      Mean step: 0.0184 ? 0.0317
+      Median step: 0.0100 (IQR: 0.0000-0.0200)
+      Anomaly threshold: 0.1769
+      Anomalies: 1366 (0.8519% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 160348
+      Step range: [0.0000, 0.1000]
+      Mean step: 0.0121 ? 0.0166
+      Median step: 0.0100 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.0949
+      Anomalies: 21 (0.0131% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 2: 0.000 ? 8.419V (?=8.419V, 199.7?)
+      2. At index 5954: 4.718 ? 5.166V (?=0.448V, 10.6?)
+      3. At index 11806: 8.420 ? 7.576V (?=0.844V, 20.0?)
+      4. At index 12427: 4.878 ? 5.537V (?=0.659V, 15.6?)
+      5. At index 16884: 8.430 ? 7.633V (?=0.797V, 18.9?)
+      6. At index 17495: 4.804 ? 5.465V (?=0.661V, 15.6?)
+      7. At index 21217: 5.835 ? 6.081V (?=0.246V, 5.8?)
+      8. At index 25091: 8.425 ? 7.615V (?=0.810V, 19.2?)
+      9. At index 25707: 4.835 ? 5.484V (?=0.649V, 15.4?)
+      10. At index 30112: 8.419 ? 7.608V (?=0.811V, 19.2?)
+    voltage_charger - rate anomalies:
+      1. At index 937164: rate=1.28V/s (threshold=0.52V/s)
+    voltage_load - step anomalies:
+      1. At index 2289: -0.026 ? 8.547V (?=8.573V, 25.3?)
+      2. At index 11804: 4.917 ? -0.026V (?=8.755V, 25.9?)
+      3. At index 12423: 5.028 ? 4.960V (?=8.766V, 25.9?)
+      4. At index 17490: 5.038 ? 4.973V (?=8.760V, 25.9?)
+      5. At index 25701: 5.123 ? 5.052V (?=8.753V, 25.9?)
+      6. At index 30717: 5.174 ? 5.114V (?=8.749V, 25.8?)
+      7. At index 35722: 5.214 ? 5.157V (?=8.743V, 25.8?)
+      8. At index 40650: 5.293 ? 5.241V (?=8.737V, 25.8?)
+      9. At index 45519: 5.319 ? 5.269V (?=8.711V, 25.7?)
+      10. At index 51663: 5.356 ? 5.321V (?=8.728V, 25.8?)
+    current_load - step anomalies:
+      1. At index 11805: 0.550 ? 0.591A (?=14.375A, 25.8?)
+      2. At index 16882: 14.479 ? 0.550A (?=14.387A, 25.9?)
+      3. At index 17491: 14.519 ? 14.430A (?=14.395A, 25.9?)
+      4. At index 25702: 14.556 ? 14.513A (?=14.413A, 25.9?)
+      5. At index 30718: 14.647 ? 14.583A (?=14.374A, 25.8?)
+      6. At index 35723: 14.608 ? 14.559A (?=14.422A, 25.9?)
+      7. At index 40651: 14.648 ? 14.648A (?=14.403A, 25.9?)
+      8. At index 45520: 14.659 ? 14.654A (?=14.411A, 25.9?)
+      9. At index 51664: 14.743 ? 14.678A (?=14.403A, 25.9?)
+      10. At index 56421: 14.723 ? 14.685A (?=14.367A, 25.8?)
+    temperature_battery - step anomalies:
+      1. At index 2: 0.000 ? 23.305C (?=23.305C, 145.2?)
+      2. At index 16883: 24.783 ? -74.503C (?=99.286C, 619.0?)
+      3. At index 16884: -74.503 ? -75.974C (?=1.471C, 9.1?)
+      4. At index 16886: -75.974 ? -75.072C (?=0.902C, 5.5?)
+      5. At index 16887: -75.072 ? -72.447C (?=2.625C, 16.3?)
+      6. At index 16888: -72.447 ? -75.819C (?=3.372C, 20.9?)
+      7. At index 16967: -71.416 ? 33.079C (?=104.495C, 651.4?)
+      8. At index 58697: 28.920 ? 0.000C (?=28.920C, 180.2?)
+      9. At index 58702: 0.000 ? 22.220C (?=22.220C, 138.4?)
+      10. At index 76505: 29.245 ? 22.538C (?=6.707C, 41.7?)
+    temperature_mosfet - step anomalies:
+      1. At index 25092: 22.970 ? 23.020C (?=0.180C, 5.1?)
+      2. At index 25093: 23.020 ? 23.130C (?=0.200C, 5.7?)
+      3. At index 25094: 23.130 ? 23.290C (?=0.210C, 6.0?)
+      4. At index 25095: 23.290 ? 23.470C (?=0.220C, 6.4?)
+      5. At index 25096: 23.470 ? 23.670C (?=0.220C, 6.4?)
+      6. At index 25097: 23.670 ? 23.880C (?=0.210C, 6.0?)
+      7. At index 25098: 23.880 ? 24.100C (?=0.210C, 6.0?)
+      8. At index 25099: 24.100 ? 24.320C (?=0.210C, 6.0?)
+      9. At index 25100: 24.320 ? 24.530C (?=0.210C, 6.0?)
+      10. At index 25101: 24.530 ? 24.740C (?=0.210C, 6.0?)
+    temperature_mosfet - rate anomalies:
+      1. At index 25109: rate=0.18C/s (threshold=0.18C/s)
+      2. At index 25111: rate=0.18C/s (threshold=0.18C/s)
+      3. At index 78428: rate=0.18C/s (threshold=0.18C/s)
+      4. At index 78429: rate=0.18C/s (threshold=0.18C/s)
+      5. At index 83412: rate=0.18C/s (threshold=0.18C/s)
+    temperature_resistor - step anomalies:
+      1. At index 55876: 23.970 ? 24.060C (?=0.100C, 5.3?)
+      2. At index 130189: 23.300 ? 23.320C (?=0.100C, 5.3?)
+      3. At index 130192: 23.370 ? 23.400C (?=0.100C, 5.3?)
+      4. At index 162519: 22.710 ? 22.710C (?=0.100C, 5.3?)
+      5. At index 162521: 22.750 ? 22.760C (?=0.100C, 5.3?)
+      6. At index 190378: 31.230 ? 31.240C (?=0.100C, 5.3?)
+      7. At index 204140: 31.560 ? 31.550C (?=0.100C, 5.3?)
+      8. At index 204143: 31.550 ? 31.540C (?=0.100C, 5.3?)
+      9. At index 208645: 31.120 ? 31.120C (?=0.100C, 5.3?)
+      10. At index 315211: 31.100 ? 31.090C (?=0.100C, 5.3?)
+    temperature_resistor - rate anomalies:
+      1. At index 78438: rate=0.09C/s (threshold=0.09C/s)
+      2. At index 157547: rate=0.09C/s (threshold=0.09C/s)
+      3. At index 328704: rate=0.09C/s (threshold=0.09C/s)
+      4. At index 328709: rate=0.09C/s (threshold=0.09C/s)
+      5. At index 472714: rate=0.09C/s (threshold=0.09C/s)
+
+File: battery30.csv (34.12 MB)
+  Rows: 597,316
+  ERROR: unsupported operand type(s) for -: 'str' and 'str'
+
+File: battery31.csv (199.91 MB)
+  Rows: 3,341,603
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 3341602
+      Step range: [0.0000, 9.2070]
+      Mean step: 0.0015 ? 0.0346
+      Median step: 0.0000 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.1743
+      Anomalies: 1628 (0.0487% of steps)
+    voltage_load (V):
+      Steps analyzed: 381274
+      Step range: [0.0000, 8.7560]
+      Mean step: 0.0230 ? 0.3302
+      Median step: 0.0040 (IQR: 0.0010-0.0080)
+      Anomaly threshold: 1.6741
+      Anomalies: 563 (0.1477% of steps)
+    current_load (A):
+      Steps analyzed: 381274
+      Step range: [0.0000, 13.1108]
+      Mean step: 0.0270 ? 0.4757
+      Median step: 0.0045 (IQR: 0.0010-0.0126)
+      Anomaly threshold: 2.4055
+      Anomalies: 536 (0.1406% of steps)
+    temperature_battery (C):
+      Steps analyzed: 3341602
+      Step range: [0.0000, 66.2100]
+      Mean step: 0.0205 ? 0.1260
+      Median step: 0.0080 (IQR: 0.0040-0.0210)
+      Anomaly threshold: 0.6506
+      Anomalies: 91 (0.0027% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 381274
+      Step range: [0.0000, 0.2500]
+      Mean step: 0.0163 ? 0.0238
+      Median step: 0.0100 (IQR: 0.0000-0.0200)
+      Anomaly threshold: 0.1351
+      Anomalies: 1939 (0.5086% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 381274
+      Step range: [0.0000, 0.1500]
+      Mean step: 0.0071 ? 0.0104
+      Median step: 0.0000 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.0592
+      Anomalies: 3508 (0.9201% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 1: 0.000 ? 8.087V (?=8.087V, 234.0?)
+      2. At index 48261: 8.087 ? 8.348V (?=0.261V, 7.5?)
+      3. At index 51930: 4.724 ? 5.193V (?=0.469V, 13.5?)
+      4. At index 52560: 6.188 ? 6.382V (?=0.194V, 5.6?)
+      5. At index 56364: 8.420 ? 7.721V (?=0.699V, 20.2?)
+      6. At index 57072: 4.871 ? 5.480V (?=0.609V, 17.6?)
+      7. At index 61984: 8.403 ? 7.727V (?=0.676V, 19.5?)
+      8. At index 62689: 4.815 ? 5.427V (?=0.612V, 17.7?)
+      9. At index 67341: 8.403 ? 7.738V (?=0.665V, 19.2?)
+      10. At index 68044: 4.853 ? 5.463V (?=0.610V, 17.6?)
+    voltage_load - step anomalies:
+      1. At index 48262: -0.026 ? 8.478V (?=8.504V, 25.7?)
+      2. At index 56362: 4.907 ? -0.026V (?=8.756V, 26.4?)
+      3. At index 57068: 5.042 ? 4.968V (?=8.741V, 26.4?)
+      4. At index 62684: 5.058 ? 4.992V (?=8.740V, 26.4?)
+      5. At index 68038: 5.142 ? 5.087V (?=8.741V, 26.4?)
+      6. At index 73045: 5.208 ? 5.158V (?=8.733V, 26.4?)
+      7. At index 78019: 5.258 ? 5.203V (?=8.731V, 26.4?)
+      8. At index 82938: 5.303 ? 5.250V (?=8.691V, 26.2?)
+      9. At index 96848: 5.320 ? 5.278V (?=8.720V, 26.3?)
+      10. At index 102007: 5.357 ? 5.324V (?=8.719V, 26.3?)
+    current_load - step anomalies:
+      1. At index 56363: 0.550 ? 0.594A (?=12.039A, 25.3?)
+      2. At index 61982: 12.824 ? 0.550A (?=12.085A, 25.3?)
+      3. At index 62685: 12.816 ? 12.817A (?=12.081A, 25.3?)
+      4. At index 68039: 12.835 ? 12.848A (?=12.027A, 25.2?)
+      5. At index 73046: 12.846 ? 12.830A (?=12.046A, 25.3?)
+      6. At index 78020: 12.800 ? 12.827A (?=12.031A, 25.2?)
+      7. At index 82939: 12.832 ? 12.839A (?=12.395A, 26.0?)
+      8. At index 96849: 13.140 ? 13.130A (?=12.364A, 25.9?)
+      9. At index 102008: 13.124 ? 13.142A (?=12.377A, 26.0?)
+      10. At index 107114: 13.127 ? 13.143A (?=12.383A, 26.0?)
+    current_load - rate anomalies:
+      1. At index 48262: rate=2.51A/s (threshold=2.40A/s)
+      2. At index 166961: rate=2.44A/s (threshold=2.40A/s)
+      3. At index 283246: rate=2.44A/s (threshold=2.40A/s)
+      4. At index 549080: rate=2.44A/s (threshold=2.40A/s)
+      5. At index 810497: rate=2.45A/s (threshold=2.40A/s)
+    temperature_battery - step anomalies:
+      1. At index 1: 0.000 ? 22.079C (?=22.079C, 175.0?)
+      2. At index 155996: 23.216 ? 22.385C (?=0.831C, 6.4?)
+      3. At index 184727: 28.397 ? 22.492C (?=5.905C, 46.7?)
+      4. At index 194699: 28.488 ? 22.129C (?=6.359C, 50.3?)
+      5. At index 206164: 25.934 ? 22.545C (?=3.389C, 26.7?)
+      6. At index 230744: 22.071 ? 0.000C (?=22.071C, 175.0?)
+      7. At index 230745: 0.000 ? 22.580C (?=22.580C, 179.0?)
+      8. At index 275178: 28.612 ? 22.446C (?=6.166C, 48.8?)
+      9. At index 309898: 28.840 ? 0.000C (?=28.840C, 228.7?)
+      10. At index 309902: 0.000 ? 22.990C (?=22.990C, 182.3?)
+    temperature_battery - rate anomalies:
+      1. At index 2885798: rate=2.30C/s (threshold=2.09C/s)
+    temperature_mosfet - step anomalies:
+      1. At index 56366: 22.500 ? 22.610C (?=0.160C, 6.0?)
+      2. At index 56367: 22.610 ? 22.770C (?=0.170C, 6.5?)
+      3. At index 56368: 22.770 ? 22.940C (?=0.200C, 7.7?)
+      4. At index 56369: 22.940 ? 23.140C (?=0.200C, 7.7?)
+      5. At index 56370: 23.140 ? 23.340C (?=0.210C, 8.2?)
+      6. At index 56371: 23.340 ? 23.550C (?=0.220C, 8.6?)
+      7. At index 56372: 23.550 ? 23.770C (?=0.210C, 8.2?)
+      8. At index 56373: 23.770 ? 23.980C (?=0.210C, 8.2?)
+      9. At index 56374: 23.980 ? 24.190C (?=0.200C, 7.7?)
+      10. At index 56375: 24.190 ? 24.390C (?=0.200C, 7.7?)
+    temperature_mosfet - rate anomalies:
+      1. At index 82939: rate=0.13C/s (threshold=0.13C/s)
+      2. At index 191241: rate=0.14C/s (threshold=0.13C/s)
+      3. At index 191243: rate=0.14C/s (threshold=0.13C/s)
+      4. At index 196329: rate=0.13C/s (threshold=0.13C/s)
+      5. At index 196330: rate=0.13C/s (threshold=0.13C/s)
+    temperature_resistor - step anomalies:
+      1. At index 56382: 23.160 ? 23.210C (?=0.060C, 5.1?)
+      2. At index 56385: 23.320 ? 23.370C (?=0.060C, 5.1?)
+      3. At index 56386: 23.370 ? 23.430C (?=0.070C, 6.0?)
+      4. At index 56387: 23.430 ? 23.500C (?=0.060C, 5.1?)
+      5. At index 56390: 23.610 ? 23.660C (?=0.060C, 5.1?)
+      6. At index 56394: 23.820 ? 23.870C (?=0.060C, 5.1?)
+      7. At index 56395: 23.870 ? 23.930C (?=0.060C, 5.1?)
+      8. At index 56397: 23.990 ? 24.040C (?=0.060C, 5.1?)
+      9. At index 56398: 24.040 ? 24.100C (?=0.060C, 5.1?)
+      10. At index 57068: 28.510 ? 28.510C (?=0.130C, 11.8?)
+
+File: battery40.csv (43.22 MB)
+  Rows: 753,257
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 753256
+      Step range: [0.0000, 8.2570]
+      Mean step: 0.0013 ? 0.0278
+      Median step: 0.0000 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.1401
+      Anomalies: 382 (0.0507% of steps)
+    voltage_load (V):
+      Steps analyzed: 62240
+      Step range: [0.0000, 8.7100]
+      Mean step: 0.0221 ? 0.3463
+      Median step: 0.0030 (IQR: 0.0010-0.0080)
+      Anomaly threshold: 1.7535
+      Anomalies: 104 (0.1671% of steps)
+    current_load (A):
+      Steps analyzed: 62240
+      Step range: [0.0000, 17.8319]
+      Mean step: 0.0498 ? 0.6989
+      Median step: 0.0043 (IQR: 0.0010-0.0179)
+      Anomaly threshold: 3.5443
+      Anomalies: 99 (0.1591% of steps)
+    temperature_battery (C):
+      Steps analyzed: 753256
+      Step range: [0.0000, 26.8910]
+      Mean step: 0.0229 ? 0.0949
+      Median step: 0.0040 (IQR: 0.0000-0.0160)
+      Anomaly threshold: 0.4976
+      Anomalies: 225 (0.0299% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 62240
+      Step range: [0.0000, 6.3200]
+      Mean step: 0.0227 ? 0.0657
+      Median step: 0.0100 (IQR: 0.0000-0.0200)
+      Anomaly threshold: 0.3510
+      Anomalies: 92 (0.1478% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 62240
+      Step range: [0.0000, 0.1700]
+      Mean step: 0.0171 ? 0.0229
+      Median step: 0.0100 (IQR: 0.0000-0.0200)
+      Anomaly threshold: 0.1318
+      Anomalies: 32 (0.0514% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 1: 0.000 ? 8.241V (?=8.241V, 296.8?)
+      2. At index 323: 8.240 ? 7.901V (?=0.339V, 12.2?)
+      3. At index 4012: 4.297 ? 4.895V (?=0.598V, 21.5?)
+      4. At index 4013: 4.895 ? 5.043V (?=0.148V, 5.3?)
+      5. At index 4393: 5.865 ? 0.000V (?=5.865V, 211.2?)
+      6. At index 4399: 0.000 ? 6.428V (?=6.428V, 231.5?)
+      7. At index 4807: 6.428 ? 6.656V (?=0.228V, 8.2?)
+      8. At index 7874: 8.603 ? 8.343V (?=0.260V, 9.3?)
+      9. At index 10668: 8.338 ? 7.264V (?=1.074V, 38.6?)
+      10. At index 11193: 5.057 ? 4.868V (?=0.189V, 6.8?)
+    voltage_charger - rate anomalies:
+      1. At index 202635: rate=0.67V/s (threshold=0.36V/s)
+    voltage_load - step anomalies:
+      1. At index 323: -0.026 ? 8.341V (?=8.367V, 24.1?)
+      2. At index 10666: 4.903 ? -0.026V (?=8.672V, 25.0?)
+      3. At index 11192: 5.110 ? 5.054V (?=8.710V, 25.1?)
+      4. At index 16234: 5.031 ? 4.971V (?=8.700V, 25.1?)
+      5. At index 21146: 5.054 ? 5.012V (?=8.637V, 24.9?)
+      6. At index 29509: 5.194 ? 5.156V (?=8.680V, 25.0?)
+      7. At index 34424: 5.252 ? 5.211V (?=8.676V, 25.0?)
+      8. At index 39262: 5.251 ? 5.221V (?=8.672V, 25.0?)
+      9. At index 44032: 5.286 ? 5.244V (?=8.662V, 25.0?)
+      10. At index 48851: 5.363 ? 5.339V (?=8.657V, 24.9?)
+    current_load - step anomalies:
+      1. At index 10667: 0.548 ? 0.595A (?=17.043A, 24.3?)
+      2. At index 15724: 16.354 ? 0.550A (?=16.465A, 23.5?)
+      3. At index 16235: 16.332 ? 16.332A (?=17.377A, 24.8?)
+      4. At index 21147: 18.138 ? 18.059A (?=17.072A, 24.4?)
+      5. At index 29510: 16.412 ? 16.372A (?=17.044A, 24.3?)
+      6. At index 34425: 16.442 ? 16.454A (?=17.399A, 24.8?)
+      7. At index 39263: 17.543 ? 17.512A (?=17.387A, 24.8?)
+      8. At index 44033: 17.620 ? 17.547A (?=16.495A, 23.5?)
+      9. At index 48852: 16.530 ? 16.517A (?=17.110A, 24.4?)
+      10. At index 53626: 16.507 ? 16.429A (?=17.082A, 24.4?)
+    temperature_battery - step anomalies:
+      1. At index 1: 0.000 ? 22.480C (?=22.480C, 236.5?)
+      2. At index 4393: 26.891 ? 0.000C (?=26.891C, 283.0?)
+      3. At index 4399: 0.000 ? 21.355C (?=21.355C, 224.7?)
+      4. At index 7874: 30.194 ? 22.194C (?=8.000C, 84.0?)
+      5. At index 8495: 22.285 ? 21.408C (?=0.877C, 9.0?)
+      6. At index 11197: 97.525 ? 96.988C (?=0.537C, 5.4?)
+      7. At index 16239: 98.676 ? 98.087C (?=0.589C, 6.0?)
+      8. At index 21152: 100.178 ? 99.659C (?=0.519C, 5.2?)
+      9. At index 21156: 98.372 ? 97.840C (?=0.532C, 5.4?)
+      10. At index 21160: 96.407 ? 95.852C (?=0.555C, 5.6?)
+    temperature_mosfet - step anomalies:
+      1. At index 29094: 31.070 ? 30.970C (?=0.590C, 8.6?)
+      2. At index 29095: 30.970 ? 30.860C (?=2.980C, 45.0?)
+      3. At index 29179: 31.820 ? 31.730C (?=0.380C, 5.4?)
+      4. At index 29180: 31.730 ? 31.620C (?=0.530C, 7.7?)
+      5. At index 29181: 31.620 ? 31.520C (?=2.670C, 40.3?)
+      6. At index 34319: 29.310 ? 29.250C (?=1.620C, 24.3?)
+      7. At index 34320: 29.250 ? 29.200C (?=0.440C, 6.4?)
+      8. At index 34321: 29.200 ? 28.990C (?=4.680C, 70.9?)
+      9. At index 91800: 27.130 ? 27.180C (?=0.430C, 6.2?)
+      10. At index 91804: 27.530 ? 27.500C (?=0.490C, 7.1?)
+    temperature_mosfet - rate anomalies:
+      1. At index 228686: rate=0.37C/s (threshold=0.37C/s)
+    temperature_resistor - step anomalies:
+      1. At index 10666: 22.810 ? 34.100C (?=0.140C, 5.4?)
+      2. At index 11192: 32.460 ? 32.470C (?=0.140C, 5.4?)
+      3. At index 16234: 32.540 ? 32.540C (?=0.150C, 5.8?)
+      4. At index 39262: 32.800 ? 32.810C (?=0.140C, 5.4?)
+      5. At index 44032: 32.820 ? 32.830C (?=0.140C, 5.4?)
+      6. At index 73656: 32.850 ? 32.850C (?=0.150C, 5.8?)
+      7. At index 82745: 32.810 ? 32.820C (?=0.150C, 5.8?)
+      8. At index 246548: 32.460 ? 32.440C (?=0.150C, 5.8?)
+      9. At index 401136: 33.010 ? 33.020C (?=0.150C, 5.8?)
+      10. At index 423422: 33.490 ? 33.490C (?=0.140C, 5.4?)
+    temperature_resistor - rate anomalies:
+      1. At index 537071: rate=0.14C/s (threshold=0.14C/s)
+      2. At index 578415: rate=0.14C/s (threshold=0.14C/s)
+
+File: battery41.csv (172.53 MB)
+  Rows: 2,926,443
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 2926442
+      Step range: [0.0000, 9.2500]
+      Mean step: 0.0014 ? 0.0358
+      Median step: 0.0000 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.1804
+      Anomalies: 1034 (0.0353% of steps)
+    voltage_load (V):
+      Steps analyzed: 258136
+      Step range: [0.0000, 8.8000]
+      Mean step: 0.0238 ? 0.3375
+      Median step: 0.0040 (IQR: 0.0010-0.0080)
+      Anomaly threshold: 1.7116
+      Anomalies: 415 (0.1608% of steps)
+    current_load (A):
+      Steps analyzed: 258136
+      Step range: [0.0000, 15.8028]
+      Mean step: 0.0490 ? 0.5866
+      Median step: 0.0048 (IQR: 0.0010-0.0154)
+      Anomaly threshold: 2.9821
+      Anomalies: 652 (0.2526% of steps)
+    temperature_battery (C):
+      Steps analyzed: 2926442
+      Step range: [0.0000, 77.2270]
+      Mean step: 0.0191 ? 0.1314
+      Median step: 0.0040 (IQR: 0.0030-0.0160)
+      Anomaly threshold: 0.6760
+      Anomalies: 82 (0.0028% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 258136
+      Step range: [0.0000, 0.2500]
+      Mean step: 0.0181 ? 0.0262
+      Median step: 0.0100 (IQR: 0.0000-0.0200)
+      Anomaly threshold: 0.1489
+      Anomalies: 1219 (0.4722% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 258136
+      Step range: [0.0000, 0.1100]
+      Mean step: 0.0118 ? 0.0128
+      Median step: 0.0100 (IQR: 0.0000-0.0200)
+      Anomaly threshold: 0.0757
+      Anomalies: 635 (0.246% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 2: 0.000 ? 8.349V (?=8.349V, 233.2?)
+      2. At index 9121: 4.720 ? 5.196V (?=0.476V, 13.3?)
+      3. At index 9746: 6.154 ? 6.348V (?=0.194V, 5.4?)
+      4. At index 13475: 8.410 ? 7.560V (?=0.850V, 23.7?)
+      5. At index 14090: 4.900 ? 5.618V (?=0.718V, 20.0?)
+      6. At index 18472: 8.400 ? 7.635V (?=0.765V, 21.3?)
+      7. At index 19095: 4.856 ? 5.495V (?=0.639V, 17.8?)
+      8. At index 23399: 8.394 ? 7.640V (?=0.754V, 21.0?)
+      9. At index 24026: 4.898 ? 5.579V (?=0.681V, 19.0?)
+      10. At index 31740: 8.444 ? 7.641V (?=0.803V, 22.4?)
+    voltage_charger - rate anomalies:
+      1. At index 1075574: rate=0.84V/s (threshold=0.55V/s)
+    voltage_load - step anomalies:
+      1. At index 5491: -0.026 ? 8.479V (?=8.505V, 25.1?)
+      2. At index 13473: 4.904 ? -0.026V (?=8.744V, 25.8?)
+      3. At index 18470: -0.026 ? -0.026V (?=7.740V, 22.9?)
+      4. At index 23395: 4.956 ? -0.026V (?=7.825V, 23.1?)
+      5. At index 24022: 5.035 ? 4.967V (?=8.780V, 25.9?)
+      6. At index 32349: 5.136 ? 5.069V (?=8.770V, 25.9?)
+      7. At index 42079: 5.308 ? 5.266V (?=8.696V, 25.7?)
+      8. At index 46966: 5.129 ? 5.079V (?=8.800V, 26.0?)
+      9. At index 66796: 5.416 ? 5.403V (?=8.691V, 25.7?)
+      10. At index 71788: 5.472 ? 5.433V (?=7.687V, 22.7?)
+    voltage_load - rate anomalies:
+      1. At index 2605988: rate=1.72V/s (threshold=1.70V/s)
+    current_load - step anomalies:
+      1. At index 13474: 0.550 ? 0.591A (?=13.717A, 23.3?)
+      2. At index 13725: 12.922 ? 12.924A (?=3.250A, 5.5?)
+      3. At index 18470: 0.550 ? 0.550A (?=13.939A, 23.7?)
+      4. At index 23395: 13.766 ? 0.550A (?=13.039A, 22.1?)
+      5. At index 28315: 14.716 ? 0.463A (?=13.004A, 22.1?)
+      6. At index 32350: 14.719 ? 14.736A (?=13.009A, 22.1?)
+      7. At index 42080: 14.771 ? 14.766A (?=13.909A, 23.6?)
+      8. At index 46967: 13.782 ? 13.768A (?=13.718A, 23.3?)
+      9. At index 66437: 12.923 ? 12.929A (?=3.236A, 5.4?)
+      10. At index 66797: 15.833 ? 15.820A (?=13.929A, 23.7?)
+    current_load - rate anomalies:
+      1. At index 83895: rate=3.00A/s (threshold=2.99A/s)
+      2. At index 88925: rate=3.00A/s (threshold=2.99A/s)
+      3. At index 210368: rate=3.00A/s (threshold=2.99A/s)
+      4. At index 218334: rate=3.04A/s (threshold=2.99A/s)
+      5. At index 318641: rate=3.04A/s (threshold=2.99A/s)
+    temperature_battery - step anomalies:
+      1. At index 2: 0.000 ? 22.381C (?=22.381C, 170.2?)
+      2. At index 44435: 29.971 ? 22.312C (?=7.659C, 58.2?)
+      3. At index 79155: 24.040 ? 0.000C (?=24.040C, 182.9?)
+      4. At index 79159: 0.000 ? 22.538C (?=22.538C, 171.4?)
+      5. At index 141878: 25.050 ? 22.312C (?=2.738C, 20.7?)
+      6. At index 211444: 43.114 ? 22.450C (?=20.664C, 157.2?)
+      7. At index 215656: 23.809 ? 21.842C (?=1.967C, 14.8?)
+      8. At index 230738: 37.561 ? 22.247C (?=15.314C, 116.4?)
+      9. At index 234929: 23.489 ? 22.209C (?=1.280C, 9.6?)
+      10. At index 273282: 31.518 ? 0.000C (?=31.518C, 239.8?)
+    temperature_mosfet - step anomalies:
+      1. At index 13477: 22.690 ? 22.810C (?=0.170C, 5.8?)
+      2. At index 13478: 22.810 ? 22.980C (?=0.190C, 6.6?)
+      3. At index 13479: 22.980 ? 23.170C (?=0.220C, 7.7?)
+      4. At index 13480: 23.170 ? 23.390C (?=0.210C, 7.3?)
+      5. At index 13481: 23.390 ? 23.600C (?=0.220C, 7.7?)
+      6. At index 13482: 23.600 ? 23.820C (?=0.230C, 8.1?)
+      7. At index 13483: 23.820 ? 24.050C (?=0.220C, 7.7?)
+      8. At index 13484: 24.050 ? 24.270C (?=0.220C, 7.7?)
+      9. At index 13485: 24.270 ? 24.490C (?=0.210C, 7.3?)
+      10. At index 13486: 24.490 ? 24.700C (?=0.210C, 7.3?)
+    temperature_resistor - step anomalies:
+      1. At index 13497: 23.790 ? 23.860C (?=0.080C, 5.3?)
+      2. At index 13500: 24.010 ? 24.080C (?=0.080C, 5.3?)
+      3. At index 13503: 24.230 ? 24.300C (?=0.080C, 5.3?)
+      4. At index 13516: 25.140 ? 25.200C (?=0.080C, 5.3?)
+      5. At index 18490: 22.930 ? 22.990C (?=0.080C, 5.3?)
+      6. At index 18495: 23.280 ? 23.350C (?=0.080C, 5.3?)
+      7. At index 18501: 23.710 ? 23.780C (?=0.080C, 5.3?)
+      8. At index 18503: 23.850 ? 23.930C (?=0.080C, 5.3?)
+      9. At index 18505: 24.000 ? 24.080C (?=0.080C, 5.3?)
+      10. At index 18506: 24.080 ? 24.140C (?=0.090C, 6.1?)
+
+File: battery50.csv (46.56 MB)
+  Rows: 791,869
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 791868
+      Step range: [0.0000, 9.0950]
+      Mean step: 0.0015 ? 0.0343
+      Median step: 0.0000 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.1731
+      Anomalies: 300 (0.0379% of steps)
+    voltage_load (V):
+      Steps analyzed: 78040
+      Step range: [0.0000, 8.7720]
+      Mean step: 0.0225 ? 0.3568
+      Median step: 0.0030 (IQR: 0.0010-0.0070)
+      Anomaly threshold: 1.8064
+      Anomalies: 130 (0.1666% of steps)
+    current_load (A):
+      Steps analyzed: 78040
+      Step range: [0.0000, 22.6996]
+      Mean step: 0.0476 ? 0.6891
+      Median step: 0.0037 (IQR: 0.0007-0.0163)
+      Anomaly threshold: 3.4931
+      Anomalies: 121 (0.155% of steps)
+    temperature_battery (C):
+      Steps analyzed: 791868
+      Step range: [0.0000, 77.6430]
+      Mean step: 0.0260 ? 0.1686
+      Median step: 0.0050 (IQR: 0.0040-0.0170)
+      Anomaly threshold: 0.8690
+      Anomalies: 35 (0.0044% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 78040
+      Step range: [0.0000, 6.6200]
+      Mean step: 0.0242 ? 0.0628
+      Median step: 0.0100 (IQR: 0.0000-0.0200)
+      Anomaly threshold: 0.3381
+      Anomalies: 130 (0.1666% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 78040
+      Step range: [0.0000, 2.1600]
+      Mean step: 0.0196 ? 0.0272
+      Median step: 0.0100 (IQR: 0.0000-0.0300)
+      Anomaly threshold: 0.1556
+      Anomalies: 25 (0.032% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 1: 0.000 ? 8.240V (?=8.240V, 240.0?)
+      2. At index 323: 8.240 ? 7.911V (?=0.329V, 9.5?)
+      3. At index 4003: 4.320 ? 4.907V (?=0.587V, 17.1?)
+      4. At index 4303: 5.887 ? 0.000V (?=5.887V, 171.4?)
+      5. At index 4309: 0.000 ? 6.450V (?=6.450V, 187.8?)
+      6. At index 4739: 6.450 ? 6.670V (?=0.220V, 6.4?)
+      7. At index 8107: 8.387 ? 7.009V (?=1.378V, 40.1?)
+      8. At index 8405: 5.970 ? 6.969V (?=0.999V, 29.1?)
+      9. At index 16171: 8.412 ? 7.362V (?=1.050V, 30.5?)
+      10. At index 16688: 4.934 ? 5.778V (?=0.844V, 24.5?)
+    voltage_load - step anomalies:
+      1. At index 323: -0.026 ? 8.351V (?=8.377V, 23.4?)
+      2. At index 8105: 4.924 ? -0.026V (?=8.730V, 24.4?)
+      3. At index 8403: 7.123 ? 7.111V (?=8.756V, 24.5?)
+      4. At index 16683: 5.031 ? 4.997V (?=8.772V, 24.5?)
+      5. At index 21614: 5.086 ? 5.030V (?=8.700V, 24.3?)
+      6. At index 29963: 5.225 ? 5.190V (?=8.759V, 24.5?)
+      7. At index 35047: 5.250 ? 5.217V (?=8.754V, 24.5?)
+      8. At index 40064: 5.274 ? 5.238V (?=8.750V, 24.5?)
+      9. At index 45035: 5.328 ? 5.293V (?=8.747V, 24.5?)
+      10. At index 49946: 5.370 ? 5.320V (?=8.746V, 24.5?)
+    voltage_load - rate anomalies:
+      1. At index 781755: rate=1.82V/s (threshold=1.80V/s)
+    current_load - step anomalies:
+      1. At index 8106: 0.550 ? 0.594A (?=22.700A, 32.9?)
+      2. At index 16169: 24.053 ? 0.550A (?=17.284A, 25.0?)
+      3. At index 16684: 18.180 ? 18.109A (?=16.969A, 24.6?)
+      4. At index 21615: 16.377 ? 16.355A (?=16.405A, 23.7?)
+      5. At index 29964: 16.417 ? 16.441A (?=17.297A, 25.0?)
+      6. At index 35048: 17.562 ? 17.561A (?=17.300A, 25.0?)
+      7. At index 40065: 17.626 ? 17.597A (?=17.301A, 25.0?)
+      8. At index 45036: 17.602 ? 17.570A (?=16.385A, 23.7?)
+      9. At index 49947: 16.451 ? 16.451A (?=17.327A, 25.1?)
+      10. At index 54837: 17.653 ? 17.635A (?=17.336A, 25.1?)
+    temperature_battery - step anomalies:
+      1. At index 1: 0.000 ? 22.967C (?=22.967C, 136.1?)
+      2. At index 4303: 27.400 ? 0.000C (?=27.400C, 162.4?)
+      3. At index 4309: 0.000 ? 22.052C (?=22.052C, 130.6?)
+      4. At index 7784: 30.243 ? 22.975C (?=7.268C, 43.0?)
+      5. At index 8405: 96.712 ? 22.240C (?=74.472C, 441.6?)
+      6. At index 25794: 26.773 ? 22.975C (?=3.798C, 22.4?)
+      7. At index 58637: 28.700 ? 23.374C (?=5.326C, 31.4?)
+      8. At index 96316: 33.664 ? 23.647C (?=10.017C, 59.3?)
+      9. At index 180818: 33.774 ? 23.328C (?=10.446C, 61.8?)
+      10. At index 185766: 34.295 ? 22.522C (?=11.773C, 69.7?)
+    temperature_mosfet - step anomalies:
+      1. At index 8106: 22.990 ? 22.980C (?=2.250C, 35.5?)
+      2. At index 8348: 28.360 ? 28.500C (?=0.430C, 6.5?)
+      3. At index 8351: 28.240 ? 28.150C (?=0.620C, 9.5?)
+      4. At index 8353: 27.530 ? 27.840C (?=0.400C, 6.0?)
+      5. At index 8356: 27.270 ? 27.030C (?=0.480C, 7.3?)
+      6. At index 8357: 27.030 ? 26.550C (?=0.600C, 9.2?)
+      7. At index 8358: 26.550 ? 27.150C (?=0.440C, 6.6?)
+      8. At index 8359: 27.150 ? 26.710C (?=0.350C, 5.2?)
+      9. At index 8360: 26.710 ? 26.360C (?=0.630C, 9.7?)
+      10. At index 8362: 26.990 ? 27.280C (?=0.620C, 9.5?)
+    temperature_mosfet - rate anomalies:
+      1. At index 209883: rate=0.34C/s (threshold=0.34C/s)
+      2. At index 209891: rate=0.34C/s (threshold=0.34C/s)
+      3. At index 229576: rate=0.34C/s (threshold=0.34C/s)
+    temperature_resistor - step anomalies:
+      1. At index 8106: 23.150 ? 23.160C (?=2.160C, 78.7?)
+      2. At index 8116: 21.190 ? 21.190C (?=0.160C, 5.2?)
+      3. At index 8122: 21.810 ? 21.950C (?=0.160C, 5.2?)
+      4. At index 8125: 22.240 ? 22.350C (?=0.170C, 5.5?)
+      5. At index 8126: 22.350 ? 22.520C (?=0.210C, 7.0?)
+      6. At index 8127: 22.520 ? 22.730C (?=0.160C, 5.2?)
+      7. At index 8130: 23.040 ? 23.190C (?=0.160C, 5.2?)
+      8. At index 8131: 23.190 ? 23.350C (?=0.210C, 7.0?)
+      9. At index 8133: 23.560 ? 23.680C (?=0.190C, 6.3?)
+      10. At index 8134: 23.680 ? 23.870C (?=0.190C, 6.3?)
+    temperature_resistor - rate anomalies:
+      1. At index 8164: rate=0.16C/s (threshold=0.16C/s)
+      2. At index 8223: rate=0.16C/s (threshold=0.16C/s)
+
+File: battery51.csv (111.19 MB)
+  Rows: 1,822,787
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 1822786
+      Step range: [0.0000, 8.5500]
+      Mean step: 0.0015 ? 0.0335
+      Median step: 0.0000 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.1689
+      Anomalies: 805 (0.0442% of steps)
+    voltage_load (V):
+      Steps analyzed: 196560
+      Step range: [0.0000, 8.8450]
+      Mean step: 0.0248 ? 0.3388
+      Median step: 0.0040 (IQR: 0.0010-0.0090)
+      Anomaly threshold: 1.7187
+      Anomalies: 296 (0.1506% of steps)
+    current_load (A):
+      Steps analyzed: 196560
+      Step range: [0.0000, 15.4437]
+      Mean step: 0.0466 ? 0.5574
+      Median step: 0.0047 (IQR: 0.0010-0.0155)
+      Anomaly threshold: 2.8339
+      Anomalies: 525 (0.2671% of steps)
+    temperature_battery (C):
+      Steps analyzed: 1822786
+      Step range: [0.0000, 70.8380]
+      Mean step: 0.0214 ? 0.1481
+      Median step: 0.0080 (IQR: 0.0040-0.0190)
+      Anomaly threshold: 0.7618
+      Anomalies: 59 (0.0032% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 196560
+      Step range: [0.0000, 0.2600]
+      Mean step: 0.0208 ? 0.0345
+      Median step: 0.0100 (IQR: 0.0000-0.0200)
+      Anomaly threshold: 0.1932
+      Anomalies: 1786 (0.9086% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 196560
+      Step range: [0.0000, 0.1100]
+      Mean step: 0.0140 ? 0.0169
+      Median step: 0.0100 (IQR: 0.0000-0.0200)
+      Anomaly threshold: 0.0985
+      Anomalies: 43 (0.0219% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 4: 0.000 ? 8.351V (?=8.351V, 249.4?)
+      2. At index 6858: 4.714 ? 5.212V (?=0.498V, 14.8?)
+      3. At index 7479: 6.189 ? 6.383V (?=0.194V, 5.8?)
+      4. At index 11871: 8.500 ? 7.652V (?=0.848V, 25.3?)
+      5. At index 12507: 4.878 ? 5.517V (?=0.639V, 19.0?)
+      6. At index 17427: 8.449 ? 7.618V (?=0.831V, 24.8?)
+      7. At index 18037: 4.914 ? 5.632V (?=0.718V, 21.4?)
+      8. At index 23037: 8.442 ? 7.682V (?=0.760V, 22.7?)
+      9. At index 23047: 7.353 ? 7.537V (?=0.184V, 5.5?)
+      10. At index 23674: 4.903 ? 5.584V (?=0.681V, 20.3?)
+    voltage_charger - rate anomalies:
+      1. At index 186944: rate=0.51V/s (threshold=0.49V/s)
+    voltage_load - step anomalies:
+      1. At index 3199: -0.026 ? 8.489V (?=8.515V, 25.1?)
+      2. At index 11869: 4.904 ? -0.026V (?=8.845V, 26.0?)
+      3. At index 12503: 5.017 ? 4.946V (?=8.793V, 25.9?)
+      4. At index 18032: 5.071 ? 5.029V (?=8.787V, 25.9?)
+      5. At index 23668: 5.133 ? 5.083V (?=8.783V, 25.9?)
+      6. At index 29132: 5.164 ? 5.121V (?=8.786V, 25.9?)
+      7. At index 34489: 5.230 ? 5.194V (?=8.830V, 26.0?)
+      8. At index 41142: 5.233 ? 5.189V (?=8.792V, 25.9?)
+      9. At index 46786: 5.293 ? 5.254V (?=8.782V, 25.8?)
+      10. At index 52400: 5.318 ? 5.285V (?=8.788V, 25.9?)
+    current_load - step anomalies:
+      1. At index 11870: 0.550 ? 0.591A (?=13.979A, 25.0?)
+      2. At index 17425: 13.694 ? 0.550A (?=13.810A, 24.7?)
+      3. At index 17670: 13.024 ? 13.040A (?=3.254A, 5.8?)
+      4. At index 18033: 15.638 ? 15.592A (?=13.096A, 23.4?)
+      5. At index 23278: 13.226 ? 13.243A (?=2.901A, 5.1?)
+      6. At index 23462: 16.109 ? 16.107A (?=2.834A, 5.0?)
+      7. At index 23669: 14.666 ? 14.624A (?=13.787A, 24.6?)
+      8. At index 28774: 13.010 ? 13.040A (?=3.277A, 5.8?)
+      9. At index 29133: 15.690 ? 15.679A (?=13.991A, 25.0?)
+      10. At index 34490: 13.735 ? 13.718A (?=13.782A, 24.6?)
+    current_load - rate anomalies:
+      1. At index 46574: rate=2.85A/s (threshold=2.82A/s)
+      2. At index 52196: rate=2.84A/s (threshold=2.82A/s)
+      3. At index 57727: rate=2.84A/s (threshold=2.82A/s)
+      4. At index 79619: rate=2.87A/s (threshold=2.82A/s)
+      5. At index 194561: rate=2.97A/s (threshold=2.82A/s)
+    temperature_battery - step anomalies:
+      1. At index 4: 0.000 ? 22.867C (?=22.867C, 154.3?)
+      2. At index 35361: 38.677 ? 0.000C (?=38.677C, 261.1?)
+      3. At index 35365: 0.000 ? 23.866C (?=23.866C, 161.0?)
+      4. At index 68792: 72.180 ? 23.212C (?=48.968C, 330.6?)
+      5. At index 160363: 23.955 ? 22.461C (?=1.494C, 9.9?)
+      6. At index 167650: 68.513 ? 22.798C (?=45.715C, 308.6?)
+      7. At index 171862: 24.736 ? 22.186C (?=2.550C, 17.1?)
+      8. At index 186944: 61.085 ? 22.580C (?=38.505C, 259.9?)
+      9. At index 191135: 25.081 ? 22.687C (?=2.394C, 16.0?)
+      10. At index 229488: 70.838 ? 0.000C (?=70.838C, 478.3?)
+    temperature_mosfet - step anomalies:
+      1. At index 11875: 23.020 ? 23.210C (?=0.200C, 5.2?)
+      2. At index 11876: 23.210 ? 23.410C (?=0.230C, 6.1?)
+      3. At index 11877: 23.410 ? 23.640C (?=0.230C, 6.1?)
+      4. At index 11878: 23.640 ? 23.870C (?=0.200C, 5.2?)
+      5. At index 11879: 23.870 ? 24.070C (?=0.250C, 6.6?)
+      6. At index 11880: 24.070 ? 24.320C (?=0.200C, 5.2?)
+      7. At index 11881: 24.320 ? 24.520C (?=0.220C, 5.8?)
+      8. At index 11882: 24.520 ? 24.740C (?=0.210C, 5.5?)
+      9. At index 11883: 24.740 ? 24.950C (?=0.220C, 5.8?)
+      10. At index 11884: 24.950 ? 25.170C (?=0.210C, 5.5?)
+    temperature_mosfet - rate anomalies:
+      1. At index 11874: rate=0.19C/s (threshold=0.19C/s)
+      2. At index 11885: rate=0.20C/s (threshold=0.19C/s)
+      3. At index 17429: rate=0.19C/s (threshold=0.19C/s)
+      4. At index 28532: rate=0.19C/s (threshold=0.19C/s)
+      5. At index 41147: rate=0.19C/s (threshold=0.19C/s)
+    temperature_resistor - step anomalies:
+      1. At index 354151: 29.810 ? 29.810C (?=0.100C, 5.1?)
+      2. At index 678554: 30.640 ? 30.640C (?=0.100C, 5.1?)
+      3. At index 865437: 30.540 ? 30.520C (?=0.100C, 5.1?)
+      4. At index 1373352: 30.900 ? 30.900C (?=0.100C, 5.1?)
+      5. At index 1373357: 30.890 ? 30.870C (?=0.100C, 5.1?)
+      6. At index 1426714: 30.890 ? 30.890C (?=0.100C, 5.1?)
+      7. At index 1436203: 22.810 ? 22.810C (?=0.100C, 5.1?)
+      8. At index 1460503: 30.800 ? 30.840C (?=0.100C, 5.1?)
+      9. At index 1460505: 30.860 ? 30.880C (?=0.100C, 5.1?)
+      10. At index 1460507: 30.900 ? 30.930C (?=0.100C, 5.1?)
+
+File: battery52.csv (89.97 MB)
+  Rows: 1,510,563
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 1510562
+      Step range: [0.0000, 8.4740]
+      Mean step: 0.0015 ? 0.0358
+      Median step: 0.0000 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.1807
+      Anomalies: 608 (0.0402% of steps)
+    voltage_load (V):
+      Steps analyzed: 172148
+      Step range: [0.0000, 8.8430]
+      Mean step: 0.0216 ? 0.3383
+      Median step: 0.0030 (IQR: 0.0010-0.0070)
+      Anomaly threshold: 1.7131
+      Anomalies: 258 (0.1499% of steps)
+    current_load (A):
+      Steps analyzed: 172148
+      Step range: [0.0000, 14.5345]
+      Mean step: 0.0310 ? 0.5376
+      Median step: 0.0044 (IQR: 0.0010-0.0142)
+      Anomaly threshold: 2.7191
+      Anomalies: 247 (0.1435% of steps)
+    temperature_battery (C):
+      Steps analyzed: 1510562
+      Step range: [0.0000, 82.4250]
+      Mean step: 0.0255 ? 0.1697
+      Median step: 0.0080 (IQR: 0.0040-0.0220)
+      Anomaly threshold: 0.8742
+      Anomalies: 49 (0.0032% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 172148
+      Step range: [0.0000, 0.2600]
+      Mean step: 0.0205 ? 0.0368
+      Median step: 0.0100 (IQR: 0.0000-0.0200)
+      Anomaly threshold: 0.2045
+      Anomalies: 1239 (0.7197% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 172148
+      Step range: [0.0000, 0.1100]
+      Mean step: 0.0126 ? 0.0181
+      Median step: 0.0100 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.1032
+      Anomalies: 1 (0.0006% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 1: 0.000 ? 8.349V (?=8.349V, 233.0?)
+      2. At index 7657: 4.713 ? 5.197V (?=0.484V, 13.5?)
+      3. At index 8275: 6.155 ? 6.356V (?=0.201V, 5.6?)
+      4. At index 12415: 8.498 ? 7.631V (?=0.867V, 24.2?)
+      5. At index 13045: 4.864 ? 5.576V (?=0.712V, 19.8?)
+      6. At index 17822: 8.493 ? 7.629V (?=0.864V, 24.1?)
+      7. At index 18443: 4.835 ? 5.551V (?=0.716V, 19.9?)
+      8. At index 24046: 8.474 ? 0.000V (?=8.474V, 236.5?)
+      9. At index 24047: 0.000 ? 8.420V (?=8.420V, 235.0?)
+      10. At index 28414: 8.416 ? 7.508V (?=0.908V, 25.3?)
+    voltage_load - step anomalies:
+      1. At index 4046: -0.026 ? 8.486V (?=8.512V, 25.1?)
+      2. At index 12413: 4.901 ? -0.026V (?=8.843V, 26.1?)
+      3. At index 13041: 4.993 ? 4.937V (?=8.838V, 26.1?)
+      4. At index 18438: 5.035 ? 4.980V (?=8.760V, 25.8?)
+      5. At index 29027: 5.103 ? 5.046V (?=8.824V, 26.0?)
+      6. At index 34459: 5.148 ? 5.100V (?=8.804V, 26.0?)
+      7. At index 40854: 5.179 ? 5.144V (?=8.815V, 26.0?)
+      8. At index 46173: 5.244 ? 5.201V (?=8.794V, 25.9?)
+      9. At index 52361: 5.271 ? 5.233V (?=8.809V, 26.0?)
+      10. At index 57598: 5.341 ? 5.295V (?=8.806V, 26.0?)
+    current_load - step anomalies:
+      1. At index 12414: 0.550 ? 0.590A (?=13.880A, 25.8?)
+      2. At index 12766: 12.941 ? 12.970A (?=2.904A, 5.3?)
+      3. At index 17820: 14.671 ? 0.550A (?=13.886A, 25.8?)
+      4. At index 18167: 12.960 ? 12.963A (?=2.972A, 5.5?)
+      5. At index 18439: 14.681 ? 14.694A (?=13.996A, 26.0?)
+      6. At index 29028: 14.696 ? 14.635A (?=13.972A, 25.9?)
+      7. At index 34460: 14.684 ? 14.683A (?=13.981A, 25.9?)
+      8. At index 40855: 14.687 ? 14.690A (?=13.981A, 25.9?)
+      9. At index 46174: 14.702 ? 14.702A (?=13.985A, 26.0?)
+      10. At index 52362: 14.707 ? 14.707A (?=13.986A, 26.0?)
+    temperature_battery - step anomalies:
+      1. At index 1: 0.000 ? 23.189C (?=23.189C, 136.5?)
+      2. At index 24046: 23.113 ? 0.000C (?=23.113C, 136.0?)
+      3. At index 24047: 0.000 ? 22.810C (?=22.810C, 134.2?)
+      4. At index 138665: 42.939 ? 24.156C (?=18.783C, 110.5?)
+      5. At index 170425: 24.133 ? 0.000C (?=24.133C, 142.0?)
+      6. At index 170426: 0.000 ? 22.775C (?=22.775C, 134.0?)
+      7. At index 243387: 33.533 ? 0.000C (?=33.533C, 197.4?)
+      8. At index 243390: 0.000 ? 23.539C (?=23.539C, 138.5?)
+      9. At index 362591: 22.618 ? 0.000C (?=22.618C, 133.1?)
+      10. At index 362592: 0.000 ? 22.825C (?=22.825C, 134.3?)
+    temperature_mosfet - step anomalies:
+      1. At index 12419: 22.970 ? 23.160C (?=0.210C, 5.1?)
+      2. At index 12420: 23.160 ? 23.370C (?=0.220C, 5.4?)
+      3. At index 12421: 23.370 ? 23.590C (?=0.230C, 5.7?)
+      4. At index 12422: 23.590 ? 23.820C (?=0.220C, 5.4?)
+      5. At index 12423: 23.820 ? 24.040C (?=0.220C, 5.4?)
+      6. At index 12424: 24.040 ? 24.260C (?=0.220C, 5.4?)
+      7. At index 12425: 24.260 ? 24.480C (?=0.220C, 5.4?)
+      8. At index 12426: 24.480 ? 24.700C (?=0.220C, 5.4?)
+      9. At index 12427: 24.700 ? 24.920C (?=0.220C, 5.4?)
+      10. At index 17825: 22.680 ? 22.850C (?=0.210C, 5.1?)
+    temperature_mosfet - rate anomalies:
+      1. At index 12428: rate=0.21C/s (threshold=0.20C/s)
+      2. At index 12429: rate=0.21C/s (threshold=0.20C/s)
+      3. At index 12430: rate=0.20C/s (threshold=0.20C/s)
+      4. At index 12431: rate=0.21C/s (threshold=0.20C/s)
+      5. At index 113786: rate=0.20C/s (threshold=0.20C/s)
+    temperature_resistor - step anomalies:
+      1. At index 4057: 28.630 ? 28.520C (?=0.110C, 5.4?)
+
+FOLDER: recommissioned_batteries
+------------------------------------------------------------
+Typical step sizes in this folder:
+  voltage_charger: mean step 0.0018V, std 0.0372V
+  voltage_load: mean step 0.0207V, std 0.3281V
+  current_load: mean step 0.0304A, std 0.4889A
+  temperature_battery: mean step 0.0207C, std 0.1249C
+  temperature_mosfet: mean step 0.0166C, std 0.031C
+  temperature_resistor: mean step 0.01C, std 0.0157C
+
+
+File: battery02.csv (123.3 MB)
+  Rows: 2,069,667
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 2069666
+      Step range: [0.0000, 12.2260]
+      Mean step: 0.0018 ? 0.0431
+      Median step: 0.0010 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.2173
+      Anomalies: 890 (0.043% of steps)
+    voltage_load (V):
+      Steps analyzed: 260146
+      Step range: [0.0000, 8.7630]
+      Mean step: 0.0232 ? 0.3440
+      Median step: 0.0040 (IQR: 0.0010-0.0090)
+      Anomaly threshold: 1.7429
+      Anomalies: 415 (0.1595% of steps)
+    current_load (A):
+      Steps analyzed: 260146
+      Step range: [0.0000, 16.0367]
+      Mean step: 0.0318 ? 0.5444
+      Median step: 0.0046 (IQR: 0.0010-0.0145)
+      Anomaly threshold: 2.7537
+      Anomalies: 395 (0.1518% of steps)
+    temperature_battery (C):
+      Steps analyzed: 2069666
+      Step range: [0.0000, 65.5340]
+      Mean step: 0.0205 ? 0.1066
+      Median step: 0.0080 (IQR: 0.0040-0.0190)
+      Anomaly threshold: 0.5533
+      Anomalies: 38 (0.0018% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 260146
+      Step range: [0.0000, 0.2600]
+      Mean step: 0.0181 ? 0.0331
+      Median step: 0.0100 (IQR: 0.0000-0.0200)
+      Anomaly threshold: 0.1837
+      Anomalies: 2172 (0.8349% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 260146
+      Step range: [0.0000, 0.1300]
+      Mean step: 0.0109 ? 0.0167
+      Median step: 0.0100 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.0944
+      Anomalies: 1277 (0.4909% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 3: 0.000 ? 8.365V (?=8.365V, 194.1?)
+      2. At index 4412: 4.747 ? 5.182V (?=0.435V, 10.1?)
+      3. At index 8839: 8.422 ? 7.567V (?=0.855V, 19.8?)
+      4. At index 9411: 4.913 ? 5.576V (?=0.663V, 15.3?)
+      5. At index 13403: 8.388 ? 7.479V (?=0.909V, 21.1?)
+      6. At index 13987: 4.951 ? 5.600V (?=0.649V, 15.0?)
+      7. At index 18538: 8.406 ? 7.555V (?=0.851V, 19.7?)
+      8. At index 19101: 4.928 ? 5.588V (?=0.660V, 15.3?)
+      9. At index 19112: 5.676 ? 5.933V (?=0.257V, 5.9?)
+      10. At index 19113: 5.933 ? 6.177V (?=0.244V, 5.6?)
+    voltage_charger - rate anomalies:
+      1. At index 371160: rate=29.50V/s (threshold=0.37V/s)
+      2. At index 1149005: rate=0.58V/s (threshold=0.37V/s)
+      3. At index 1335784: rate=2.36V/s (threshold=0.37V/s)
+    voltage_load - step anomalies:
+      1. At index 654: -0.026 ? 8.500V (?=8.526V, 24.7?)
+      2. At index 8837: 4.927 ? -0.026V (?=8.763V, 25.4?)
+      3. At index 9407: 4.982 ? 4.916V (?=8.728V, 25.3?)
+      4. At index 13982: 5.055 ? 5.005V (?=8.747V, 25.4?)
+      5. At index 19095: 5.099 ? 5.062V (?=8.740V, 25.3?)
+      6. At index 23740: 5.164 ? 5.115V (?=8.735V, 25.3?)
+      7. At index 28793: 5.205 ? 5.162V (?=8.728V, 25.3?)
+      8. At index 33826: 5.230 ? 5.182V (?=8.722V, 25.3?)
+      9. At index 38804: 5.281 ? 5.247V (?=8.717V, 25.3?)
+      10. At index 43706: 5.331 ? 5.295V (?=8.685V, 25.2?)
+    current_load - step anomalies:
+      1. At index 8838: 0.479 ? 0.515A (?=15.753A, 28.9?)
+      2. At index 13401: 15.830 ? 0.479A (?=15.767A, 28.9?)
+      3. At index 13983: 15.857 ? 15.804A (?=15.771A, 28.9?)
+      4. At index 19096: 15.929 ? 15.848A (?=15.835A, 29.0?)
+      5. At index 23741: 15.899 ? 15.926A (?=15.801A, 29.0?)
+      6. At index 28794: 15.974 ? 15.917A (?=15.783A, 28.9?)
+      7. At index 33827: 15.986 ? 15.975A (?=15.824A, 29.0?)
+      8. At index 38805: 16.063 ? 16.001A (?=15.821A, 29.0?)
+      9. At index 43707: 16.089 ? 16.070A (?=15.791A, 28.9?)
+      10. At index 50901: 16.082 ? 16.090A (?=15.804A, 29.0?)
+    temperature_battery - step anomalies:
+      1. At index 3: 0.000 ? 22.611C (?=22.611C, 212.0?)
+      2. At index 13401: 27.479 ? 23.159C (?=4.320C, 40.3?)
+      3. At index 19112: 75.669 ? 22.572C (?=53.097C, 498.1?)
+      4. At index 90066: 22.871 ? 0.000C (?=22.871C, 214.4?)
+      5. At index 90067: 0.000 ? 23.067C (?=23.067C, 216.3?)
+      6. At index 100254: 26.958 ? 23.078C (?=3.880C, 36.2?)
+      7. At index 237038: 23.070 ? 0.000C (?=23.070C, 216.3?)
+      8. At index 237040: 0.000 ? 22.955C (?=22.955C, 215.2?)
+      9. At index 315546: 25.353 ? 22.775C (?=2.578C, 24.0?)
+      10. At index 430167: 30.402 ? 23.662C (?=6.740C, 63.1?)
+    temperature_battery - rate anomalies:
+      1. At index 371160: rate=82.50C/s (threshold=2.66C/s)
+    temperature_mosfet - step anomalies:
+      1. At index 8842: 22.850 ? 23.010C (?=0.190C, 5.2?)
+      2. At index 8843: 23.010 ? 23.200C (?=0.200C, 5.5?)
+      3. At index 8844: 23.200 ? 23.400C (?=0.220C, 6.1?)
+      4. At index 8845: 23.400 ? 23.620C (?=0.220C, 6.1?)
+      5. At index 8846: 23.620 ? 23.840C (?=0.230C, 6.4?)
+      6. At index 8847: 23.840 ? 24.070C (?=0.220C, 6.1?)
+      7. At index 8848: 24.070 ? 24.290C (?=0.220C, 6.1?)
+      8. At index 8849: 24.290 ? 24.510C (?=0.220C, 6.1?)
+      9. At index 8850: 24.510 ? 24.730C (?=0.220C, 6.1?)
+      10. At index 8851: 24.730 ? 24.950C (?=0.210C, 5.8?)
+    temperature_mosfet - rate anomalies:
+      1. At index 8858: rate=0.19C/s (threshold=0.18C/s)
+      2. At index 8859: rate=0.19C/s (threshold=0.18C/s)
+      3. At index 8860: rate=0.19C/s (threshold=0.18C/s)
+      4. At index 8862: rate=0.19C/s (threshold=0.18C/s)
+      5. At index 13405: rate=0.19C/s (threshold=0.18C/s)
+    temperature_resistor - step anomalies:
+      1. At index 8861: 24.140 ? 24.230C (?=0.100C, 5.3?)
+      2. At index 8863: 24.330 ? 24.420C (?=0.100C, 5.3?)
+      3. At index 8864: 24.420 ? 24.520C (?=0.100C, 5.3?)
+      4. At index 8865: 24.520 ? 24.620C (?=0.100C, 5.3?)
+      5. At index 8867: 24.720 ? 24.810C (?=0.100C, 5.3?)
+      6. At index 8868: 24.810 ? 24.910C (?=0.110C, 5.9?)
+      7. At index 8871: 25.110 ? 25.190C (?=0.100C, 5.3?)
+      8. At index 13432: 24.660 ? 24.750C (?=0.100C, 5.3?)
+      9. At index 13435: 24.930 ? 25.020C (?=0.100C, 5.3?)
+      10. At index 18556: 24.080 ? 24.170C (?=0.100C, 5.3?)
+    temperature_resistor - rate anomalies:
+      1. At index 8856: rate=0.09C/s (threshold=0.09C/s)
+      2. At index 8857: rate=0.09C/s (threshold=0.09C/s)
+      3. At index 8858: rate=0.10C/s (threshold=0.09C/s)
+      4. At index 8859: rate=0.09C/s (threshold=0.09C/s)
+      5. At index 8860: rate=0.09C/s (threshold=0.09C/s)
+
+File: battery03.csv (132.58 MB)
+  Rows: 2,161,444
+  ERROR: unsupported operand type(s) for -: 'str' and 'str'
+
+File: battery12.csv (198.22 MB)
+  Rows: 3,041,084
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 3041083
+      Step range: [0.0000, 8.4310]
+      Mean step: 0.0018 ? 0.0277
+      Median step: 0.0010 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.1403
+      Anomalies: 2080 (0.0684% of steps)
+    voltage_load (V):
+      Steps analyzed: 490052
+      Step range: [0.0000, 8.7760]
+      Mean step: 0.0178 ? 0.3060
+      Median step: 0.0030 (IQR: 0.0010-0.0060)
+      Anomaly threshold: 1.5480
+      Anomalies: 622 (0.1269% of steps)
+    current_load (A):
+      Steps analyzed: 490052
+      Step range: [0.0000, 16.0343]
+      Mean step: 0.0254 ? 0.3756
+      Median step: 0.0052 (IQR: 0.0010-0.0143)
+      Anomaly threshold: 1.9033
+      Anomalies: 622 (0.1269% of steps)
+    temperature_battery (C):
+      Steps analyzed: 3041083
+      Step range: [0.0000, 63.7790]
+      Mean step: 0.0200 ? 0.0946
+      Median step: 0.0090 (IQR: 0.0040-0.0230)
+      Anomaly threshold: 0.4930
+      Anomalies: 66 (0.0022% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 490052
+      Step range: [0.0000, 0.2600]
+      Mean step: 0.0142 ? 0.0276
+      Median step: 0.0100 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.1523
+      Anomalies: 4135 (0.8438% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 490052
+      Step range: [0.0000, 0.1300]
+      Mean step: 0.0068 ? 0.0112
+      Median step: 0.0000 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.0628
+      Anomalies: 3702 (0.7554% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 1: 0.000 ? 8.384V (?=8.384V, 302.5?)
+      2. At index 4327: 4.713 ? 5.166V (?=0.453V, 16.3?)
+      3. At index 4328: 5.166 ? 5.308V (?=0.142V, 5.1?)
+      4. At index 4938: 6.137 ? 6.325V (?=0.188V, 6.7?)
+      5. At index 8691: 8.429 ? 7.554V (?=0.875V, 31.5?)
+      6. At index 9251: 4.873 ? 5.553V (?=0.680V, 24.5?)
+      7. At index 13656: 8.420 ? 7.554V (?=0.866V, 31.2?)
+      8. At index 14213: 4.928 ? 5.599V (?=0.671V, 24.2?)
+      9. At index 18588: 8.412 ? 7.548V (?=0.864V, 31.1?)
+      10. At index 19139: 4.932 ? 5.612V (?=0.680V, 24.5?)
+    voltage_charger - rate anomalies:
+      1. At index 37358: rate=0.49V/s (threshold=0.33V/s)
+      2. At index 1562282: rate=1.00V/s (threshold=0.33V/s)
+    voltage_load - step anomalies:
+      1. At index 639: -0.026 ? 8.522V (?=8.548V, 27.9?)
+      2. At index 8689: 4.903 ? -0.026V (?=8.776V, 28.6?)
+      3. At index 9247: 4.967 ? 4.915V (?=8.765V, 28.6?)
+      4. At index 14208: 5.077 ? 5.015V (?=8.758V, 28.6?)
+      5. At index 19133: 5.134 ? 5.087V (?=8.753V, 28.5?)
+      6. At index 23998: 5.159 ? 5.118V (?=8.748V, 28.5?)
+      7. At index 28830: 5.221 ? 5.161V (?=8.742V, 28.5?)
+      8. At index 33608: 5.281 ? 5.233V (?=8.708V, 28.4?)
+      9. At index 37917: 5.271 ? 5.228V (?=8.731V, 28.5?)
+      10. At index 42925: 5.330 ? 5.295V (?=8.725V, 28.5?)
+    current_load - step anomalies:
+      1. At index 639: 0.152 ? 2.520A (?=2.368A, 6.2?)
+      2. At index 8690: 0.508 ? 0.547A (?=15.721A, 41.8?)
+      3. At index 13654: 16.144 ? 0.508A (?=15.710A, 41.8?)
+      4. At index 14209: 16.222 ? 16.189A (?=15.705A, 41.7?)
+      5. At index 19134: 16.236 ? 16.204A (?=15.713A, 41.8?)
+      6. At index 23999: 16.231 ? 16.225A (?=15.717A, 41.8?)
+      7. At index 28831: 16.235 ? 16.241A (?=15.732A, 41.8?)
+      8. At index 33609: 16.292 ? 16.281A (?=15.729A, 41.8?)
+      9. At index 37918: 16.296 ? 16.263A (?=15.710A, 41.8?)
+      10. At index 42926: 16.288 ? 16.310A (?=15.746A, 41.9?)
+    temperature_battery - step anomalies:
+      1. At index 1: 0.000 ? 22.026C (?=22.026C, 232.6?)
+      2. At index 37358: 26.923 ? 22.213C (?=4.710C, 49.6?)
+      3. At index 66178: 26.883 ? 0.000C (?=26.883C, 284.0?)
+      4. At index 66179: 0.000 ? 22.538C (?=22.538C, 238.1?)
+      5. At index 95473: 27.238 ? 22.343C (?=4.895C, 51.5?)
+      6. At index 117308: 27.935 ? 22.714C (?=5.221C, 55.0?)
+      7. At index 187898: 29.793 ? 23.013C (?=6.780C, 71.5?)
+      8. At index 226499: 45.016 ? 0.000C (?=45.016C, 475.7?)
+      9. At index 226501: 0.000 ? 22.500C (?=22.500C, 237.7?)
+      10. At index 239899: 29.652 ? 22.975C (?=6.677C, 70.4?)
+    temperature_mosfet - step anomalies:
+      1. At index 8693: 22.260 ? 22.380C (?=0.170C, 5.6?)
+      2. At index 8694: 22.380 ? 22.550C (?=0.190C, 6.4?)
+      3. At index 8695: 22.550 ? 22.740C (?=0.220C, 7.4?)
+      4. At index 8696: 22.740 ? 22.960C (?=0.230C, 7.8?)
+      5. At index 8697: 22.960 ? 23.190C (?=0.230C, 7.8?)
+      6. At index 8698: 23.190 ? 23.420C (?=0.230C, 7.8?)
+      7. At index 8699: 23.420 ? 23.650C (?=0.240C, 8.2?)
+      8. At index 8700: 23.650 ? 23.890C (?=0.230C, 7.8?)
+      9. At index 8701: 23.890 ? 24.120C (?=0.230C, 7.8?)
+      10. At index 8702: 24.120 ? 24.350C (?=0.220C, 7.4?)
+    temperature_mosfet - rate anomalies:
+      1. At index 8720: rate=0.15C/s (threshold=0.15C/s)
+      2. At index 8724: rate=0.15C/s (threshold=0.15C/s)
+      3. At index 8725: rate=0.16C/s (threshold=0.15C/s)
+      4. At index 13682: rate=0.15C/s (threshold=0.15C/s)
+      5. At index 13683: rate=0.15C/s (threshold=0.15C/s)
+    temperature_resistor - step anomalies:
+      1. At index 8702: 22.760 ? 22.820C (?=0.070C, 5.6?)
+      2. At index 8703: 22.820 ? 22.890C (?=0.070C, 5.6?)
+      3. At index 8704: 22.890 ? 22.960C (?=0.070C, 5.6?)
+      4. At index 8705: 22.960 ? 23.030C (?=0.070C, 5.6?)
+      5. At index 8706: 23.030 ? 23.100C (?=0.090C, 7.4?)
+      6. At index 8707: 23.100 ? 23.190C (?=0.080C, 6.5?)
+      7. At index 8708: 23.190 ? 23.270C (?=0.080C, 6.5?)
+      8. At index 8709: 23.270 ? 23.350C (?=0.080C, 6.5?)
+      9. At index 8710: 23.350 ? 23.430C (?=0.090C, 7.4?)
+      10. At index 8711: 23.430 ? 23.520C (?=0.090C, 7.4?)
+    temperature_resistor - rate anomalies:
+      1. At index 37363: rate=0.06C/s (threshold=0.06C/s)
+      2. At index 37365: rate=0.06C/s (threshold=0.06C/s)
+      3. At index 37366: rate=0.06C/s (threshold=0.06C/s)
+      4. At index 37417: rate=0.06C/s (threshold=0.06C/s)
+      5. At index 37418: rate=0.06C/s (threshold=0.06C/s)
+
+File: battery24.csv (199.36 MB)
+  Rows: 3,285,619
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 3285618
+      Step range: [0.0000, 9.2720]
+      Mean step: 0.0019 ? 0.0305
+      Median step: 0.0010 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.1543
+      Anomalies: 2543 (0.0774% of steps)
+    voltage_load (V):
+      Steps analyzed: 489110
+      Step range: [0.0000, 8.7690]
+      Mean step: 0.0201 ? 0.3064
+      Median step: 0.0030 (IQR: 0.0010-0.0070)
+      Anomaly threshold: 1.5519
+      Anomalies: 622 (0.1272% of steps)
+    current_load (A):
+      Steps analyzed: 489110
+      Step range: [0.0000, 16.1346]
+      Mean step: 0.0270 ? 0.3727
+      Median step: 0.0056 (IQR: 0.0010-0.0150)
+      Anomaly threshold: 1.8904
+      Anomalies: 622 (0.1272% of steps)
+    temperature_battery (C):
+      Steps analyzed: 3285618
+      Step range: [0.0000, 93.8040]
+      Mean step: 0.0213 ? 0.1279
+      Median step: 0.0090 (IQR: 0.0040-0.0240)
+      Anomaly threshold: 0.6609
+      Anomalies: 673 (0.0205% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 489110
+      Step range: [0.0000, 0.2900]
+      Mean step: 0.0133 ? 0.0260
+      Median step: 0.0100 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.1434
+      Anomalies: 5049 (1.0323% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 489110
+      Step range: [0.0000, 0.1200]
+      Mean step: 0.0071 ? 0.0132
+      Median step: 0.0000 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.0733
+      Anomalies: 5115 (1.0458% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 1: 0.000 ? 8.415V (?=8.415V, 276.0?)
+      2. At index 5699: 4.728 ? 5.183V (?=0.455V, 14.9?)
+      3. At index 6310: 6.113 ? 6.306V (?=0.193V, 6.3?)
+      4. At index 10031: 8.434 ? 7.522V (?=0.912V, 29.9?)
+      5. At index 10583: 4.903 ? 5.615V (?=0.712V, 23.3?)
+      6. At index 14949: 8.423 ? 7.514V (?=0.909V, 29.8?)
+      7. At index 15499: 4.908 ? 5.628V (?=0.720V, 23.6?)
+      8. At index 19816: 8.415 ? 7.504V (?=0.911V, 29.8?)
+      9. At index 20356: 4.902 ? 5.618V (?=0.716V, 23.4?)
+      10. At index 25538: 8.390 ? 7.446V (?=0.944V, 30.9?)
+    voltage_load - step anomalies:
+      1. At index 2064: -0.026 ? 8.546V (?=8.572V, 27.9?)
+      2. At index 10029: 4.926 ? -0.026V (?=8.769V, 28.6?)
+      3. At index 10579: 5.020 ? 4.955V (?=8.757V, 28.5?)
+      4. At index 15494: 5.081 ? 5.031V (?=8.749V, 28.5?)
+      5. At index 20350: 5.133 ? 5.087V (?=8.724V, 28.4?)
+      6. At index 26071: 5.167 ? 5.120V (?=8.735V, 28.4?)
+      7. At index 30908: 5.195 ? 5.141V (?=8.729V, 28.4?)
+      8. At index 35648: 5.244 ? 5.202V (?=8.697V, 28.3?)
+      9. At index 42272: 5.287 ? 5.261V (?=8.719V, 28.4?)
+      10. At index 46838: 5.354 ? 5.320V (?=8.712V, 28.4?)
+    current_load - step anomalies:
+      1. At index 2064: 0.152 ? 2.523A (?=2.371A, 6.3?)
+      2. At index 10030: 0.514 ? 0.555A (?=15.771A, 42.2?)
+      3. At index 14947: 15.846 ? 0.516A (?=15.756A, 42.2?)
+      4. At index 15495: 15.899 ? 15.836A (?=15.760A, 42.2?)
+      5. At index 20351: 15.949 ? 15.884A (?=15.787A, 42.3?)
+      6. At index 26072: 15.971 ? 15.942A (?=15.784A, 42.3?)
+      7. At index 30909: 15.986 ? 15.900A (?=15.783A, 42.3?)
+      8. At index 35649: 16.007 ? 15.952A (?=15.792A, 42.3?)
+      9. At index 42273: 16.041 ? 16.017A (?=15.796A, 42.3?)
+      10. At index 46839: 16.052 ? 16.066A (?=15.791A, 42.3?)
+    temperature_battery - step anomalies:
+      1. At index 1: 0.000 ? 23.090C (?=23.090C, 180.3?)
+      2. At index 321: 22.152 ? 23.001C (?=0.849C, 6.5?)
+      3. At index 2671: 24.048 ? -69.756C (?=93.804C, 733.2?)
+      4. At index 2672: -69.756 ? -68.996C (?=0.760C, 5.8?)
+      5. At index 2674: -69.276 ? -68.188C (?=1.088C, 8.3?)
+      6. At index 2676: -68.812 ? -67.259C (?=1.553C, 12.0?)
+      7. At index 2677: -67.259 ? -69.089C (?=1.830C, 14.1?)
+      8. At index 2680: -68.100 ? -69.089C (?=0.989C, 7.6?)
+      9. At index 2683: -68.996 ? -67.423C (?=1.573C, 12.1?)
+      10. At index 2684: -67.423 ? -68.541C (?=1.118C, 8.6?)
+    temperature_mosfet - step anomalies:
+      1. At index 10033: 22.570 ? 22.690C (?=0.180C, 6.4?)
+      2. At index 10034: 22.690 ? 22.870C (?=0.200C, 7.2?)
+      3. At index 10035: 22.870 ? 23.070C (?=0.210C, 7.6?)
+      4. At index 10036: 23.070 ? 23.280C (?=0.220C, 7.9?)
+      5. At index 10037: 23.280 ? 23.500C (?=0.240C, 8.7?)
+      6. At index 10038: 23.500 ? 23.740C (?=0.240C, 8.7?)
+      7. At index 10039: 23.740 ? 23.980C (?=0.230C, 8.3?)
+      8. At index 10040: 23.980 ? 24.210C (?=0.230C, 8.3?)
+      9. At index 10041: 24.210 ? 24.440C (?=0.230C, 8.3?)
+      10. At index 10042: 24.440 ? 24.670C (?=0.220C, 7.9?)
+    temperature_mosfet - rate anomalies:
+      1. At index 10062: rate=0.14C/s (threshold=0.14C/s)
+      2. At index 10064: rate=0.14C/s (threshold=0.14C/s)
+      3. At index 14980: rate=0.14C/s (threshold=0.14C/s)
+      4. At index 74399: rate=0.15C/s (threshold=0.14C/s)
+      5. At index 74403: rate=0.15C/s (threshold=0.14C/s)
+    temperature_resistor - step anomalies:
+      1. At index 10042: 23.220 ? 23.280C (?=0.080C, 5.5?)
+      2. At index 10044: 23.360 ? 23.430C (?=0.080C, 5.5?)
+      3. At index 10045: 23.430 ? 23.510C (?=0.080C, 5.5?)
+      4. At index 10046: 23.510 ? 23.590C (?=0.090C, 6.3?)
+      5. At index 10047: 23.590 ? 23.680C (?=0.080C, 5.5?)
+      6. At index 10048: 23.680 ? 23.760C (?=0.090C, 6.3?)
+      7. At index 10049: 23.760 ? 23.850C (?=0.090C, 6.3?)
+      8. At index 10050: 23.850 ? 23.940C (?=0.100C, 7.0?)
+      9. At index 10051: 23.940 ? 24.040C (?=0.080C, 5.5?)
+      10. At index 10052: 24.040 ? 24.120C (?=0.100C, 7.0?)
+    temperature_resistor - rate anomalies:
+      1. At index 82618: rate=0.07C/s (threshold=0.07C/s)
+      2. At index 82619: rate=0.07C/s (threshold=0.07C/s)
+      3. At index 82620: rate=0.07C/s (threshold=0.07C/s)
+      4. At index 82621: rate=0.07C/s (threshold=0.07C/s)
+      5. At index 82627: rate=0.07C/s (threshold=0.07C/s)
+
+File: battery25.csv (135.36 MB)
+  Rows: 2,169,910
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 2169909
+      Step range: [0.0000, 9.2500]
+      Mean step: 0.0019 ? 0.0394
+      Median step: 0.0010 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.1991
+      Anomalies: 1126 (0.0519% of steps)
+    voltage_load (V):
+      Steps analyzed: 341366
+      Step range: [0.0000, 8.7680]
+      Mean step: 0.0171 ? 0.3022
+      Median step: 0.0030 (IQR: 0.0010-0.0060)
+      Anomaly threshold: 1.5279
+      Anomalies: 453 (0.1327% of steps)
+    current_load (A):
+      Steps analyzed: 341366
+      Step range: [0.0000, 15.9973]
+      Mean step: 0.0240 ? 0.4189
+      Median step: 0.0043 (IQR: 0.0010-0.0130)
+      Anomaly threshold: 2.1184
+      Anomalies: 421 (0.1233% of steps)
+    temperature_battery (C):
+      Steps analyzed: 2169909
+      Step range: [0.0000, 116.1030]
+      Mean step: 0.0187 ? 0.2019
+      Median step: 0.0080 (IQR: 0.0040-0.0180)
+      Anomaly threshold: 1.0282
+      Anomalies: 118 (0.0054% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 341366
+      Step range: [0.0000, 0.4500]
+      Mean step: 0.0147 ? 0.0276
+      Median step: 0.0100 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.1526
+      Anomalies: 2737 (0.8018% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 341366
+      Step range: [0.0000, 0.1300]
+      Mean step: 0.0084 ? 0.0155
+      Median step: 0.0000 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.0857
+      Anomalies: 3537 (1.0361% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 2: 0.000 ? 8.421V (?=8.421V, 213.5?)
+      2. At index 8678: 4.703 ? 5.155V (?=0.452V, 11.4?)
+      3. At index 12956: 8.433 ? 7.546V (?=0.887V, 22.4?)
+      4. At index 13513: 4.867 ? 5.549V (?=0.682V, 17.2?)
+      5. At index 17818: 8.425 ? 7.535V (?=0.890V, 22.5?)
+      6. At index 18373: 4.890 ? 5.577V (?=0.687V, 17.4?)
+      7. At index 21535: 8.390 ? 8.112V (?=0.278V, 7.0?)
+      8. At index 26561: 8.343 ? 7.378V (?=0.965V, 24.4?)
+      9. At index 27127: 4.904 ? 5.589V (?=0.685V, 17.3?)
+      10. At index 31535: 8.412 ? 7.513V (?=0.899V, 22.7?)
+    voltage_charger - rate anomalies:
+      1. At index 1003247: rate=0.55V/s (threshold=0.46V/s)
+    voltage_load - step anomalies:
+      1. At index 5032: -0.026 ? 8.550V (?=8.576V, 28.3?)
+      2. At index 12954: 4.901 ? -0.026V (?=8.768V, 29.0?)
+      3. At index 13509: 4.985 ? 4.927V (?=8.760V, 28.9?)
+      4. At index 18368: 5.065 ? 5.021V (?=8.675V, 28.7?)
+      5. At index 27121: 5.137 ? 5.079V (?=8.746V, 28.9?)
+      6. At index 32095: 5.151 ? 5.099V (?=8.737V, 28.9?)
+      7. At index 36995: 5.194 ? 5.149V (?=8.733V, 28.8?)
+      8. At index 41876: 5.285 ? 5.218V (?=8.726V, 28.8?)
+      9. At index 46685: 5.296 ? 5.251V (?=8.721V, 28.8?)
+      10. At index 51455: 5.328 ? 5.274V (?=8.715V, 28.8?)
+    voltage_load - rate anomalies:
+      1. At index 593170: rate=1.49V/s (threshold=1.48V/s)
+      2. At index 668404: rate=1.50V/s (threshold=1.48V/s)
+      3. At index 1683441: rate=1.55V/s (threshold=1.48V/s)
+      4. At index 1939964: rate=1.53V/s (threshold=1.48V/s)
+      5. At index 1944939: rate=1.50V/s (threshold=1.48V/s)
+    current_load - step anomalies:
+      1. At index 5032: 0.152 ? 2.520A (?=2.368A, 5.6?)
+      2. At index 12955: 0.516 ? 0.554A (?=15.739A, 37.5?)
+      3. At index 17816: 15.588 ? 0.516A (?=15.741A, 37.5?)
+      4. At index 18369: 15.655 ? 15.597A (?=15.698A, 37.4?)
+      5. At index 27122: 15.694 ? 15.645A (?=15.770A, 37.6?)
+      6. At index 32096: 15.697 ? 15.595A (?=15.773A, 37.6?)
+      7. At index 36996: 15.724 ? 15.654A (?=15.785A, 37.6?)
+      8. At index 41877: 15.842 ? 15.743A (?=15.791A, 37.6?)
+      9. At index 46686: 15.837 ? 15.758A (?=15.748A, 37.5?)
+      10. At index 51456: 15.805 ? 15.839A (?=15.765A, 37.6?)
+    temperature_battery - step anomalies:
+      1. At index 2: 0.000 ? 22.477C (?=22.477C, 111.2?)
+      2. At index 9494: 25.482 ? -71.751C (?=97.233C, 481.5?)
+      3. At index 12344: -71.864 ? -90.191C (?=18.327C, 90.7?)
+      4. At index 12345: -90.191 ? -93.149C (?=2.958C, 14.6?)
+      5. At index 12346: -93.149 ? -94.608C (?=1.459C, 7.1?)
+      6. At index 12347: -94.608 ? -97.277C (?=2.669C, 13.1?)
+      7. At index 12348: -97.277 ? -99.553C (?=2.276C, 11.2?)
+      8. At index 12349: -99.553 ? -100.925C (?=1.372C, 6.7?)
+      9. At index 12350: -100.925 ? -102.531C (?=1.606C, 7.9?)
+      10. At index 12351: -102.531 ? -104.464C (?=1.933C, 9.5?)
+    temperature_mosfet - step anomalies:
+      1. At index 12958: 22.250 ? 22.370C (?=0.170C, 5.6?)
+      2. At index 12959: 22.370 ? 22.540C (?=0.200C, 6.7?)
+      3. At index 12960: 22.540 ? 22.740C (?=0.210C, 7.1?)
+      4. At index 12961: 22.740 ? 22.950C (?=0.230C, 7.8?)
+      5. At index 12962: 22.950 ? 23.180C (?=0.220C, 7.4?)
+      6. At index 12963: 23.180 ? 23.400C (?=0.240C, 8.2?)
+      7. At index 12964: 23.400 ? 23.640C (?=0.230C, 7.8?)
+      8. At index 12965: 23.640 ? 23.870C (?=0.230C, 7.8?)
+      9. At index 12966: 23.870 ? 24.100C (?=0.220C, 7.4?)
+      10. At index 12967: 24.100 ? 24.320C (?=0.230C, 7.8?)
+    temperature_mosfet - rate anomalies:
+      1. At index 12982: rate=0.15C/s (threshold=0.15C/s)
+      2. At index 12984: rate=0.15C/s (threshold=0.15C/s)
+      3. At index 12985: rate=0.15C/s (threshold=0.15C/s)
+      4. At index 17844: rate=0.15C/s (threshold=0.15C/s)
+      5. At index 17845: rate=0.15C/s (threshold=0.15C/s)
+    temperature_resistor - step anomalies:
+      1. At index 12969: 22.900 ? 22.980C (?=0.090C, 5.3?)
+      2. At index 12971: 23.070 ? 23.150C (?=0.090C, 5.3?)
+      3. At index 12972: 23.150 ? 23.240C (?=0.090C, 5.3?)
+      4. At index 12973: 23.240 ? 23.330C (?=0.090C, 5.3?)
+      5. At index 12974: 23.330 ? 23.420C (?=0.100C, 5.9?)
+      6. At index 12975: 23.420 ? 23.520C (?=0.090C, 5.3?)
+      7. At index 12976: 23.520 ? 23.610C (?=0.100C, 5.9?)
+      8. At index 12977: 23.610 ? 23.710C (?=0.090C, 5.3?)
+      9. At index 12978: 23.710 ? 23.800C (?=0.100C, 5.9?)
+      10. At index 12979: 23.800 ? 23.900C (?=0.100C, 5.9?)
+    temperature_resistor - rate anomalies:
+      1. At index 1673905: rate=0.08C/s (threshold=0.08C/s)
+      2. At index 1673906: rate=0.08C/s (threshold=0.08C/s)
+      3. At index 1673907: rate=0.08C/s (threshold=0.08C/s)
+      4. At index 1673908: rate=0.08C/s (threshold=0.08C/s)
+      5. At index 1673909: rate=0.08C/s (threshold=0.08C/s)
+
+File: battery32.csv (105.41 MB)
+  Rows: 1,829,938
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 1829937
+      Step range: [0.0000, 9.2310]
+      Mean step: 0.0018 ? 0.0463
+      Median step: 0.0010 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.2335
+      Anomalies: 773 (0.0422% of steps)
+    voltage_load (V):
+      Steps analyzed: 212856
+      Step range: [0.0000, 8.7440]
+      Mean step: 0.0224 ? 0.3522
+      Median step: 0.0030 (IQR: 0.0010-0.0070)
+      Anomaly threshold: 1.7832
+      Anomalies: 357 (0.1677% of steps)
+    current_load (A):
+      Steps analyzed: 212856
+      Step range: [0.0000, 16.3356]
+      Mean step: 0.0375 ? 0.6004
+      Median step: 0.0055 (IQR: 0.0010-0.0184)
+      Anomaly threshold: 3.0394
+      Anomalies: 339 (0.1593% of steps)
+    temperature_battery (C):
+      Steps analyzed: 1829937
+      Step range: [0.0000, 43.7380]
+      Mean step: 0.0229 ? 0.1197
+      Median step: 0.0080 (IQR: 0.0040-0.0220)
+      Anomaly threshold: 0.6214
+      Anomalies: 45 (0.0025% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 212856
+      Step range: [0.0000, 0.2700]
+      Mean step: 0.0188 ? 0.0332
+      Median step: 0.0100 (IQR: 0.0000-0.0200)
+      Anomaly threshold: 0.1847
+      Anomalies: 1880 (0.8832% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 212856
+      Step range: [0.0000, 0.1200]
+      Mean step: 0.0119 ? 0.0177
+      Median step: 0.0100 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.1005
+      Anomalies: 178 (0.0836% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 1: 0.000 ? 8.345V (?=8.345V, 180.0?)
+      2. At index 6346: 4.719 ? 5.203V (?=0.484V, 10.4?)
+      3. At index 11035: 8.407 ? 7.453V (?=0.954V, 20.5?)
+      4. At index 11590: 4.907 ? 5.657V (?=0.750V, 16.1?)
+      5. At index 15921: 8.407 ? 7.485V (?=0.922V, 19.9?)
+      6. At index 16470: 4.871 ? 5.623V (?=0.752V, 16.2?)
+      7. At index 20768: 8.401 ? 7.477V (?=0.924V, 19.9?)
+      8. At index 21304: 4.922 ? 5.669V (?=0.747V, 16.1?)
+      9. At index 25535: 8.395 ? 7.468V (?=0.927V, 20.0?)
+      10. At index 26075: 4.913 ? 5.661V (?=0.748V, 16.1?)
+    voltage_load - step anomalies:
+      1. At index 2760: -0.026 ? 8.477V (?=8.503V, 24.1?)
+      2. At index 11033: 4.902 ? -0.026V (?=8.744V, 24.8?)
+      3. At index 11586: 5.006 ? 4.932V (?=8.743V, 24.8?)
+      4. At index 16465: 5.035 ? 4.985V (?=8.737V, 24.7?)
+      5. At index 21298: 5.116 ? 5.072V (?=8.730V, 24.7?)
+      6. At index 26068: 5.172 ? 5.109V (?=8.726V, 24.7?)
+      7. At index 30809: 5.189 ? 5.148V (?=8.719V, 24.7?)
+      8. At index 35476: 5.246 ? 5.204V (?=8.715V, 24.7?)
+      9. At index 40133: 5.296 ? 5.270V (?=8.710V, 24.7?)
+      10. At index 44700: 5.322 ? 5.304V (?=8.705V, 24.7?)
+    current_load - step anomalies:
+      1. At index 11034: 0.377 ? 0.405A (?=15.828A, 26.3?)
+      2. At index 15919: 16.071 ? 0.377A (?=15.820A, 26.3?)
+      3. At index 16466: 16.194 ? 16.079A (?=15.851A, 26.3?)
+      4. At index 21299: 16.217 ? 16.188A (?=15.837A, 26.3?)
+      5. At index 26069: 16.236 ? 16.212A (?=15.840A, 26.3?)
+      6. At index 30810: 16.309 ? 16.243A (?=15.844A, 26.3?)
+      7. At index 35477: 16.274 ? 16.217A (?=15.836A, 26.3?)
+      8. At index 40134: 16.316 ? 16.290A (?=15.862A, 26.4?)
+      9. At index 44701: 16.346 ? 16.290A (?=15.848A, 26.3?)
+      10. At index 49253: 16.299 ? 16.358A (?=15.843A, 26.3?)
+    temperature_battery - step anomalies:
+      1. At index 1: 0.000 ? 22.813C (?=22.813C, 190.4?)
+      2. At index 68902: 37.427 ? 0.000C (?=37.427C, 312.5?)
+      3. At index 68906: 0.000 ? 22.959C (?=22.959C, 191.6?)
+      4. At index 73020: 24.872 ? 22.507C (?=2.365C, 19.6?)
+      5. At index 79461: 27.991 ? 23.220C (?=4.771C, 39.7?)
+      6. At index 146966: 25.198 ? 22.790C (?=2.408C, 19.9?)
+      7. At index 163743: 28.980 ? 23.017C (?=5.963C, 49.6?)
+      8. At index 164524: 25.966 ? 22.335C (?=3.631C, 30.1?)
+      9. At index 232225: 29.113 ? 23.270C (?=5.843C, 48.6?)
+      10. At index 299489: 26.616 ? 0.000C (?=26.616C, 222.1?)
+    temperature_mosfet - step anomalies:
+      1. At index 11039: 24.010 ? 24.190C (?=0.200C, 5.5?)
+      2. At index 11040: 24.190 ? 24.390C (?=0.210C, 5.8?)
+      3. At index 11041: 24.390 ? 24.600C (?=0.210C, 5.8?)
+      4. At index 11042: 24.600 ? 24.810C (?=0.210C, 5.8?)
+      5. At index 11043: 24.810 ? 25.020C (?=0.210C, 5.8?)
+      6. At index 11044: 25.020 ? 25.230C (?=0.210C, 5.8?)
+      7. At index 11045: 25.230 ? 25.440C (?=0.200C, 5.5?)
+      8. At index 11046: 25.440 ? 25.640C (?=0.200C, 5.5?)
+      9. At index 11047: 25.640 ? 25.840C (?=0.200C, 5.5?)
+      10. At index 11049: 26.040 ? 26.220C (?=0.190C, 5.2?)
+    temperature_mosfet - rate anomalies:
+      1. At index 11048: rate=0.18C/s (threshold=0.18C/s)
+      2. At index 11053: rate=0.18C/s (threshold=0.18C/s)
+      3. At index 15939: rate=0.18C/s (threshold=0.18C/s)
+      4. At index 15940: rate=0.18C/s (threshold=0.18C/s)
+      5. At index 25550: rate=0.18C/s (threshold=0.18C/s)
+    temperature_resistor - step anomalies:
+      1. At index 15955: 25.210 ? 25.310C (?=0.110C, 5.5?)
+      2. At index 20787: 23.800 ? 23.890C (?=0.110C, 5.5?)
+      3. At index 20790: 24.070 ? 24.180C (?=0.110C, 5.5?)
+      4. At index 20794: 24.480 ? 24.580C (?=0.120C, 6.1?)
+      5. At index 30320: 24.500 ? 24.600C (?=0.110C, 5.5?)
+      6. At index 34988: 23.950 ? 24.050C (?=0.110C, 5.5?)
+      7. At index 34990: 24.150 ? 24.240C (?=0.110C, 5.5?)
+      8. At index 39646: 24.160 ? 24.250C (?=0.110C, 5.5?)
+      9. At index 39651: 24.650 ? 24.750C (?=0.120C, 6.1?)
+      10. At index 44210: 23.240 ? 23.320C (?=0.110C, 5.5?)
+    temperature_resistor - rate anomalies:
+      1. At index 11062: rate=0.10C/s (threshold=0.10C/s)
+      2. At index 11072: rate=0.10C/s (threshold=0.10C/s)
+      3. At index 15941: rate=0.10C/s (threshold=0.10C/s)
+      4. At index 15946: rate=0.10C/s (threshold=0.10C/s)
+      5. At index 15947: rate=0.10C/s (threshold=0.10C/s)
+
+File: battery33.csv (140.6 MB)
+  Rows: 2,353,426
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 2353425
+      Step range: [0.0000, 12.0810]
+      Mean step: 0.0017 ? 0.0320
+      Median step: 0.0010 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.1617
+      Anomalies: 1423 (0.0605% of steps)
+    voltage_load (V):
+      Steps analyzed: 296105
+      Step range: [0.0000, 8.7520]
+      Mean step: 0.0224 ? 0.3441
+      Median step: 0.0030 (IQR: 0.0010-0.0080)
+      Anomaly threshold: 1.7429
+      Anomalies: 474 (0.1601% of steps)
+    current_load (A):
+      Steps analyzed: 296105
+      Step range: [0.0000, 16.1115]
+      Mean step: 0.0321 ? 0.5418
+      Median step: 0.0043 (IQR: 0.0010-0.0151)
+      Anomaly threshold: 2.7411
+      Anomalies: 450 (0.152% of steps)
+    temperature_battery (C):
+      Steps analyzed: 2353425
+      Step range: [0.0000, 47.1910]
+      Mean step: 0.0193 ? 0.1064
+      Median step: 0.0080 (IQR: 0.0040-0.0170)
+      Anomaly threshold: 0.5512
+      Anomalies: 55 (0.0023% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 296105
+      Step range: [0.0000, 0.4300]
+      Mean step: 0.0169 ? 0.0306
+      Median step: 0.0100 (IQR: 0.0000-0.0200)
+      Anomaly threshold: 0.1698
+      Anomalies: 2642 (0.8923% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 296105
+      Step range: [0.0000, 0.1200]
+      Mean step: 0.0109 ? 0.0154
+      Median step: 0.0100 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.0880
+      Anomalies: 1543 (0.5211% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 1: 0.000 ? 8.378V (?=8.378V, 261.8?)
+      2. At index 5744: 4.740 ? 5.203V (?=0.463V, 14.4?)
+      3. At index 6369: 6.125 ? 6.328V (?=0.203V, 6.3?)
+      4. At index 10164: 8.416 ? 7.460V (?=0.956V, 29.8?)
+      5. At index 10725: 4.884 ? 5.625V (?=0.741V, 23.1?)
+      6. At index 15169: 8.406 ? 7.472V (?=0.934V, 29.1?)
+      7. At index 15729: 4.924 ? 5.669V (?=0.745V, 23.2?)
+      8. At index 20125: 8.400 ? 7.464V (?=0.936V, 29.2?)
+      9. At index 20674: 4.900 ? 5.659V (?=0.759V, 23.7?)
+      10. At index 25008: 8.394 ? 7.454V (?=0.940V, 29.3?)
+    voltage_charger - rate anomalies:
+      1. At index 1062928: rate=0.42V/s (threshold=0.39V/s)
+    voltage_load - step anomalies:
+      1. At index 2033: -0.026 ? 8.504V (?=8.530V, 24.7?)
+      2. At index 10162: 4.923 ? -0.026V (?=8.752V, 25.4?)
+      3. At index 10721: 4.978 ? 4.916V (?=8.742V, 25.3?)
+      4. At index 15724: 5.066 ? 5.020V (?=8.736V, 25.3?)
+      5. At index 20668: 5.105 ? 5.056V (?=8.730V, 25.3?)
+      6. At index 25548: 5.154 ? 5.116V (?=8.698V, 25.2?)
+      7. At index 29901: 5.159 ? 5.121V (?=8.716V, 25.3?)
+      8. At index 34964: 5.211 ? 5.169V (?=8.710V, 25.2?)
+      9. At index 39953: 5.234 ? 5.204V (?=8.707V, 25.2?)
+      10. At index 44931: 5.290 ? 5.254V (?=8.703V, 25.2?)
+    current_load - step anomalies:
+      1. At index 10163: 0.499 ? 0.537A (?=15.779A, 29.1?)
+      2. At index 15167: 15.981 ? 0.499A (?=15.799A, 29.1?)
+      3. At index 15725: 16.058 ? 16.027A (?=15.786A, 29.1?)
+      4. At index 20669: 16.051 ? 16.080A (?=15.808A, 29.1?)
+      5. At index 25549: 16.110 ? 16.073A (?=15.756A, 29.0?)
+      6. At index 29902: 16.176 ? 16.113A (?=15.790A, 29.1?)
+      7. At index 34965: 16.169 ? 16.132A (?=15.756A, 29.0?)
+      8. At index 39954: 16.181 ? 16.167A (?=15.773A, 29.1?)
+      9. At index 44932: 16.211 ? 16.189A (?=15.779A, 29.1?)
+      10. At index 49844: 16.190 ? 16.256A (?=15.759A, 29.0?)
+    temperature_battery - step anomalies:
+      1. At index 1: 0.000 ? 22.599C (?=22.599C, 212.2?)
+      2. At index 29330: 27.868 ? 22.975C (?=4.893C, 45.8?)
+      3. At index 67931: 27.749 ? 0.000C (?=27.749C, 260.6?)
+      4. At index 67933: 0.000 ? 22.580C (?=22.580C, 212.1?)
+      5. At index 81331: 29.519 ? 23.040C (?=6.479C, 60.7?)
+      6. At index 87042: 36.492 ? 22.412C (?=14.080C, 132.2?)
+      7. At index 157996: 25.743 ? 0.000C (?=25.743C, 241.8?)
+      8. At index 157997: 0.000 ? 23.040C (?=23.040C, 216.4?)
+      9. At index 168184: 71.942 ? 24.751C (?=47.191C, 443.4?)
+      10. At index 237027: 26.974 ? 23.320C (?=3.654C, 34.2?)
+    temperature_mosfet - step anomalies:
+      1. At index 10167: 22.950 ? 23.110C (?=0.190C, 5.7?)
+      2. At index 10168: 23.110 ? 23.300C (?=0.200C, 6.0?)
+      3. At index 10169: 23.300 ? 23.500C (?=0.220C, 6.6?)
+      4. At index 10170: 23.500 ? 23.720C (?=0.220C, 6.6?)
+      5. At index 10171: 23.720 ? 23.940C (?=0.220C, 6.6?)
+      6. At index 10172: 23.940 ? 24.160C (?=0.230C, 7.0?)
+      7. At index 10173: 24.160 ? 24.390C (?=0.220C, 6.6?)
+      8. At index 10174: 24.390 ? 24.610C (?=0.220C, 6.6?)
+      9. At index 10175: 24.610 ? 24.830C (?=0.220C, 6.6?)
+      10. At index 10176: 24.830 ? 25.050C (?=0.210C, 6.3?)
+    temperature_mosfet - rate anomalies:
+      1. At index 15170: rate=0.17C/s (threshold=0.17C/s)
+      2. At index 29350: rate=0.17C/s (threshold=0.17C/s)
+      3. At index 29351: rate=0.17C/s (threshold=0.17C/s)
+      4. At index 90544: rate=0.17C/s (threshold=0.17C/s)
+      5. At index 90547: rate=0.17C/s (threshold=0.17C/s)
+    temperature_resistor - step anomalies:
+      1. At index 10182: 23.780 ? 23.860C (?=0.090C, 5.1?)
+      2. At index 10184: 23.950 ? 24.030C (?=0.090C, 5.1?)
+      3. At index 10185: 24.030 ? 24.120C (?=0.090C, 5.1?)
+      4. At index 10186: 24.120 ? 24.210C (?=0.090C, 5.1?)
+      5. At index 10188: 24.300 ? 24.380C (?=0.100C, 5.8?)
+      6. At index 10189: 24.380 ? 24.480C (?=0.090C, 5.1?)
+      7. At index 10190: 24.480 ? 24.570C (?=0.090C, 5.1?)
+      8. At index 10191: 24.570 ? 24.660C (?=0.100C, 5.8?)
+      9. At index 10192: 24.660 ? 24.760C (?=0.090C, 5.1?)
+      10. At index 10193: 24.760 ? 24.850C (?=0.100C, 5.8?)
+
+File: battery53.csv (67.32 MB)
+  Rows: 1,139,972
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 1139971
+      Step range: [0.0000, 9.1990]
+      Mean step: 0.0016 ? 0.0415
+      Median step: 0.0010 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.2090
+      Anomalies: 449 (0.0394% of steps)
+    voltage_load (V):
+      Steps analyzed: 136950
+      Step range: [0.0000, 8.8520]
+      Mean step: 0.0222 ? 0.3418
+      Median step: 0.0030 (IQR: 0.0010-0.0080)
+      Anomaly threshold: 1.7313
+      Anomalies: 209 (0.1526% of steps)
+    current_load (A):
+      Steps analyzed: 136950
+      Step range: [0.0000, 16.4708]
+      Mean step: 0.0347 ? 0.5683
+      Median step: 0.0052 (IQR: 0.0010-0.0178)
+      Anomaly threshold: 2.8765
+      Anomalies: 198 (0.1446% of steps)
+    temperature_battery (C):
+      Steps analyzed: 1139971
+      Step range: [0.0000, 50.2740]
+      Mean step: 0.0222 ? 0.1175
+      Median step: 0.0080 (IQR: 0.0040-0.0200)
+      Anomaly threshold: 0.6096
+      Anomalies: 27 (0.0024% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 136950
+      Step range: [0.0000, 0.2700]
+      Mean step: 0.0205 ? 0.0387
+      Median step: 0.0100 (IQR: 0.0000-0.0200)
+      Anomaly threshold: 0.2139
+      Anomalies: 829 (0.6053% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 136950
+      Step range: [0.0000, 0.1200]
+      Mean step: 0.0137 ? 0.0202
+      Median step: 0.0100 (IQR: 0.0000-0.0200)
+      Anomaly threshold: 0.1146
+      Anomalies: 3 (0.0022% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 4: 0.000 ? 8.384V (?=8.384V, 202.1?)
+      2. At index 8641: 4.734 ? 5.214V (?=0.480V, 11.5?)
+      3. At index 13501: 8.506 ? 7.635V (?=0.871V, 21.0?)
+      4. At index 14121: 4.823 ? 5.538V (?=0.715V, 17.2?)
+      5. At index 18998: 8.357 ? 7.509V (?=0.848V, 20.4?)
+      6. At index 19595: 4.840 ? 5.554V (?=0.714V, 17.2?)
+      7. At index 24388: 8.376 ? 7.511V (?=0.865V, 20.8?)
+      8. At index 24973: 4.826 ? 5.542V (?=0.716V, 17.2?)
+      9. At index 29752: 8.384 ? 7.528V (?=0.856V, 20.6?)
+      10. At index 30342: 4.849 ? 5.562V (?=0.713V, 17.1?)
+    voltage_charger - rate anomalies:
+      1. At index 1066546: rate=0.66V/s (threshold=0.61V/s)
+    voltage_load - step anomalies:
+      1. At index 5053: -0.026 ? 8.514V (?=8.540V, 24.9?)
+      2. At index 13499: 4.921 ? -0.026V (?=8.852V, 25.8?)
+      3. At index 14117: 4.961 ? 4.902V (?=8.697V, 25.4?)
+      4. At index 19590: 5.046 ? 4.984V (?=8.718V, 25.4?)
+      5. At index 24967: 5.083 ? 5.041V (?=8.725V, 25.5?)
+      6. At index 30335: 5.152 ? 5.103V (?=8.686V, 25.3?)
+      7. At index 35634: 5.234 ? 5.171V (?=8.680V, 25.3?)
+      8. At index 40886: 5.265 ? 5.222V (?=8.667V, 25.3?)
+      9. At index 46071: 5.299 ? 5.262V (?=8.815V, 25.7?)
+      10. At index 51180: 5.336 ? 5.308V (?=8.462V, 24.7?)
+    voltage_load - rate anomalies:
+      1. At index 1020544: rate=1.70V/s (threshold=1.68V/s)
+      2. At index 1062227: rate=1.72V/s (threshold=1.68V/s)
+      3. At index 1104959: rate=1.74V/s (threshold=1.68V/s)
+    current_load - step anomalies:
+      1. At index 13500: 0.384 ? 0.414A (?=14.182A, 24.9?)
+      2. At index 18996: 14.603 ? 0.384A (?=14.192A, 24.9?)
+      3. At index 19591: 14.698 ? 14.653A (?=14.205A, 24.9?)
+      4. At index 24968: 14.741 ? 14.711A (?=14.219A, 25.0?)
+      5. At index 30336: 14.756 ? 14.792A (?=14.203A, 24.9?)
+      6. At index 35635: 14.705 ? 14.770A (?=14.221A, 25.0?)
+      7. At index 40887: 14.827 ? 14.752A (?=14.237A, 25.0?)
+      8. At index 46072: 14.809 ? 14.836A (?=14.237A, 25.0?)
+      9. At index 51181: 14.831 ? 14.815A (?=14.272A, 25.1?)
+      10. At index 56219: 14.799 ? 14.840A (?=14.257A, 25.0?)
+    temperature_battery - step anomalies:
+      1. At index 4: 0.000 ? 22.538C (?=22.538C, 191.7?)
+      2. At index 85593: 24.558 ? 22.963C (?=1.595C, 13.4?)
+      3. At index 109352: 27.006 ? 22.967C (?=4.039C, 34.2?)
+      4. At index 151285: 25.564 ? 0.000C (?=25.564C, 217.4?)
+      5. At index 151289: 0.000 ? 23.259C (?=23.259C, 197.8?)
+      6. At index 194992: 29.891 ? 22.844C (?=7.047C, 59.8?)
+      7. At index 272637: 30.907 ? 0.000C (?=30.907C, 262.9?)
+      8. At index 272640: 0.000 ? 23.578C (?=23.578C, 200.5?)
+      9. At index 352499: 22.871 ? 0.000C (?=22.871C, 194.5?)
+      10. At index 352500: 0.000 ? 22.902C (?=22.902C, 194.8?)
+    temperature_mosfet - step anomalies:
+      1. At index 13506: 24.190 ? 24.400C (?=0.220C, 5.2?)
+      2. At index 13507: 24.400 ? 24.620C (?=0.220C, 5.2?)
+      3. At index 13508: 24.620 ? 24.840C (?=0.220C, 5.2?)
+      4. At index 13509: 24.840 ? 25.060C (?=0.220C, 5.2?)
+      5. At index 13510: 25.060 ? 25.280C (?=0.220C, 5.2?)
+      6. At index 13511: 25.280 ? 25.500C (?=0.220C, 5.2?)
+      7. At index 19003: 24.000 ? 24.210C (?=0.220C, 5.2?)
+      8. At index 19004: 24.210 ? 24.420C (?=0.220C, 5.2?)
+      9. At index 19005: 24.420 ? 24.640C (?=0.230C, 5.4?)
+      10. At index 19006: 24.640 ? 24.860C (?=0.220C, 5.2?)
+    temperature_mosfet - rate anomalies:
+      1. At index 13505: rate=0.21C/s (threshold=0.21C/s)
+      2. At index 13512: rate=0.21C/s (threshold=0.21C/s)
+      3. At index 13513: rate=0.21C/s (threshold=0.21C/s)
+      4. At index 19001: rate=0.21C/s (threshold=0.21C/s)
+      5. At index 19002: rate=0.21C/s (threshold=0.21C/s)
+    temperature_resistor - step anomalies:
+      1. At index 989880: 30.530 ? 30.520C (?=0.120C, 5.3?)
+      2. At index 989883: 30.500 ? 30.510C (?=0.120C, 5.3?)
+      3. At index 1016312: 30.300 ? 30.310C (?=0.120C, 5.3?)
+    temperature_resistor - rate anomalies:
+      1. At index 5064: rate=0.11C/s (threshold=0.11C/s)
+      2. At index 889723: rate=0.11C/s (threshold=0.11C/s)
+
+FOLDER: second_life_batteries
+------------------------------------------------------------
+Typical step sizes in this folder:
+  voltage_charger: mean step 0.002V, std 0.0504V
+  voltage_load: mean step 0.0151V, std 0.2776V
+  current_load: mean step 0.018A, std 0.2305A
+  temperature_battery: mean step 0.0234C, std 0.1668C
+  temperature_mosfet: mean step 0.0099C, std 0.0176C
+  temperature_resistor: mean step 0.0042C, std 0.0059C
+
+
+File: battery13.csv (104.0 MB)
+  Rows: 1,736,149
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 1736148
+      Step range: [0.0000, 8.6140]
+      Mean step: 0.0022 ? 0.0549
+      Median step: 0.0010 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.2767
+      Anomalies: 757 (0.0436% of steps)
+    voltage_load (V):
+      Steps analyzed: 239915
+      Step range: [0.0000, 8.7520]
+      Mean step: 0.0218 ? 0.3137
+      Median step: 0.0030 (IQR: 0.0010-0.0080)
+      Anomaly threshold: 1.5901
+      Anomalies: 323 (0.1346% of steps)
+    current_load (A):
+      Steps analyzed: 239915
+      Step range: [0.0000, 9.3398]
+      Mean step: 0.0314 ? 0.3347
+      Median step: 0.0068 (IQR: 0.0010-0.0191)
+      Anomaly threshold: 1.7047
+      Anomalies: 323 (0.1346% of steps)
+    temperature_battery (C):
+      Steps analyzed: 1736148
+      Step range: [0.0000, 60.4780]
+      Mean step: 0.0207 ? 0.1923
+      Median step: 0.0090 (IQR: 0.0040-0.0240)
+      Anomaly threshold: 0.9823
+      Anomalies: 87 (0.005% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 239915
+      Step range: [0.0000, 0.1800]
+      Mean step: 0.0127 ? 0.0213
+      Median step: 0.0100 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.1192
+      Anomalies: 1606 (0.6694% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 239915
+      Step range: [0.0000, 0.0500]
+      Mean step: 0.0057 ? 0.0076
+      Median step: 0.0000 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.0435
+      Anomalies: 6 (0.0025% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 2: 0.000 ? 8.089V (?=8.089V, 147.2?)
+      2. At index 3308: 4.730 ? 5.193V (?=0.463V, 8.4?)
+      3. At index 3929: 5.950 ? 6.234V (?=0.284V, 5.1?)
+      4. At index 9806: 4.728 ? 5.205V (?=0.477V, 8.6?)
+      5. At index 10406: 5.923 ? 6.214V (?=0.291V, 5.3?)
+      6. At index 13506: 8.248 ? 7.594V (?=0.654V, 11.9?)
+      7. At index 14209: 4.821 ? 5.548V (?=0.727V, 13.2?)
+      8. At index 17888: 8.247 ? 7.595V (?=0.652V, 11.8?)
+      9. At index 18587: 4.845 ? 5.572V (?=0.727V, 13.2?)
+      10. At index 22192: 8.245 ? 7.588V (?=0.657V, 11.9?)
+    voltage_charger - rate anomalies:
+      1. At index 547119: rate=1.55V/s (threshold=0.69V/s)
+    voltage_load - step anomalies:
+      1. At index 619: -0.026 ? 8.168V (?=8.194V, 26.1?)
+      2. At index 7070: 4.914 ? -0.026V (?=8.371V, 26.6?)
+      3. At index 9802: 4.936 ? 4.914V (?=8.589V, 27.3?)
+      4. At index 14204: 5.037 ? 5.017V (?=8.587V, 27.3?)
+      5. At index 18581: 5.108 ? 5.056V (?=8.586V, 27.3?)
+      6. At index 22874: 5.109 ? 5.062V (?=8.584V, 27.3?)
+      7. At index 27167: 5.159 ? 5.123V (?=8.584V, 27.3?)
+      8. At index 31410: 5.187 ? 5.149V (?=8.583V, 27.3?)
+      9. At index 35636: 5.218 ? 5.183V (?=8.583V, 27.3?)
+      10. At index 39811: 5.275 ? 5.239V (?=8.583V, 27.3?)
+    current_load - step anomalies:
+      1. At index 619: 0.152 ? 2.523A (?=2.371A, 7.0?)
+      2. At index 7070: 2.521 ? 0.152A (?=2.369A, 7.0?)
+      3. At index 13504: 2.523 ? 0.440A (?=9.159A, 27.3?)
+      4. At index 14205: 10.041 ? 10.070A (?=9.165A, 27.3?)
+      5. At index 18582: 10.045 ? 10.039A (?=9.139A, 27.2?)
+      6. At index 22875: 9.997 ? 10.034A (?=9.145A, 27.2?)
+      7. At index 27168: 10.002 ? 9.997A (?=9.163A, 27.3?)
+      8. At index 31411: 10.076 ? 10.052A (?=9.123A, 27.2?)
+      9. At index 35637: 10.015 ? 10.015A (?=9.176A, 27.3?)
+      10. At index 39812: 10.015 ? 10.032A (?=9.174A, 27.3?)
+    temperature_battery - step anomalies:
+      1. At index 2: 0.000 ? 22.664C (?=22.664C, 117.7?)
+      2. At index 47370: 26.173 ? 0.000C (?=26.173C, 136.0?)
+      3. At index 47371: 0.000 ? 22.442C (?=22.442C, 116.6?)
+      4. At index 101904: 22.925 ? 0.000C (?=22.925C, 119.1?)
+      5. At index 101905: 0.000 ? 22.507C (?=22.507C, 116.9?)
+      6. At index 147550: 58.547 ? 0.000C (?=58.547C, 304.3?)
+      7. At index 147553: 0.000 ? 22.530C (?=22.530C, 117.0?)
+      8. At index 168284: 22.771 ? 0.000C (?=22.771C, 118.3?)
+      9. At index 168286: 0.000 ? 22.484C (?=22.484C, 116.8?)
+      10. At index 222171: 29.282 ? 0.000C (?=29.282C, 152.1?)
+    temperature_mosfet - step anomalies:
+      1. At index 13507: 22.300 ? 22.340C (?=0.120C, 5.0?)
+      2. At index 13508: 22.340 ? 22.420C (?=0.130C, 5.5?)
+      3. At index 13509: 22.420 ? 22.540C (?=0.140C, 6.0?)
+      4. At index 13510: 22.540 ? 22.670C (?=0.160C, 6.9?)
+      5. At index 13511: 22.670 ? 22.810C (?=0.150C, 6.4?)
+      6. At index 13512: 22.810 ? 22.970C (?=0.170C, 7.4?)
+      7. At index 13513: 22.970 ? 23.120C (?=0.150C, 6.4?)
+      8. At index 13514: 23.120 ? 23.290C (?=0.160C, 6.9?)
+      9. At index 13515: 23.290 ? 23.440C (?=0.150C, 6.4?)
+      10. At index 13516: 23.440 ? 23.600C (?=0.150C, 6.4?)
+    temperature_resistor - step anomalies:
+      1. At index 30771: 23.060 ? 23.090C (?=0.050C, 5.9?)
+      2. At index 43299: 22.880 ? 22.910C (?=0.050C, 5.9?)
+      3. At index 61257: 23.400 ? 23.430C (?=0.050C, 5.9?)
+      4. At index 209280: 26.450 ? 26.460C (?=0.050C, 5.9?)
+      5. At index 213238: 22.970 ? 22.960C (?=0.050C, 5.9?)
+      6. At index 981953: 26.270 ? 26.260C (?=0.050C, 5.9?)
+
+File: battery36.csv (208.51 MB)
+  Rows: 3,394,365
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 3394364
+      Step range: [0.0000, 9.2400]
+      Mean step: 0.0020 ? 0.0440
+      Median step: 0.0010 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.2221
+      Anomalies: 2309 (0.068% of steps)
+    voltage_load (V):
+      Steps analyzed: 629418
+      Step range: [0.0000, 8.5540]
+      Mean step: 0.0145 ? 0.2859
+      Median step: 0.0020 (IQR: 0.0010-0.0040)
+      Anomaly threshold: 1.4441
+      Anomalies: 714 (0.1134% of steps)
+    current_load (A):
+      Steps analyzed: 629418
+      Step range: [0.0000, 7.2801]
+      Mean step: 0.0174 ? 0.2382
+      Median step: 0.0041 (IQR: 0.0010-0.0111)
+      Anomaly threshold: 1.2086
+      Anomalies: 714 (0.1134% of steps)
+    temperature_battery (C):
+      Steps analyzed: 3394364
+      Step range: [0.0000, 35.3190]
+      Mean step: 0.0251 ? 0.1209
+      Median step: 0.0170 (IQR: 0.0050-0.0340)
+      Anomaly threshold: 0.6296
+      Anomalies: 110 (0.0032% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 629418
+      Step range: [0.0000, 0.1500]
+      Mean step: 0.0100 ? 0.0183
+      Median step: 0.0100 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.1015
+      Anomalies: 6077 (0.9655% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 629418
+      Step range: [0.0000, 0.0500]
+      Mean step: 0.0042 ? 0.0059
+      Median step: 0.0000 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.0335
+      Anomalies: 455 (0.0723% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 1: 0.000 ? 8.089V (?=8.089V, 183.8?)
+      2. At index 4203: 4.732 ? 5.179V (?=0.447V, 10.1?)
+      3. At index 4833: 5.940 ? 6.239V (?=0.299V, 6.7?)
+      4. At index 10977: 4.732 ? 5.196V (?=0.464V, 10.5?)
+      5. At index 11602: 5.953 ? 6.250V (?=0.297V, 6.7?)
+      6. At index 14812: 8.224 ? 7.674V (?=0.550V, 12.5?)
+      7. At index 15777: 4.792 ? 5.502V (?=0.710V, 16.1?)
+      8. At index 16398: 6.098 ? 6.323V (?=0.225V, 5.1?)
+      9. At index 19570: 8.224 ? 7.675V (?=0.549V, 12.4?)
+      10. At index 20531: 4.790 ? 5.504V (?=0.714V, 16.2?)
+    voltage_load - step anomalies:
+      1. At index 1377: -0.026 ? 8.135V (?=8.161V, 28.5?)
+      2. At index 8087: 4.902 ? -0.026V (?=8.328V, 29.1?)
+      3. At index 10973: 4.915 ? 4.902V (?=8.554V, 29.9?)
+      4. At index 15772: 4.970 ? 4.943V (?=8.554V, 29.9?)
+      5. At index 20525: 4.994 ? 4.967V (?=8.547V, 29.8?)
+      6. At index 25294: 5.012 ? 4.993V (?=8.511V, 29.7?)
+      7. At index 30787: 5.069 ? 5.028V (?=8.483V, 29.6?)
+      8. At index 38140: 5.094 ? 5.022V (?=8.551V, 29.9?)
+      9. At index 42666: 5.205 ? 5.051V (?=8.551V, 29.9?)
+      10. At index 47049: 5.119 ? 5.244V (?=8.538V, 29.8?)
+    current_load - step anomalies:
+      1. At index 1377: 0.152 ? 2.520A (?=2.368A, 9.9?)
+      2. At index 8087: 2.520 ? 0.152A (?=2.368A, 9.9?)
+      3. At index 14810: 2.520 ? 0.455A (?=7.200A, 30.1?)
+      4. At index 15773: 7.512 ? 7.532A (?=7.214A, 30.2?)
+      5. At index 20526: 7.487 ? 7.490A (?=7.201A, 30.2?)
+      6. At index 25295: 7.517 ? 7.540A (?=7.216A, 30.2?)
+      7. At index 30788: 7.519 ? 7.538A (?=7.186A, 30.1?)
+      8. At index 38141: 7.419 ? 7.525A (?=7.228A, 30.3?)
+      9. At index 42667: 7.376 ? 7.506A (?=7.199A, 30.1?)
+      10. At index 47050: 7.229 ? 7.843A (?=7.192A, 30.1?)
+    temperature_battery - step anomalies:
+      1. At index 1: 0.000 ? 21.511C (?=21.511C, 177.7?)
+      2. At index 48759: 31.778 ? 0.000C (?=31.778C, 262.6?)
+      3. At index 48760: 0.000 ? 21.667C (?=21.667C, 179.0?)
+      4. At index 80416: 33.588 ? 0.000C (?=33.588C, 277.6?)
+      5. At index 80418: 0.000 ? 22.220C (?=22.220C, 183.6?)
+      6. At index 126677: 33.344 ? 0.000C (?=33.344C, 275.6?)
+      7. At index 126678: 0.000 ? 22.136C (?=22.136C, 182.9?)
+      8. At index 129175: 25.015 ? 22.450C (?=2.565C, 21.0?)
+      9. At index 158814: 22.026 ? 23.689C (?=1.663C, 13.5?)
+      10. At index 164564: 22.940 ? 0.000C (?=22.940C, 189.5?)
+    temperature_mosfet - step anomalies:
+      1. At index 14814: 22.260 ? 22.330C (?=0.110C, 5.5?)
+      2. At index 14815: 22.330 ? 22.420C (?=0.130C, 6.6?)
+      3. At index 14816: 22.420 ? 22.530C (?=0.130C, 6.6?)
+      4. At index 14817: 22.530 ? 22.660C (?=0.130C, 6.6?)
+      5. At index 14818: 22.660 ? 22.790C (?=0.140C, 7.1?)
+      6. At index 14819: 22.790 ? 22.920C (?=0.130C, 6.6?)
+      7. At index 14820: 22.920 ? 23.060C (?=0.130C, 6.6?)
+      8. At index 14821: 23.060 ? 23.190C (?=0.130C, 6.6?)
+      9. At index 14822: 23.190 ? 23.320C (?=0.140C, 7.1?)
+      10. At index 14823: 23.320 ? 23.450C (?=0.130C, 6.6?)
+    temperature_mosfet - rate anomalies:
+      1. At index 14833: rate=0.10C/s (threshold=0.10C/s)
+      2. At index 14835: rate=0.10C/s (threshold=0.10C/s)
+      3. At index 14837: rate=0.10C/s (threshold=0.10C/s)
+      4. At index 14839: rate=0.10C/s (threshold=0.10C/s)
+      5. At index 14845: rate=0.10C/s (threshold=0.10C/s)
+    temperature_resistor - step anomalies:
+      1. At index 1378: 25.030 ? 24.990C (?=0.040C, 6.1?)
+      2. At index 1386: 24.780 ? 24.740C (?=0.040C, 6.1?)
+      3. At index 1393: 24.560 ? 24.520C (?=0.040C, 6.1?)
+      4. At index 1394: 24.520 ? 24.480C (?=0.040C, 6.1?)
+      5. At index 1404: 24.230 ? 24.190C (?=0.040C, 6.1?)
+      6. At index 20525: 24.260 ? 24.260C (?=0.040C, 6.1?)
+      7. At index 24365: 24.260 ? 25.550C (?=0.040C, 6.1?)
+      8. At index 24367: 25.510 ? 25.490C (?=0.040C, 6.1?)
+      9. At index 24373: 25.330 ? 25.300C (?=0.040C, 6.1?)
+      10. At index 25294: 24.330 ? 24.330C (?=0.040C, 6.1?)
+
+File: battery54.csv (122.32 MB)
+  Rows: 1,989,458
+  STEP STATISTICS:
+    voltage_charger (V):
+      Steps analyzed: 1989457
+      Step range: [0.0000, 9.2070]
+      Mean step: 0.0017 ? 0.0521
+      Median step: 0.0010 (IQR: 0.0000-0.0010)
+      Anomaly threshold: 0.2624
+      Anomalies: 1163 (0.0585% of steps)
+    voltage_load (V):
+      Steps analyzed: 478845
+      Step range: [0.0000, 8.7290]
+      Mean step: 0.0091 ? 0.2333
+      Median step: 0.0020 (IQR: 0.0010-0.0030)
+      Anomaly threshold: 1.1757
+      Anomalies: 355 (0.0741% of steps)
+    current_load (A):
+      Steps analyzed: 478845
+      Step range: [0.0000, 4.4542]
+      Mean step: 0.0052 ? 0.1187
+      Median step: 0.0010 (IQR: 0.0000-0.0029)
+      Anomaly threshold: 0.5988
+      Anomalies: 355 (0.0741% of steps)
+    temperature_battery (C):
+      Steps analyzed: 1989457
+      Step range: [0.0000, 55.3920]
+      Mean step: 0.0244 ? 0.1872
+      Median step: 0.0160 (IQR: 0.0080-0.0310)
+      Anomaly threshold: 0.9606
+      Anomalies: 93 (0.0047% of steps)
+    temperature_mosfet (C):
+      Steps analyzed: 478845
+      Step range: [0.0000, 0.1100]
+      Mean step: 0.0069 ? 0.0132
+      Median step: 0.0000 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.0727
+      Anomalies: 5454 (1.139% of steps)
+    temperature_resistor (C):
+      Steps analyzed: 478845
+      Step range: [0.0000, 0.0300]
+      Mean step: 0.0026 ? 0.0044
+      Median step: 0.0000 (IQR: 0.0000-0.0100)
+      Anomaly threshold: 0.0247
+      Anomalies: 5 (0.001% of steps)
+  ANOMALIES DETECTED:
+    voltage_charger - step anomalies:
+      1. At index 4: 0.000 ? 8.037V (?=8.037V, 154.1?)
+      2. At index 4861: 8.035 ? 7.769V (?=0.266V, 5.1?)
+      3. At index 7351: 4.727 ? 5.220V (?=0.493V, 9.4?)
+      4. At index 7962: 5.943 ? 6.279V (?=0.336V, 6.4?)
+      5. At index 14280: 4.729 ? 5.234V (?=0.505V, 9.7?)
+      6. At index 14882: 5.969 ? 6.298V (?=0.329V, 6.3?)
+      7. At index 18462: 8.303 ? 7.828V (?=0.475V, 9.1?)
+      8. At index 19828: 4.759 ? 5.422V (?=0.663V, 12.7?)
+      9. At index 20413: 6.095 ? 6.368V (?=0.273V, 5.2?)
+      10. At index 20735: 7.302 ? 0.000V (?=7.302V, 140.0?)
+    voltage_charger - rate anomalies:
+      1. At index 223667: rate=0.99V/s (threshold=0.82V/s)
+    voltage_load - step anomalies:
+      1. At index 4861: -0.026 ? 8.031V (?=8.057V, 34.5?)
+      2. At index 11547: 4.904 ? -0.026V (?=8.349V, 35.7?)
+      3. At index 14276: 4.921 ? 4.906V (?=8.641V, 37.0?)
+      4. At index 19823: 4.957 ? 4.935V (?=8.639V, 37.0?)
+      5. At index 26164: 4.969 ? 4.946V (?=8.639V, 37.0?)
+      6. At index 31787: 4.992 ? 4.970V (?=8.639V, 37.0?)
+      7. At index 37375: 5.014 ? 4.995V (?=8.638V, 37.0?)
+      8. At index 42859: 5.039 ? 5.020V (?=8.636V, 37.0?)
+      9. At index 48297: 5.045 ? 5.026V (?=8.564V, 36.7?)
+      10. At index 54889: 5.058 ? 5.041V (?=8.637V, 37.0?)
+    current_load - step anomalies:
+      1. At index 4861: 0.152 ? 2.519A (?=2.367A, 19.9?)
+      2. At index 11547: 2.519 ? 0.152A (?=2.365A, 19.9?)
+      3. At index 18460: 2.519 ? 0.447A (?=4.454A, 37.5?)
+      4. At index 19824: 4.831 ? 4.832A (?=4.454A, 37.5?)
+      5. At index 26165: 4.818 ? 4.824A (?=4.454A, 37.5?)
+      6. At index 31788: 4.825 ? 4.820A (?=4.453A, 37.5?)
+      7. At index 37376: 4.823 ? 4.814A (?=4.454A, 37.5?)
+      8. At index 42860: 4.819 ? 4.817A (?=4.453A, 37.5?)
+      9. At index 48298: 4.819 ? 4.817A (?=4.453A, 37.5?)
+      10. At index 54890: 4.815 ? 4.822A (?=4.454A, 37.5?)
+    temperature_battery - step anomalies:
+      1. At index 4: 0.000 ? 22.852C (?=22.852C, 121.9?)
+      2. At index 20735: 32.100 ? 0.000C (?=32.100C, 171.3?)
+      3. At index 20737: 0.000 ? 22.725C (?=22.725C, 121.2?)
+      4. At index 74622: 25.946 ? 0.000C (?=25.946C, 138.4?)
+      5. At index 74626: 0.000 ? 22.802C (?=22.802C, 121.6?)
+      6. At index 109451: 27.963 ? 22.967C (?=4.996C, 26.6?)
+      7. At index 111904: 22.902 ? 0.000C (?=22.902C, 122.2?)
+      8. At index 111907: 0.000 ? 22.676C (?=22.676C, 121.0?)
+      9. At index 160291: 33.008 ? 0.000C (?=33.008C, 176.1?)
+      10. At index 160293: 0.000 ? 22.783C (?=22.783C, 121.5?)
+    temperature_mosfet - step anomalies:
+      1. At index 18464: 22.080 ? 22.130C (?=0.080C, 5.6?)
+      2. At index 18465: 22.130 ? 22.200C (?=0.090C, 6.3?)
+      3. At index 18466: 22.200 ? 22.280C (?=0.090C, 6.3?)
+      4. At index 18467: 22.280 ? 22.370C (?=0.090C, 6.3?)
+      5. At index 18468: 22.370 ? 22.460C (?=0.100C, 7.1?)
+      6. At index 18469: 22.460 ? 22.550C (?=0.090C, 6.3?)
+      7. At index 18470: 22.550 ? 22.650C (?=0.100C, 7.1?)
+      8. At index 18471: 22.650 ? 22.740C (?=0.100C, 7.1?)
+      9. At index 18472: 22.740 ? 22.840C (?=0.090C, 6.3?)
+      10. At index 18473: 22.840 ? 22.940C (?=0.090C, 6.3?)
+    temperature_mosfet - rate anomalies:
+      1. At index 24760: rate=0.07C/s (threshold=0.07C/s)
+      2. At index 24761: rate=0.07C/s (threshold=0.07C/s)
+      3. At index 24763: rate=0.07C/s (threshold=0.07C/s)
+      4. At index 24769: rate=0.07C/s (threshold=0.07C/s)
+      5. At index 24774: rate=0.07C/s (threshold=0.07C/s)
+    temperature_resistor - step anomalies:
+      1. At index 4864: 23.690 ? 23.660C (?=0.030C, 6.2?)
+      2. At index 4868: 23.600 ? 23.570C (?=0.030C, 6.2?)
+      3. At index 48297: 23.340 ? 23.340C (?=0.030C, 6.2?)
+      4. At index 87854: 23.530 ? 23.530C (?=0.030C, 6.2?)
+      5. At index 705330: 23.100 ? 23.100C (?=0.030C, 6.2?)
+
+====================================================================================================
+END OF REPORT
+====================================================================================================
