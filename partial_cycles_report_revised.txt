@@ -1,0 +1,524 @@
+====================================================================================================
+NASA BATTERY DATASET - PARTIAL CYCLE ANALYSIS REPORT (REVISED)
+Generated: 2026-03-11 15:14:00
+====================================================================================================
+
+Analysis parameters:
+  Voltage range: 6.0V - 8.4V
+  Full cycle threshold: 85.0% of range
+  Rest periods (mode=0) are IGNORED in cycle detection
+
+
+FOLDER: regular_alt_batteries
+------------------------------------------------------------
+
+File: battery00.csv (64.47 MB)
+  Rows: 1,101,244
+  Charge segments: 192
+  Discharge segments: 175
+  Cycles detected: 175
+    Full cycles: 175
+    Partial cycles: 0
+    Partial cycle ratio: 0.0%
+  Depth of Discharge (DoD) distribution:
+    Min: 89.1%, Max: 100.0%, Mean: 99.3%
+    80-90%: 1 cycles
+    90-100%: 174 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.61V - 8.64V]
+    Cycle 2: full, DoD=100.0%, voltage [4.97V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [4.97V - 8.63V]
+    Cycle 4: full, DoD=100.0%, voltage [4.97V - 8.63V]
+    Cycle 5: full, DoD=100.0%, voltage [4.98V - 8.63V]
+
+File: battery01.csv (307.63 MB)
+  Rows: 4,918,193
+  Charge segments: 925
+  Discharge segments: 891
+  Cycles detected: 891
+    Full cycles: 885
+    Partial cycles: 6
+    Partial cycle ratio: 0.7%
+  Depth of Discharge (DoD) distribution:
+    Min: 0.0%, Max: 100.0%, Mean: 98.8%
+    0-10%: 6 cycles
+    80-90%: 26 cycles
+    90-100%: 859 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.76V - 8.63V]
+    Cycle 2: full, DoD=100.0%, voltage [4.88V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [4.88V - 8.63V]
+    Cycle 4: full, DoD=100.0%, voltage [4.92V - 8.63V]
+    Cycle 5: full, DoD=100.0%, voltage [4.93V - 8.63V]
+
+File: battery10.csv (52.91 MB)
+  Rows: 907,341
+  Charge segments: 162
+  Discharge segments: 148
+  Cycles detected: 148
+    Full cycles: 147
+    Partial cycles: 1
+    Partial cycle ratio: 0.7%
+  Depth of Discharge (DoD) distribution:
+    Min: 32.2%, Max: 100.0%, Mean: 99.0%
+    30-40%: 1 cycles
+    90-100%: 147 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.33V - 8.63V]
+    Cycle 2: full, DoD=100.0%, voltage [4.97V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [4.94V - 8.63V]
+    Cycle 4: full, DoD=100.0%, voltage [4.93V - 8.63V]
+    Cycle 5: full, DoD=97.0%, voltage [4.94V - 8.33V]
+
+File: battery11.csv (302.99 MB)
+  Rows: 4,914,864
+  Charge segments: 922
+  Discharge segments: 884
+  Cycles detected: 884
+    Full cycles: 883
+    Partial cycles: 1
+    Partial cycle ratio: 0.1%
+  Depth of Discharge (DoD) distribution:
+    Min: 3.1%, Max: 100.0%, Mean: 99.4%
+    0-10%: 1 cycles
+    80-90%: 10 cycles
+    90-100%: 873 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.74V - 8.63V]
+    Cycle 2: full, DoD=100.0%, voltage [4.86V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [4.88V - 8.63V]
+    Cycle 4: full, DoD=100.0%, voltage [4.84V - 8.43V]
+    Cycle 5: full, DoD=100.0%, voltage [4.92V - 8.63V]
+
+File: battery20.csv (11.81 MB)
+  Rows: 207,391
+  Charge segments: 35
+  Discharge segments: 33
+  Cycles detected: 33
+    Full cycles: 30
+    Partial cycles: 3
+    Partial cycle ratio: 9.1%
+  Depth of Discharge (DoD) distribution:
+    Min: 0.2%, Max: 100.0%, Mean: 90.6%
+    0-10%: 3 cycles
+    90-100%: 30 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.33V - 8.63V]
+    Cycle 2: full, DoD=100.0%, voltage [4.99V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [4.96V - 8.63V]
+    Cycle 4: full, DoD=100.0%, voltage [4.98V - 8.63V]
+    Cycle 5: full, DoD=96.6%, voltage [4.98V - 8.32V]
+
+File: battery21.csv (24.93 MB)
+  Rows: 530,718
+  Charge segments: 99
+  Discharge segments: 82
+  Cycles detected: 82
+    Full cycles: 82
+    Partial cycles: 0
+    Partial cycle ratio: 0.0%
+  Depth of Discharge (DoD) distribution:
+    Min: 92.0%, Max: 100.0%, Mean: 99.9%
+    90-100%: 82 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.75V - 8.63V]
+    Cycle 2: full, DoD=100.0%, voltage [4.98V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [4.98V - 8.43V]
+    Cycle 4: full, DoD=100.0%, voltage [4.99V - 8.63V]
+    Cycle 5: full, DoD=100.0%, voltage [5.00V - 8.63V]
+
+File: battery22.csv (164.86 MB)
+  Rows: 2,690,545
+  Charge segments: 494
+  Discharge segments: 454
+  Cycles detected: 454
+    Full cycles: 453
+    Partial cycles: 1
+    Partial cycle ratio: 0.2%
+  Depth of Discharge (DoD) distribution:
+    Min: 0.0%, Max: 100.0%, Mean: 99.3%
+    0-10%: 1 cycles
+    80-90%: 2 cycles
+    90-100%: 451 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.73V - 8.63V]
+    Cycle 2: full, DoD=100.0%, voltage [4.88V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [4.94V - 8.63V]
+    Cycle 4: full, DoD=100.0%, voltage [4.91V - 8.63V]
+    Cycle 5: full, DoD=100.0%, voltage [4.90V - 8.63V]
+
+File: battery23.csv (79.77 MB)
+  Rows: 1,344,130
+  Charge segments: 274
+  Discharge segments: 253
+  Cycles detected: 253
+    Full cycles: 253
+    Partial cycles: 0
+    Partial cycle ratio: 0.0%
+  Depth of Discharge (DoD) distribution:
+    Min: 90.9%, Max: 100.0%, Mean: 99.5%
+    90-100%: 253 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.75V - 8.63V]
+    Cycle 2: full, DoD=100.0%, voltage [4.96V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [4.90V - 8.63V]
+    Cycle 4: full, DoD=100.0%, voltage [4.91V - 8.63V]
+    Cycle 5: full, DoD=100.0%, voltage [4.93V - 8.63V]
+
+File: battery30.csv (34.12 MB)
+  Rows: 597,316
+  Charge segments: 92
+  Discharge segments: 81
+  Cycles detected: 81
+    Full cycles: 81
+    Partial cycles: 0
+    Partial cycle ratio: 0.0%
+  Depth of Discharge (DoD) distribution:
+    Min: 92.2%, Max: 100.0%, Mean: 99.7%
+    90-100%: 81 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.33V - 8.63V]
+    Cycle 2: full, DoD=100.0%, voltage [4.99V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [5.00V - 8.63V]
+    Cycle 4: full, DoD=100.0%, voltage [4.96V - 8.63V]
+    Cycle 5: full, DoD=96.0%, voltage [4.98V - 8.30V]
+
+File: battery31.csv (199.91 MB)
+  Rows: 3,341,603
+  Charge segments: 589
+  Discharge segments: 563
+  Cycles detected: 563
+    Full cycles: 563
+    Partial cycles: 0
+    Partial cycle ratio: 0.0%
+  Depth of Discharge (DoD) distribution:
+    Min: 88.6%, Max: 100.0%, Mean: 99.7%
+    80-90%: 5 cycles
+    90-100%: 558 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.75V - 8.63V]
+    Cycle 2: full, DoD=100.0%, voltage [4.95V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [4.90V - 8.63V]
+    Cycle 4: full, DoD=100.0%, voltage [4.93V - 8.63V]
+    Cycle 5: full, DoD=100.0%, voltage [4.95V - 8.63V]
+
+File: battery40.csv (43.22 MB)
+  Rows: 753,257
+  Charge segments: 136
+  Discharge segments: 142
+  Cycles detected: 136
+    Full cycles: 130
+    Partial cycles: 6
+    Partial cycle ratio: 4.4%
+  Depth of Discharge (DoD) distribution:
+    Min: 4.8%, Max: 100.0%, Mean: 95.5%
+    0-10%: 5 cycles
+    50-60%: 1 cycles
+    90-100%: 130 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.32V - 8.60V]
+    Cycle 2: full, DoD=100.0%, voltage [5.06V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [4.93V - 8.63V]
+    Cycle 4: full, DoD=100.0%, voltage [4.94V - 8.63V]
+    Cycle 5: full, DoD=100.0%, voltage [5.93V - 8.63V]
+
+File: battery41.csv (172.53 MB)
+  Rows: 2,926,443
+  Charge segments: 509
+  Discharge segments: 487
+  Cycles detected: 487
+    Full cycles: 464
+    Partial cycles: 23
+    Partial cycle ratio: 4.7%
+  Depth of Discharge (DoD) distribution:
+    Min: 0.0%, Max: 100.0%, Mean: 95.3%
+    0-10%: 6 cycles
+    10-20%: 11 cycles
+    20-30%: 1 cycles
+    60-70%: 1 cycles
+    80-90%: 26 cycles
+    90-100%: 442 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.75V - 8.63V]
+    Cycle 2: full, DoD=100.0%, voltage [4.96V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [4.93V - 8.63V]
+    Cycle 4: full, DoD=100.0%, voltage [4.97V - 8.63V]
+    Cycle 5: partial, DoD=0.9%, voltage [8.38V - 8.63V]
+
+File: battery50.csv (46.56 MB)
+  Rows: 791,869
+  Charge segments: 142
+  Discharge segments: 133
+  Cycles detected: 133
+    Full cycles: 133
+    Partial cycles: 0
+    Partial cycle ratio: 0.0%
+  Depth of Discharge (DoD) distribution:
+    Min: 91.4%, Max: 100.0%, Mean: 99.6%
+    90-100%: 133 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.34V - 8.54V]
+    Cycle 2: full, DoD=100.0%, voltage [5.97V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [4.99V - 8.63V]
+    Cycle 4: full, DoD=100.0%, voltage [4.94V - 8.63V]
+    Cycle 5: full, DoD=100.0%, voltage [5.91V - 8.63V]
+
+File: battery51.csv (111.19 MB)
+  Rows: 1,822,787
+  Charge segments: 326
+  Discharge segments: 308
+  Cycles detected: 308
+    Full cycles: 304
+    Partial cycles: 4
+    Partial cycle ratio: 1.3%
+  Depth of Discharge (DoD) distribution:
+    Min: 1.0%, Max: 100.0%, Mean: 98.2%
+    0-10%: 4 cycles
+    80-90%: 1 cycles
+    90-100%: 303 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.74V - 8.62V]
+    Cycle 2: full, DoD=100.0%, voltage [4.94V - 8.59V]
+    Cycle 3: full, DoD=100.0%, voltage [4.99V - 8.59V]
+    Cycle 4: full, DoD=100.0%, voltage [4.97V - 8.59V]
+    Cycle 5: full, DoD=100.0%, voltage [4.97V - 8.59V]
+
+File: battery52.csv (89.97 MB)
+  Rows: 1,510,563
+  Charge segments: 276
+  Discharge segments: 262
+  Cycles detected: 262
+    Full cycles: 262
+    Partial cycles: 0
+    Partial cycle ratio: 0.0%
+  Depth of Discharge (DoD) distribution:
+    Min: 89.7%, Max: 100.0%, Mean: 99.8%
+    80-90%: 1 cycles
+    90-100%: 261 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.74V - 8.63V]
+    Cycle 2: full, DoD=100.0%, voltage [4.93V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [4.90V - 8.63V]
+    Cycle 4: full, DoD=100.0%, voltage [4.92V - 8.63V]
+    Cycle 5: full, DoD=100.0%, voltage [4.92V - 8.63V]
+
+FOLDER: recommissioned_batteries
+------------------------------------------------------------
+
+File: battery02.csv (123.3 MB)
+  Rows: 2,069,667
+  Charge segments: 432
+  Discharge segments: 416
+  Cycles detected: 416
+    Full cycles: 415
+    Partial cycles: 1
+    Partial cycle ratio: 0.2%
+  Depth of Discharge (DoD) distribution:
+    Min: 0.0%, Max: 100.0%, Mean: 99.7%
+    0-10%: 1 cycles
+    90-100%: 415 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.77V - 8.63V]
+    Cycle 2: full, DoD=100.0%, voltage [4.98V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [5.00V - 8.63V]
+    Cycle 4: full, DoD=100.0%, voltage [4.99V - 8.63V]
+    Cycle 5: full, DoD=100.0%, voltage [5.01V - 8.63V]
+
+File: battery03.csv (132.58 MB)
+  Rows: 2,161,444
+  Charge segments: 456
+  Discharge segments: 441
+  Cycles detected: 441
+    Full cycles: 428
+    Partial cycles: 13
+    Partial cycle ratio: 2.9%
+  Depth of Discharge (DoD) distribution:
+    Min: 0.0%, Max: 100.0%, Mean: 96.9%
+    0-10%: 9 cycles
+    20-30%: 1 cycles
+    80-90%: 13 cycles
+    90-100%: 418 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.77V - 8.63V]
+    Cycle 2: full, DoD=100.0%, voltage [5.00V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [4.97V - 8.63V]
+    Cycle 4: full, DoD=100.0%, voltage [4.97V - 8.63V]
+    Cycle 5: full, DoD=100.0%, voltage [5.02V - 8.63V]
+
+File: battery12.csv (198.22 MB)
+  Rows: 3,041,084
+  Charge segments: 642
+  Discharge segments: 633
+  Cycles detected: 633
+    Full cycles: 633
+    Partial cycles: 0
+    Partial cycle ratio: 0.0%
+  Depth of Discharge (DoD) distribution:
+    Min: 86.6%, Max: 100.0%, Mean: 99.7%
+    80-90%: 9 cycles
+    90-100%: 624 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.74V - 8.63V]
+    Cycle 2: full, DoD=100.0%, voltage [4.95V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [4.99V - 8.63V]
+    Cycle 4: full, DoD=100.0%, voltage [5.00V - 8.63V]
+    Cycle 5: full, DoD=100.0%, voltage [4.97V - 8.63V]
+
+File: battery24.csv (199.36 MB)
+  Rows: 3,285,619
+  Charge segments: 676
+  Discharge segments: 651
+  Cycles detected: 651
+    Full cycles: 642
+    Partial cycles: 9
+    Partial cycle ratio: 1.4%
+  Depth of Discharge (DoD) distribution:
+    Min: 0.3%, Max: 100.0%, Mean: 98.0%
+    0-10%: 8 cycles
+    80-90%: 14 cycles
+    90-100%: 629 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.75V - 8.63V]
+    Cycle 2: full, DoD=100.0%, voltage [4.97V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [4.97V - 8.63V]
+    Cycle 4: full, DoD=100.0%, voltage [4.97V - 8.63V]
+    Cycle 5: full, DoD=100.0%, voltage [4.96V - 8.63V]
+
+File: battery25.csv (135.36 MB)
+  Rows: 2,169,910
+  Charge segments: 446
+  Discharge segments: 438
+  Cycles detected: 438
+    Full cycles: 429
+    Partial cycles: 9
+    Partial cycle ratio: 2.1%
+  Depth of Discharge (DoD) distribution:
+    Min: 0.0%, Max: 100.0%, Mean: 97.6%
+    0-10%: 9 cycles
+    90-100%: 429 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.73V - 8.63V]
+    Cycle 2: full, DoD=100.0%, voltage [4.93V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [4.97V - 8.43V]
+    Cycle 4: full, DoD=100.0%, voltage [4.98V - 8.63V]
+    Cycle 5: full, DoD=100.0%, voltage [4.92V - 8.63V]
+
+File: battery32.csv (105.41 MB)
+  Rows: 1,829,938
+  Charge segments: 374
+  Discharge segments: 357
+  Cycles detected: 357
+    Full cycles: 357
+    Partial cycles: 0
+    Partial cycle ratio: 0.0%
+  Depth of Discharge (DoD) distribution:
+    Min: 88.9%, Max: 100.0%, Mean: 99.8%
+    80-90%: 2 cycles
+    90-100%: 355 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.75V - 8.63V]
+    Cycle 2: full, DoD=100.0%, voltage [4.97V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [4.94V - 8.63V]
+    Cycle 4: full, DoD=100.0%, voltage [4.99V - 8.63V]
+    Cycle 5: full, DoD=100.0%, voltage [4.98V - 8.63V]
+
+File: battery33.csv (140.6 MB)
+  Rows: 2,353,426
+  Charge segments: 490
+  Discharge segments: 480
+  Cycles detected: 480
+    Full cycles: 480
+    Partial cycles: 0
+    Partial cycle ratio: 0.0%
+  Depth of Discharge (DoD) distribution:
+    Min: 86.2%, Max: 100.0%, Mean: 99.6%
+    80-90%: 3 cycles
+    90-100%: 477 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.77V - 8.63V]
+    Cycle 2: full, DoD=100.0%, voltage [4.94V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [4.98V - 8.63V]
+    Cycle 4: full, DoD=100.0%, voltage [4.97V - 8.63V]
+    Cycle 5: full, DoD=100.0%, voltage [4.98V - 8.63V]
+
+File: battery53.csv (67.32 MB)
+  Rows: 1,139,972
+  Charge segments: 219
+  Discharge segments: 210
+  Cycles detected: 210
+    Full cycles: 210
+    Partial cycles: 0
+    Partial cycle ratio: 0.0%
+  Depth of Discharge (DoD) distribution:
+    Min: 91.1%, Max: 100.0%, Mean: 99.9%
+    90-100%: 210 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.76V - 8.63V]
+    Cycle 2: full, DoD=100.0%, voltage [4.90V - 8.52V]
+    Cycle 3: full, DoD=100.0%, voltage [4.92V - 8.54V]
+    Cycle 4: full, DoD=100.0%, voltage [4.91V - 8.55V]
+    Cycle 5: full, DoD=100.0%, voltage [4.92V - 8.52V]
+
+FOLDER: second_life_batteries
+------------------------------------------------------------
+
+File: battery13.csv (104.0 MB)
+  Rows: 1,736,149
+  Charge segments: 332
+  Discharge segments: 324
+  Cycles detected: 324
+    Full cycles: 324
+    Partial cycles: 0
+    Partial cycle ratio: 0.0%
+  Depth of Discharge (DoD) distribution:
+    Min: 90.0%, Max: 100.0%, Mean: 99.8%
+    80-90%: 1 cycles
+    90-100%: 323 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.75V - 8.63V]
+    Cycle 2: full, DoD=100.0%, voltage [4.75V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [4.89V - 8.63V]
+    Cycle 4: full, DoD=100.0%, voltage [4.90V - 8.63V]
+    Cycle 5: full, DoD=100.0%, voltage [4.85V - 8.63V]
+
+File: battery36.csv (208.51 MB)
+  Rows: 3,394,365
+  Charge segments: 739
+  Discharge segments: 720
+  Cycles detected: 720
+    Full cycles: 720
+    Partial cycles: 0
+    Partial cycle ratio: 0.0%
+  Depth of Discharge (DoD) distribution:
+    Min: 88.7%, Max: 100.0%, Mean: 99.9%
+    80-90%: 3 cycles
+    90-100%: 717 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.74V - 8.63V]
+    Cycle 2: full, DoD=100.0%, voltage [4.75V - 8.63V]
+    Cycle 3: full, DoD=100.0%, voltage [4.82V - 8.63V]
+    Cycle 4: full, DoD=100.0%, voltage [4.82V - 8.63V]
+    Cycle 5: full, DoD=100.0%, voltage [4.82V - 8.63V]
+
+File: battery54.csv (122.32 MB)
+  Rows: 1,989,458
+  Charge segments: 378
+  Discharge segments: 361
+  Cycles detected: 361
+    Full cycles: 358
+    Partial cycles: 3
+    Partial cycle ratio: 0.8%
+  Depth of Discharge (DoD) distribution:
+    Min: 84.0%, Max: 100.0%, Mean: 99.6%
+    80-90%: 6 cycles
+    90-100%: 355 cycles
+  Sample cycles (first 5):
+    Cycle 1: full, DoD=100.0%, voltage [4.74V - 8.63V]
+    Cycle 2: full, DoD=100.0%, voltage [4.74V - 8.63V]
+    Cycle 3: full, DoD=96.2%, voltage [4.77V - 8.31V]
+    Cycle 4: full, DoD=100.0%, voltage [4.78V - 8.63V]
+    Cycle 5: full, DoD=100.0%, voltage [4.78V - 8.63V]
+
+====================================================================================================
+END OF REPORT
+====================================================================================================

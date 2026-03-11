@@ -1,0 +1,140 @@
+====================================================================================================
+NASA BATTERY DATASET - PARTIAL CYCLE ANALYSIS REPORT
+Generated: 2026-03-11 11:48:01
+====================================================================================================
+
+Analysis parameters:
+  Voltage range: 6.0V - 8.4V
+  Full cycle threshold: 85.0% of range
+
+
+FOLDER: regular_alt_batteries
+------------------------------------------------------------
+
+File: battery00.csv (64.47 MB)
+  Rows: 1,101,244
+  No cycles detected
+
+File: battery01.csv (307.63 MB)
+  Rows: 4,918,193
+  No cycles detected
+
+File: battery10.csv (52.91 MB)
+  Rows: 907,341
+  No cycles detected
+
+File: battery11.csv (302.99 MB)
+  Rows: 4,914,864
+  No cycles detected
+
+File: battery20.csv (11.81 MB)
+  Rows: 207,391
+  No cycles detected
+
+File: battery21.csv (24.93 MB)
+  Rows: 530,718
+  No cycles detected
+
+File: battery22.csv (164.86 MB)
+  Rows: 2,690,545
+  No cycles detected
+
+File: battery23.csv (79.77 MB)
+  Rows: 1,344,130
+  No cycles detected
+
+File: battery30.csv (34.12 MB)
+  Rows: 597,316
+  No cycles detected
+
+File: battery31.csv (199.91 MB)
+  Rows: 3,341,603
+  No cycles detected
+
+File: battery40.csv (43.22 MB)
+  Rows: 753,257
+  No cycles detected
+
+File: battery41.csv (172.53 MB)
+  Rows: 2,926,443
+  No cycles detected
+
+File: battery50.csv (46.56 MB)
+  Rows: 791,869
+  No cycles detected
+
+File: battery51.csv (111.19 MB)
+  Rows: 1,822,787
+  No cycles detected
+
+File: battery52.csv (89.97 MB)
+  Rows: 1,510,563
+  No cycles detected
+
+FOLDER: recommissioned_batteries
+------------------------------------------------------------
+
+File: battery02.csv (123.3 MB)
+  Rows: 2,069,667
+  No cycles detected
+
+File: battery03.csv (132.58 MB)
+  Rows: 2,161,444
+  Cycles detected: 1
+    Full cycles: 0
+    Partial cycles: 1
+    Partial cycle ratio: 100.0%
+  Depth of Discharge (DoD) distribution:
+    80-90%: 1 cycles
+  Sample cycles (first 5):
+    Cycle 1: partial, DoD=83.4%, voltage [6.40V - 8.61V]
+
+File: battery12.csv (198.22 MB)
+  Rows: 3,041,084
+  No cycles detected
+
+File: battery24.csv (199.36 MB)
+  Rows: 3,285,619
+  No cycles detected
+
+File: battery25.csv (135.36 MB)
+  Rows: 2,169,910
+  No cycles detected
+
+File: battery32.csv (105.41 MB)
+  Rows: 1,829,938
+  No cycles detected
+
+File: battery33.csv (140.6 MB)
+  Rows: 2,353,426
+  No cycles detected
+
+File: battery53.csv (67.32 MB)
+  Rows: 1,139,972
+  No cycles detected
+
+FOLDER: second_life_batteries
+------------------------------------------------------------
+
+File: battery13.csv (104.0 MB)
+  Rows: 1,736,149
+  No cycles detected
+
+File: battery36.csv (208.51 MB)
+  Rows: 3,394,365
+  No cycles detected
+
+File: battery54.csv (122.32 MB)
+  Rows: 1,989,458
+  Cycles detected: 1
+    Full cycles: 0
+    Partial cycles: 1
+    Partial cycle ratio: 100.0%
+  Depth of Discharge (DoD) distribution:
+    60-70%: 1 cycles
+  Sample cycles (first 5):
+    Cycle 1: partial, DoD=65.9%, voltage [6.39V - 7.97V]
+
+====================================================================================================
+END OF REPORT
+====================================================================================================

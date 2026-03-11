@@ -1,0 +1,184 @@
+====================================================================================================
+NASA BATTERY DATASET - PHYSICAL PLAUSIBILITY REPORT
+Generated: 2026-03-10 15:10:43
+====================================================================================================
+
+
+FOLDER: regular_alt_batteries
+------------------------------------------------------------
+
+File: battery00.csv (64.47 MB)
+  Rows: 1,101,244
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  No violations detected
+
+File: battery01.csv (307.63 MB)
+  Rows: 4,918,193
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  No violations detected
+
+File: battery10.csv (52.91 MB)
+  Rows: 907,341
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  No violations detected
+
+File: battery11.csv (302.99 MB)
+  Rows: 4,914,864
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  No violations detected
+
+File: battery20.csv (11.81 MB)
+  Rows: 207,391
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  No violations detected
+
+File: battery21.csv (24.93 MB)
+  Rows: 530,718
+  Mode values: [-1, 0, 1]
+  Mission type values: [0.0, 1.0]
+  No violations detected
+
+File: battery22.csv (164.86 MB)
+  Rows: 2,690,545
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  CRITICAL VIOLATIONS:
+    - temperature_battery: 2875 values below -50C (0.1069%)
+      Minimum: -102.531C
+
+File: battery23.csv (79.77 MB)
+  Rows: 1,344,130
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  CRITICAL VIOLATIONS:
+    - temperature_battery: 84 values below -50C (0.0062%)
+      Minimum: -75.974C
+
+File: battery30.csv (34.12 MB)
+  Rows: 597,316
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  CRITICAL VIOLATIONS:
+    - temperature_battery: 3679 values below -50C (0.6161%)
+      Minimum: -116.103C
+
+File: battery31.csv (199.91 MB)
+  Rows: 3,341,603
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  No violations detected
+
+File: battery40.csv (43.22 MB)
+  Rows: 753,257
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  No violations detected
+
+File: battery41.csv (172.53 MB)
+  Rows: 2,926,443
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  No violations detected
+
+File: battery50.csv (46.56 MB)
+  Rows: 791,869
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  No violations detected
+
+File: battery51.csv (111.19 MB)
+  Rows: 1,822,787
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  No violations detected
+
+File: battery52.csv (89.97 MB)
+  Rows: 1,510,563
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  No violations detected
+
+FOLDER: recommissioned_batteries
+------------------------------------------------------------
+
+File: battery02.csv (123.3 MB)
+  Rows: 2,069,667
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  No violations detected
+
+File: battery03.csv (132.58 MB)
+  Rows: 2,161,444
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  No violations detected
+
+File: battery12.csv (198.22 MB)
+  Rows: 3,041,084
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  No violations detected
+
+File: battery24.csv (199.36 MB)
+  Rows: 3,285,619
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  CRITICAL VIOLATIONS:
+    - temperature_battery: 440 values below -50C (0.0134%)
+      Minimum: -70.458C
+
+File: battery25.csv (135.36 MB)
+  Rows: 2,169,910
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  CRITICAL VIOLATIONS:
+    - temperature_battery: 2944 values below -50C (0.1357%)
+      Minimum: -116.103C
+
+File: battery32.csv (105.41 MB)
+  Rows: 1,829,938
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  No violations detected
+
+File: battery33.csv (140.6 MB)
+  Rows: 2,353,426
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  No violations detected
+
+File: battery53.csv (67.32 MB)
+  Rows: 1,139,972
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  No violations detected
+
+FOLDER: second_life_batteries
+------------------------------------------------------------
+
+File: battery13.csv (104.0 MB)
+  Rows: 1,736,149
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  No violations detected
+
+File: battery36.csv (208.51 MB)
+  Rows: 3,394,365
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  No violations detected
+
+File: battery54.csv (122.32 MB)
+  Rows: 1,989,458
+  Mode values: [-1.0, 0.0, 1.0]
+  Mission type values: [0.0, 1.0]
+  No violations detected
+
+====================================================================================================
+END OF REPORT
+====================================================================================================

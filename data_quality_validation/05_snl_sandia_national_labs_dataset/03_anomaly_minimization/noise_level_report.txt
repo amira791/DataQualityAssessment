@@ -1,0 +1,930 @@
+====================================================================================================
+NASA BATTERY DATASET - NOISE LEVEL ANALYSIS REPORT
+Generated: 2026-03-11 11:25:17
+====================================================================================================
+
+Noise is measured as RMS of high-frequency components (after trend removal)
+Lower noise = cleaner signal | SNR > 30dB is excellent
+
+
+FOLDER: regular_alt_batteries
+------------------------------------------------------------
+
+File: battery00.csv (64.47 MB)
+  Rows: 1,101,244
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.104386V
+      SNR: 21.6dB
+      Noise distribution: 95% < 0.001000V
+      Noise non-Gaussian (kurtosis=3442.76)
+    Dynamic mode noise:
+      RMS: 0.136639V
+    ? EXCESSIVE NOISE - 20.9x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.398938V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 0.881970A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 1.351973C
+      SNR: 22.8dB
+      Noise distribution: 95% < 0.100000C
+      Noise non-Gaussian (kurtosis=2460.52)
+    Dynamic mode noise:
+      RMS: 2.736509C
+    ? EXCESSIVE NOISE - 27.0x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.221176C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.252924C
+
+File: battery01.csv (307.63 MB)
+  Rows: 4,918,193
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.111425V
+      SNR: 20.4dB
+      Noise distribution: 95% < 0.002000V
+      Noise non-Gaussian (kurtosis=1874.04)
+    Dynamic mode noise:
+      RMS: 0.115011V
+    ? EXCESSIVE NOISE - 22.3x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.335630V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 0.436142A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 0.866510C
+      SNR: 22.8dB
+      Noise distribution: 95% < 0.067000C
+      Noise non-Gaussian (kurtosis=1928.78)
+    Dynamic mode noise:
+      RMS: 1.257960C
+    ? EXCESSIVE NOISE - 17.3x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.129634C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.120772C
+
+File: battery10.csv (52.91 MB)
+  Rows: 907,341
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.095541V
+      SNR: 21.0dB
+      Noise distribution: 95% < 0.001000V
+      Noise non-Gaussian (kurtosis=2714.23)
+    Dynamic mode noise:
+      RMS: 0.139243V
+    ? EXCESSIVE NOISE - 19.1x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.401172V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 0.880280A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 1.359534C
+      SNR: 22.7dB
+      Noise distribution: 95% < 0.097000C
+      Noise non-Gaussian (kurtosis=2234.48)
+    Dynamic mode noise:
+      RMS: 2.639049C
+    ? EXCESSIVE NOISE - 27.2x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.201212C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.218405C
+
+File: battery11.csv (302.99 MB)
+  Rows: 4,914,864
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.107527V
+      SNR: 19.9dB
+      Noise distribution: 95% < 0.002000V
+      Noise non-Gaussian (kurtosis=1684.04)
+    Dynamic mode noise:
+      RMS: 0.116126V
+    ? EXCESSIVE NOISE - 21.5x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.334376V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 0.432969A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 0.741906C
+      SNR: 22.5dB
+      Noise distribution: 95% < 0.058000C
+      Noise non-Gaussian (kurtosis=1908.93)
+    Dynamic mode noise:
+      RMS: 1.070147C
+    ? EXCESSIVE NOISE - 14.8x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.118852C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.061749C
+
+File: battery20.csv (11.81 MB)
+  Rows: 207,391
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.118142V
+      SNR: 18.5dB
+      Noise distribution: 95% < 0.001000V
+      Noise non-Gaussian (kurtosis=1483.47)
+    Dynamic mode noise:
+      RMS: 0.137377V
+    ? EXCESSIVE NOISE - 23.6x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.392092V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 0.986032A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 1.506159C
+      SNR: 22.3dB
+      Noise distribution: 95% < 0.095000C
+      Noise non-Gaussian (kurtosis=2594.41)
+    Dynamic mode noise:
+      RMS: 3.016339C
+    ? EXCESSIVE NOISE - 30.1x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.186835C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.293816C
+
+File: battery21.csv (24.93 MB)
+  Rows: 530,718
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.132213V
+      SNR: 22.7dB
+      Noise distribution: 95% < 0.001000V
+      Noise non-Gaussian (kurtosis=3264.11)
+    Dynamic mode noise:
+      RMS: 0.146558V
+    ? EXCESSIVE NOISE - 26.4x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.422961V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 1.092135A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 0.667245C
+      SNR: 23.8dB
+      Noise distribution: 95% < 0.061000C
+      Noise non-Gaussian (kurtosis=2519.25)
+    Dynamic mode noise:
+      RMS: 1.427726C
+    ? EXCESSIVE NOISE - 13.3x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.264082C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.384404C
+
+File: battery22.csv (164.86 MB)
+  Rows: 2,690,545
+  ERROR: unsupported operand type(s) for -: 'str' and 'str'
+
+File: battery23.csv (79.77 MB)
+  Rows: 1,344,130
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.118933V
+      SNR: 21.1dB
+      Noise distribution: 95% < 0.001000V
+      Noise non-Gaussian (kurtosis=1938.31)
+    Dynamic mode noise:
+      RMS: 0.135070V
+    ? EXCESSIVE NOISE - 23.8x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.389468V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 0.774085A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 1.031917C
+      SNR: 22.6dB
+      Noise distribution: 95% < 0.072000C
+      Noise non-Gaussian (kurtosis=1605.56)
+    Dynamic mode noise:
+      RMS: 1.689687C
+    ? EXCESSIVE NOISE - 20.6x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.208355C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.244019C
+
+File: battery30.csv (34.12 MB)
+  Rows: 597,316
+  ERROR: unsupported operand type(s) for -: 'str' and 'str'
+
+File: battery31.csv (199.91 MB)
+  Rows: 3,341,603
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.094326V
+      SNR: 20.2dB
+      Noise distribution: 95% < 0.001000V
+      Noise non-Gaussian (kurtosis=2237.05)
+    Dynamic mode noise:
+      RMS: 0.131883V
+    ? EXCESSIVE NOISE - 18.9x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.381441V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 0.679208A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 0.886750C
+      SNR: 23.0dB
+      Noise distribution: 95% < 0.078000C
+      Noise non-Gaussian (kurtosis=2317.75)
+    Dynamic mode noise:
+      RMS: 1.644458C
+    ? EXCESSIVE NOISE - 17.7x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.128985C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.095752C
+
+File: battery40.csv (43.22 MB)
+  Rows: 753,257
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.076205V
+      SNR: 21.1dB
+      Noise distribution: 95% < 0.001000V
+      Noise non-Gaussian (kurtosis=2816.05)
+    Dynamic mode noise:
+      RMS: 0.142639V
+    ? EXCESSIVE NOISE - 15.2x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.400799V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 0.953281A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 1.279675C
+      SNR: 23.1dB
+      Noise distribution: 95% < 0.081000C
+      Noise non-Gaussian (kurtosis=3236.89)
+    Dynamic mode noise:
+      RMS: 2.996421C
+    ? EXCESSIVE NOISE - 25.6x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.227192C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.316061C
+
+File: battery41.csv (172.53 MB)
+  Rows: 2,926,443
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.082773V
+      SNR: 20.6dB
+      Noise distribution: 95% < 0.001000V
+      Noise non-Gaussian (kurtosis=3363.10)
+    Dynamic mode noise:
+      RMS: 0.137067V
+    ? EXCESSIVE NOISE - 16.6x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.392000V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 0.819028A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 0.870974C
+      SNR: 23.1dB
+      Noise distribution: 95% < 0.074000C
+      Noise non-Gaussian (kurtosis=3243.70)
+    Dynamic mode noise:
+      RMS: 1.991430C
+    ? EXCESSIVE NOISE - 17.4x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.144820C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.138533C
+
+File: battery50.csv (46.56 MB)
+  Rows: 791,869
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.101756V
+      SNR: 20.8dB
+      Noise distribution: 95% < 0.001000V
+      Noise non-Gaussian (kurtosis=2046.07)
+    Dynamic mode noise:
+      RMS: 0.146893V
+    ? EXCESSIVE NOISE - 20.4x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.410018V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 0.947325A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 1.673778C
+      SNR: 22.3dB
+      Noise distribution: 95% < 0.104000C
+      Noise non-Gaussian (kurtosis=1866.67)
+    Dynamic mode noise:
+      RMS: 3.002832C
+    ? EXCESSIVE NOISE - 33.5x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.296434C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.339136C
+
+File: battery51.csv (111.19 MB)
+  Rows: 1,822,787
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.109872V
+      SNR: 20.0dB
+      Noise distribution: 95% < 0.001000V
+      Noise non-Gaussian (kurtosis=1607.79)
+    Dynamic mode noise:
+      RMS: 0.136766V
+    ? EXCESSIVE NOISE - 22.0x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.389850V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 0.784864A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 1.284575C
+      SNR: 22.5dB
+      Noise distribution: 95% < 0.092000C
+      Noise non-Gaussian (kurtosis=1581.50)
+    Dynamic mode noise:
+      RMS: 2.029511C
+    ? EXCESSIVE NOISE - 25.7x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.247516C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.237149C
+
+File: battery52.csv (89.97 MB)
+  Rows: 1,510,563
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.116985V
+      SNR: 19.9dB
+      Noise distribution: 95% < 0.001000V
+      Noise non-Gaussian (kurtosis=1434.62)
+    Dynamic mode noise:
+      RMS: 0.137415V
+    ? EXCESSIVE NOISE - 23.4x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.388972V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 0.764206A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 1.551413C
+      SNR: 22.2dB
+      Noise distribution: 95% < 0.109000C
+      Noise non-Gaussian (kurtosis=1435.42)
+    Dynamic mode noise:
+      RMS: 2.345133C
+    ? EXCESSIVE NOISE - 31.0x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.272415C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.266297C
+
+FOLDER: recommissioned_batteries
+------------------------------------------------------------
+
+File: battery02.csv (123.3 MB)
+  Rows: 2,069,667
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.121914V
+      SNR: 22.6dB
+      Noise distribution: 95% < 0.002000V
+      Noise non-Gaussian (kurtosis=2014.56)
+    Dynamic mode noise:
+      RMS: 0.135355V
+    ? EXCESSIVE NOISE - 24.4x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.396965V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 0.766579A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 1.145863C
+      SNR: 22.4dB
+      Noise distribution: 95% < 0.075000C
+      Noise non-Gaussian (kurtosis=1559.06)
+    Dynamic mode noise:
+      RMS: 1.808125C
+    ? EXCESSIVE NOISE - 22.9x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.228186C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.231721C
+
+File: battery03.csv (132.58 MB)
+  Rows: 2,161,444
+  ERROR: unsupported operand type(s) for -: 'str' and 'str'
+
+File: battery12.csv (198.22 MB)
+  Rows: 3,041,084
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.118184V
+      SNR: 19.3dB
+      Noise distribution: 95% < 0.002000V
+      Noise non-Gaussian (kurtosis=1102.94)
+    Dynamic mode noise:
+      RMS: 0.122200V
+    ? EXCESSIVE NOISE - 23.6x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.353284V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 0.536866A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 1.042054C
+      SNR: 22.2dB
+      Noise distribution: 95% < 0.078000C
+      Noise non-Gaussian (kurtosis=1511.59)
+    Dynamic mode noise:
+      RMS: 1.361700C
+    ? EXCESSIVE NOISE - 20.8x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.193079C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.142317C
+
+File: battery24.csv (199.36 MB)
+  Rows: 3,285,619
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.111631V
+      SNR: 20.1dB
+      Noise distribution: 95% < 0.002000V
+      Noise non-Gaussian (kurtosis=1417.72)
+    Dynamic mode noise:
+      RMS: 0.123083V
+    ? EXCESSIVE NOISE - 22.3x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.353765V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 0.529924A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 1.029177C
+      SNR: 22.6dB
+      Noise distribution: 95% < 0.082000C
+      Noise non-Gaussian (kurtosis=1809.94)
+    Dynamic mode noise:
+      RMS: 1.472408C
+    ? EXCESSIVE NOISE - 20.6x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.177310C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.171432C
+
+File: battery25.csv (135.36 MB)
+  Rows: 2,169,910
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.124670V
+      SNR: 19.0dB
+      Noise distribution: 95% < 0.002000V
+      Noise non-Gaussian (kurtosis=1432.67)
+    Dynamic mode noise:
+      RMS: 0.121976V
+    ? EXCESSIVE NOISE - 24.9x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.348674V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 0.586089A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 1.140578C
+      SNR: 22.4dB
+      Noise distribution: 95% < 0.075000C
+      Noise non-Gaussian (kurtosis=1938.66)
+    Dynamic mode noise:
+      RMS: 1.478197C
+    ? EXCESSIVE NOISE - 22.8x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.191813C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.205750C
+
+File: battery32.csv (105.41 MB)
+  Rows: 1,829,938
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.118514V
+      SNR: 20.4dB
+      Noise distribution: 95% < 0.002000V
+      Noise non-Gaussian (kurtosis=2122.12)
+    Dynamic mode noise:
+      RMS: 0.141287V
+    ? EXCESSIVE NOISE - 23.7x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.406506V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 0.850925A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 1.027933C
+      SNR: 22.5dB
+      Noise distribution: 95% < 0.091000C
+      Noise non-Gaussian (kurtosis=1651.79)
+    Dynamic mode noise:
+      RMS: 1.736993C
+    ? EXCESSIVE NOISE - 20.6x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.220012C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.235457C
+
+File: battery33.csv (140.6 MB)
+  Rows: 2,353,426
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.109593V
+      SNR: 19.7dB
+      Noise distribution: 95% < 0.002000V
+      Noise non-Gaussian (kurtosis=1543.10)
+    Dynamic mode noise:
+      RMS: 0.137471V
+    ? EXCESSIVE NOISE - 21.9x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.397181V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 0.764827A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 1.080578C
+      SNR: 22.2dB
+      Noise distribution: 95% < 0.070000C
+      Noise non-Gaussian (kurtosis=1601.21)
+    Dynamic mode noise:
+      RMS: 1.728708C
+    ? EXCESSIVE NOISE - 21.6x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.198667C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.222514C
+
+File: battery53.csv (67.32 MB)
+  Rows: 1,139,972
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.127515V
+      SNR: 20.1dB
+      Noise distribution: 95% < 0.001000V
+      Noise non-Gaussian (kurtosis=1584.93)
+    Dynamic mode noise:
+      RMS: 0.138846V
+    ? EXCESSIVE NOISE - 25.5x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.392917V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 0.805140A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 1.341579C
+      SNR: 22.3dB
+      Noise distribution: 95% < 0.094000C
+      Noise non-Gaussian (kurtosis=1304.38)
+    Dynamic mode noise:
+      RMS: 1.941251C
+    ? EXCESSIVE NOISE - 26.8x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.286296C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.299056C
+
+FOLDER: second_life_batteries
+------------------------------------------------------------
+
+File: battery13.csv (104.0 MB)
+  Rows: 1,736,149
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.116355V
+      SNR: 17.5dB
+      Noise distribution: 95% < 0.002000V
+      Noise non-Gaussian (kurtosis=2440.56)
+    Dynamic mode noise:
+      RMS: 0.126300V
+    ? EXCESSIVE NOISE - 23.3x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.362807V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 0.482648A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 0.834597C
+      SNR: 22.2dB
+      Noise distribution: 95% < 0.067000C
+      Noise non-Gaussian (kurtosis=1993.75)
+    Dynamic mode noise:
+      RMS: 1.356676C
+    ? EXCESSIVE NOISE - 16.7x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.141081C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.103651C
+
+File: battery36.csv (208.51 MB)
+  Rows: 3,394,365
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.118296V
+      SNR: 20.4dB
+      Noise distribution: 95% < 0.002000V
+      Noise non-Gaussian (kurtosis=1748.29)
+    Dynamic mode noise:
+      RMS: 0.119372V
+    ? EXCESSIVE NOISE - 23.7x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.330900V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 0.338107A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 0.765114C
+      SNR: 22.3dB
+      Noise distribution: 95% < 0.082000C
+      Noise non-Gaussian (kurtosis=1635.43)
+    Dynamic mode noise:
+      RMS: 1.025779C
+    ? EXCESSIVE NOISE - 15.3x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.128445C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.058081C
+
+File: battery54.csv (122.32 MB)
+  Rows: 1,989,458
+
+  voltage_charger:
+    Rest mode noise:
+      RMS: 0.153677V
+      SNR: 18.0dB
+      Noise distribution: 95% < 0.003000V
+      Noise non-Gaussian (kurtosis=1387.09)
+    Dynamic mode noise:
+      RMS: 0.095461V
+    ? EXCESSIVE NOISE - 30.7x expected
+
+  voltage_load:
+    Dynamic mode noise:
+      RMS: 0.269180V
+
+  current_load:
+    Dynamic mode noise:
+      RMS: 0.166565A
+
+  temperature_battery:
+    Rest mode noise:
+      RMS: 0.837768C
+      SNR: 20.8dB
+      Noise distribution: 95% < 0.093000C
+      Noise non-Gaussian (kurtosis=1244.88)
+    Dynamic mode noise:
+      RMS: 0.723770C
+    ? EXCESSIVE NOISE - 16.8x expected
+
+  temperature_mosfet:
+    Dynamic mode noise:
+      RMS: 0.085689C
+
+  temperature_resistor:
+    Dynamic mode noise:
+      RMS: 0.020796C
+
+====================================================================================================
+END OF REPORT
+====================================================================================================
