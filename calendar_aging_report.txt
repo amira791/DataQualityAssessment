@@ -1,0 +1,250 @@
+====================================================================================================
+NASA BATTERY DATASET - CALENDAR AGING ANALYSIS REPORT
+Generated: 2026-03-12 08:58:14
+====================================================================================================
+
+Analysis parameters:
+  Minimum rest period: 12 hours
+  Minimum calendar events: 3
+
+
+FOLDER: regular_alt_batteries
+------------------------------------------------------------
+
+File: battery00.csv (64.47 MB)
+  Rows: 1,101,244
+  Calendar aging detected: False
+  Confidence score: 30/100
+  Indicators:
+    ? Has 28666 reference discharges
+  Reference discharges: 28666
+
+File: battery01.csv (307.63 MB)
+  Rows: 4,918,193
+  Calendar aging detected: True
+  Confidence score: 60/100
+  Indicators:
+    ? Has 122842 reference discharges
+    ? Stable temperature during rest (std=0.21?C)
+    ? Test duration > 30 days (57.3 days)
+  Long rest periods:
+    1. 13.6 hours (0.57 days)
+  Reference discharges: 122842
+
+File: battery10.csv (52.91 MB)
+  Rows: 907,341
+  Calendar aging detected: False
+  Confidence score: 30/100
+  Indicators:
+    ? Has 22898 reference discharges
+  Reference discharges: 22898
+
+File: battery11.csv (302.99 MB)
+  Rows: 4,914,864
+  Calendar aging detected: False
+  Confidence score: 40/100
+  Indicators:
+    ? Has 126520 reference discharges
+    ? Test duration > 30 days (57.3 days)
+  Reference discharges: 126520
+
+File: battery20.csv (11.81 MB)
+  Rows: 207,391
+  Calendar aging detected: False
+  Confidence score: 30/100
+  Indicators:
+    ? Has 7104 reference discharges
+  Reference discharges: 7104
+
+File: battery21.csv (24.93 MB)
+  Rows: 530,718
+  Calendar aging detected: False
+  Confidence score: 30/100
+  Indicators:
+    ? Has 13654 reference discharges
+  Reference discharges: 13654
+
+File: battery22.csv (164.86 MB)
+  Rows: 2,690,545
+  Calendar aging detected: False
+  Confidence score: 40/100
+  Indicators:
+    ? Has 69336 reference discharges
+    ? Test duration > 30 days (31.2 days)
+  Reference discharges: 69336
+
+File: battery23.csv (79.77 MB)
+  Rows: 1,344,130
+  Calendar aging detected: False
+  Confidence score: 30/100
+  Indicators:
+    ? Has 37876 reference discharges
+  Reference discharges: 37876
+
+File: battery30.csv (34.12 MB)
+  Rows: 597,316
+  Calendar aging detected: False
+  Confidence score: 30/100
+  Indicators:
+    ? Has 13433 reference discharges
+  Reference discharges: 13433
+
+File: battery31.csv (199.91 MB)
+  Rows: 3,341,603
+  Calendar aging detected: True
+  Confidence score: 60/100
+  Indicators:
+    ? Has 80992 reference discharges
+    ? Stable temperature during rest (std=0.16?C)
+    ? Test duration > 30 days (38.7 days)
+  Long rest periods:
+    1. 13.3 hours (0.55 days)
+  Reference discharges: 80992
+
+File: battery40.csv (43.22 MB)
+  Rows: 753,257
+  Calendar aging detected: True
+  Confidence score: 50/100
+  Indicators:
+    ? Has 16637 reference discharges
+    ? Stable temperature during rest (std=0.86?C)
+  Long rest periods:
+    1. 13.2 hours (0.55 days)
+  Reference discharges: 16637
+
+File: battery41.csv (172.53 MB)
+  Rows: 2,926,443
+  Calendar aging detected: False
+  Confidence score: 40/100
+  Indicators:
+    ? Has 60236 reference discharges
+    ? Test duration > 30 days (33.9 days)
+  Reference discharges: 60236
+
+File: battery50.csv (46.56 MB)
+  Rows: 791,869
+  Calendar aging detected: False
+  Confidence score: 30/100
+  Indicators:
+    ? Has 22789 reference discharges
+  Reference discharges: 22789
+
+File: battery51.csv (111.19 MB)
+  Rows: 1,822,787
+  Calendar aging detected: False
+  Confidence score: 30/100
+  Indicators:
+    ? Has 47064 reference discharges
+  Reference discharges: 47064
+
+File: battery52.csv (89.97 MB)
+  Rows: 1,510,563
+  Calendar aging detected: False
+  Confidence score: 30/100
+  Indicators:
+    ? Has 42242 reference discharges
+  Reference discharges: 42242
+
+FOLDER: recommissioned_batteries
+------------------------------------------------------------
+
+File: battery02.csv (123.3 MB)
+  Rows: 2,069,667
+  Calendar aging detected: False
+  Confidence score: 30/100
+  Indicators:
+    ? Has 59593 reference discharges
+  Reference discharges: 59593
+
+File: battery03.csv (132.58 MB)
+  Rows: 2,161,444
+  Calendar aging detected: False
+  Confidence score: 30/100
+  Indicators:
+    ? Has 60954 reference discharges
+  Reference discharges: 60954
+
+File: battery12.csv (198.22 MB)
+  Rows: 3,041,084
+  Calendar aging detected: False
+  Confidence score: 40/100
+  Indicators:
+    ? Has 92038 reference discharges
+    ? Test duration > 30 days (35.7 days)
+  Reference discharges: 92038
+
+File: battery24.csv (199.36 MB)
+  Rows: 3,285,619
+  Calendar aging detected: True
+  Confidence score: 60/100
+  Indicators:
+    ? Has 94787 reference discharges
+    ? Stable temperature during rest (std=0.13?C)
+    ? Test duration > 30 days (38.4 days)
+  Long rest periods:
+    1. 20.0 hours (0.83 days)
+  Reference discharges: 94787
+
+File: battery25.csv (135.36 MB)
+  Rows: 2,169,910
+  Calendar aging detected: False
+  Confidence score: 30/100
+  Indicators:
+    ? Has 59490 reference discharges
+  Reference discharges: 59490
+
+File: battery32.csv (105.41 MB)
+  Rows: 1,829,938
+  Calendar aging detected: False
+  Confidence score: 30/100
+  Indicators:
+    ? Has 50440 reference discharges
+  Reference discharges: 50440
+
+File: battery33.csv (140.6 MB)
+  Rows: 2,353,426
+  Calendar aging detected: False
+  Confidence score: 30/100
+  Indicators:
+    ? Has 69630 reference discharges
+  Reference discharges: 69630
+
+File: battery53.csv (67.32 MB)
+  Rows: 1,139,972
+  Calendar aging detected: False
+  Confidence score: 30/100
+  Indicators:
+    ? Has 35295 reference discharges
+  Reference discharges: 35295
+
+FOLDER: second_life_batteries
+------------------------------------------------------------
+
+File: battery13.csv (104.0 MB)
+  Rows: 1,736,149
+  Calendar aging detected: False
+  Confidence score: 30/100
+  Indicators:
+    ? Has 43046 reference discharges
+  Reference discharges: 43046
+
+File: battery36.csv (208.51 MB)
+  Rows: 3,394,365
+  Calendar aging detected: False
+  Confidence score: 40/100
+  Indicators:
+    ? Has 84848 reference discharges
+    ? Test duration > 30 days (39.2 days)
+  Reference discharges: 84848
+
+File: battery54.csv (122.32 MB)
+  Rows: 1,989,458
+  Calendar aging detected: False
+  Confidence score: 30/100
+  Indicators:
+    ? Has 45037 reference discharges
+  Reference discharges: 45037
+
+====================================================================================================
+END OF REPORT
+====================================================================================================
