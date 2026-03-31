@@ -1,503 +1,504 @@
 """
-explore.py - Comprehensive exploration script for CALCE Battery Dataset
-Dataset path: C:\Users\admin\Desktop\DR2\11 All Datasets\10 Battery Archive Datasets\Battery Archive Data\CALCE\CALCE
+CALCE Battery Dataset Explorer
+================================
+Purpose: Understand the structure, format, and content of the CALCE dataset
+before performing quality assessment.
+
+Dataset location: C:/Users/admin/Desktop/DR2/11 All Datasets/03 CALCE Battery Dataset/Kaggle Dataset/calce_dataset
 """
 
 import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
 from pathlib import Path
 import glob
+from datetime import datetime
 import warnings
 warnings.filterwarnings('ignore')
 
-# Set style for better visualizations
-plt.style.use('seaborn-v0_8-darkgrid')
-sns.set_palette("husl")
+# Set up paths
+from pathlib import Path
 
-class CALCEExplorer:
-    def __init__(self, data_path):
-        """
-        Initialize the explorer with the path to CALCE dataset
-        
-        Parameters:
-        data_path (str): Full path to the CALCE dataset folder
-        """
-        self.data_path = Path(data_path)
-        self.timeseries_files = []
-        self.cycle_data_files = []
-        self.summary_df = None
-        
-        print(f" Initializing CALCE Dataset Explorer")
-        print(f" Dataset path: {self.data_path}")
-        print("-" * 60)
-        
-    def scan_dataset(self):
-        """Scan the dataset and categorize all CSV files"""
-        print("\n Scanning dataset for CSV files...")
-        
-        # Find all CSV files
-        all_csv_files = list(self.data_path.glob("*.csv"))
-        
-        # Separate timeseries and cycle data files
-        self.timeseries_files = [f for f in all_csv_files if 'timeseries' in f.name.lower()]
-        self.cycle_data_files = [f for f in all_csv_files if 'cycle_data' in f.name.lower()]
-        
-        print(f"   Found {len(all_csv_files)} total CSV files")
-        print(f"    Timeseries files: {len(self.timeseries_files)}")
-        print(f"    Cycle data files: {len(self.cycle_data_files)}")
-        
-        if len(all_csv_files) == 0:
-            print("    No CSV files found! Check the path.")
-            return False
-        return True
+DATASET_PATH = Path(r"C:\Users\admin\Desktop\DR2\11 All Datasets\03 CALCE Battery Dataset\Kaggle Dataset\calce_dataset")
+OUTPUT_DIR = Path(r"C:\Users\admin\Desktop\CALCE_exploration_output")
+OUTPUT_DIR.mkdir(exist_ok=True)
+
+print("=" * 80)
+print("CALCE BATTERY DATASET EXPLORER")
+print("=" * 80)
+print(f"Dataset path: {DATASET_PATH}")
+print(f"Output directory: {OUTPUT_DIR}")
+print("=" * 80)
+
+# ============================================================================
+# 1. UNDERSTAND DIRECTORY STRUCTURE
+# ============================================================================
+print("\n" + "=" * 80)
+print("1. DIRECTORY STRUCTURE ANALYSIS")
+print("=" * 80)
+
+def analyze_directory_structure(path, max_depth=3):
+    """Analyze and print directory structure"""
+    structure = []
     
-    def parse_filename(self, filename):
-        """Parse the CALCE filename convention to extract metadata"""
+    def walk_dir(p, depth=0, max_depth=3):
+        if depth > max_depth:
+            return
         try:
-            # Example: CALCE_CX2-16_prism_LCO_25C_0-100_0.5-0.5C_a_timeseries.csv
-            name_parts = filename.stem.split('_')
-            
-            metadata = {
-                'cell_id': name_parts[1] if len(name_parts) > 1 else 'unknown',
-                'form_factor': name_parts[2] if len(name_parts) > 2 else 'unknown',
-                'chemistry': name_parts[3] if len(name_parts) > 3 else 'unknown',
-                'temperature': name_parts[4] if len(name_parts) > 4 else 'unknown',
-                'soc_range': name_parts[5] if len(name_parts) > 5 else 'unknown',
-                'c_rate': name_parts[6] if len(name_parts) > 6 else 'unknown',
-                'cell_suffix': name_parts[7] if len(name_parts) > 7 else 'unknown',
-                'data_type': name_parts[8] if len(name_parts) > 8 else 'unknown'
-            }
-            return metadata
-        except Exception as e:
-            print(f"     Could not parse filename {filename.name}: {e}")
-            return {}
+            items = sorted([item for item in p.iterdir() if not item.name.startswith('.')])
+            for item in items:
+                indent = "  " * depth
+                if item.is_dir():
+                    structure.append(f"{indent}📁 {item.name}/")
+                    walk_dir(item, depth + 1, max_depth)
+                else:
+                    # Get file extension and size
+                    size = item.stat().st_size / 1024  # KB
+                    structure.append(f"{indent}📄 {item.name} ({size:.1f} KB)")
+        except PermissionError:
+            pass
     
-    def create_dataset_summary(self):
-        """Create a summary DataFrame of all files in the dataset"""
-        print("\n Creating dataset summary...")
-        
-        summary_data = []
-        
-        # Process timeseries files
-        for file_path in self.timeseries_files:
-            metadata = self.parse_filename(file_path)
-            metadata.update({
-                'file_name': file_path.name,
-                'file_path': str(file_path),
-                'file_size_kb': round(file_path.stat().st_size / 1024, 2),
-                'file_type': 'timeseries'
-            })
-            summary_data.append(metadata)
-        
-        # Process cycle data files
-        for file_path in self.cycle_data_files:
-            metadata = self.parse_filename(file_path)
-            metadata.update({
-                'file_name': file_path.name,
-                'file_path': str(file_path),
-                'file_size_kb': round(file_path.stat().st_size / 1024, 2),
-                'file_type': 'cycle_data'
-            })
-            summary_data.append(metadata)
-        
-        self.summary_df = pd.DataFrame(summary_data)
-        
-        if len(self.summary_df) > 0:
-            print(f"\n Dataset Summary:")
-            print(f"   Total files: {len(self.summary_df)}")
-            print(f"   Unique cells: {self.summary_df['cell_id'].nunique()}")
-            print(f"   Temperature conditions: {self.summary_df['temperature'].unique().tolist()}")
-            print(f"   SOC ranges: {self.summary_df['soc_range'].unique().tolist()}")
-            print(f"   C-rates: {self.summary_df['c_rate'].unique().tolist()}")
-        
-        return self.summary_df
+    walk_dir(path, 0, max_depth)
+    return structure
+
+print("\nDirectory structure (first 3 levels):")
+structure = analyze_directory_structure(DATASET_PATH, max_depth=3)
+for line in structure[:100]:  # Show first 100 lines
+    print(line)
+if len(structure) > 100:
+    print(f"... and {len(structure) - 100} more items")
+
+# ============================================================================
+# 2. IDENTIFY ALL DATA FILES
+# ============================================================================
+print("\n" + "=" * 80)
+print("2. DATA FILE INVENTORY")
+print("=" * 80)
+
+# Find all data files
+all_files = []
+extensions = ['*.txt', '*.xlsx', '*.csv', '*.xls']
+
+for ext in extensions:
+    all_files.extend(glob.glob(str(DATASET_PATH / '**' / ext), recursive=True))
+
+print(f"\nTotal data files found: {len(all_files)}")
+
+# Categorize by type
+txt_files = [f for f in all_files if f.endswith('.txt')]
+xlsx_files = [f for f in all_files if f.endswith('.xlsx')]
+xls_files = [f for f in all_files if f.endswith('.xls')]
+csv_files = [f for f in all_files if f.endswith('.csv')]
+
+print(f"  - TXT files: {len(txt_files)}")
+print(f"  - XLSX files: {len(xlsx_files)}")
+print(f"  - XLS files: {len(xls_files)}")
+print(f"  - CSV files: {len(csv_files)}")
+
+# Group by cell ID
+cell_ids = set()
+for file_path in all_files:
+    # Extract cell ID from path
+    path_parts = Path(file_path).parts
+    for part in path_parts:
+        if part.startswith(('CS2_', 'CX2_')):
+            cell_ids.add(part)
+            break
+
+print(f"\nUnique cell IDs found: {len(cell_ids)}")
+print(f"Cell IDs: {sorted(cell_ids)}")
+
+# ============================================================================
+# 3. SAMPLE DATA FILES - UNDERSTAND FORMAT
+# ============================================================================
+print("\n" + "=" * 80)
+print("3. DATA FILE FORMAT ANALYSIS")
+print("=" * 80)
+
+def analyze_file_format(file_path):
+    """Determine file format and structure"""
+    file_path = Path(file_path)
+    ext = file_path.suffix.lower()
     
-    def explore_file_structure(self, sample_file=None):
-        """Explore the structure of a sample CSV file"""
-        print("\n Exploring file structure...")
-        
-        if sample_file is None and len(self.timeseries_files) > 0:
-            sample_file = self.timeseries_files[0]
-        elif sample_file is None and len(self.cycle_data_files) > 0:
-            sample_file = self.cycle_data_files[0]
-        
-        if sample_file:
-            print(f"\n   Sample file: {sample_file.name}")
-            print(f"   Full path: {sample_file}")
+    result = {
+        'path': str(file_path),
+        'name': file_path.name,
+        'size_kb': file_path.stat().st_size / 1024,
+        'extension': ext,
+        'encoding': None,
+        'has_header': None,
+        'n_rows': None,
+        'n_cols': None,
+        'columns': None,
+        'sample_data': None
+    }
+    
+    try:
+        if ext == '.txt':
+            # Try reading with different delimiters
+            with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                first_line = f.readline().strip()
+                second_line = f.readline().strip() if f.readline() else ""
             
-            try:
-                # Read the CSV file
-                df = pd.read_csv(sample_file, nrows=5)
-                
-                print(f"\n   File Structure:")
-                print(f"   Shape: {df.shape}")
-                print(f"\n   Columns:")
-                for i, col in enumerate(df.columns, 1):
-                    print(f"     {i}. {col}")
-                
-                print(f"\n   Data Types:")
-                print(df.dtypes.to_string())
-                
-                print(f"\n   First 5 rows:")
-                print(df.to_string())
-                
-                return df.columns.tolist()
-                
-            except Exception as e:
-                print(f"    Error reading file: {e}")
-        else:
-            print("    No sample files found!")
+            # Detect delimiter
+            if '\t' in first_line:
+                delimiter = '\t'
+            elif ',' in first_line:
+                delimiter = ','
+            elif ' ' in first_line and len(first_line.split()) > 1:
+                delimiter = ' '
+            else:
+                delimiter = None
+            
+            # Try to read
+            if delimiter:
+                df_sample = pd.read_csv(file_path, delimiter=delimiter, nrows=10, 
+                                       encoding='utf-8', engine='python', on_bad_lines='skip')
+                result['has_header'] = True
+            else:
+                # Try reading as fixed width or space-separated
+                df_sample = pd.read_csv(file_path, delim_whitespace=True, nrows=10,
+                                       encoding='utf-8', engine='python', on_bad_lines='skip')
+                result['has_header'] = True
+            
+            result['n_rows'] = len(df_sample)
+            result['n_cols'] = len(df_sample.columns)
+            result['columns'] = list(df_sample.columns)
+            result['sample_data'] = df_sample.head(3).to_string()
+            result['delimiter'] = delimiter if delimiter else 'whitespace'
+            
+        elif ext in ['.xlsx', '.xls']:
+            # Read Excel file
+            df_sample = pd.read_excel(file_path, nrows=10)
+            result['has_header'] = True
+            result['n_rows'] = len(df_sample)
+            result['n_cols'] = len(df_sample.columns)
+            result['columns'] = list(df_sample.columns)
+            result['sample_data'] = df_sample.head(3).to_string()
+            result['sheet_names'] = pd.ExcelFile(file_path).sheet_names
+            
+    except Exception as e:
+        result['error'] = str(e)
+    
+    return result
+
+# Sample one file from each category
+print("\nAnalyzing sample files...")
+
+# Sample TXT file (CS2_8)
+txt_sample = next((f for f in txt_files if 'CS2_8' in f and '1_19_10' in f), txt_files[0] if txt_files else None)
+if txt_sample:
+    print(f"\n--- TXT Sample: {Path(txt_sample).name} ---")
+    analysis = analyze_file_format(txt_sample)
+    print(f"Size: {analysis['size_kb']:.1f} KB")
+    print(f"Columns: {analysis['columns']}")
+    print(f"First few rows:")
+    print(analysis['sample_data'])
+
+# Sample XLSX file (CS2_33)
+xlsx_sample = next((f for f in xlsx_files if 'CS2_33' in f and '10_04_10' in f), xlsx_files[0] if xlsx_files else None)
+if xlsx_sample:
+    print(f"\n--- XLSX Sample: {Path(xlsx_sample).name} ---")
+    analysis = analyze_file_format(xlsx_sample)
+    print(f"Size: {analysis['size_kb']:.1f} KB")
+    print(f"Sheets: {analysis.get('sheet_names', ['Unknown'])}")
+    print(f"Columns: {analysis['columns']}")
+    print(f"First few rows:")
+    print(analysis['sample_data'])
+
+# ============================================================================
+# 4. UNDERSTAND CELL TYPES AND TEST CONDITIONS
+# ============================================================================
+print("\n" + "=" * 80)
+print("4. CELL TYPE AND TEST CONDITION MAPPING")
+print("=" * 80)
+
+# Based on directory structure
+cell_info = {
+    'CS2': {
+        'type_1': ['CS2_8', 'CS2_21', 'CS2_33', 'CS2_34'],
+        'type_2': ['CS2_35', 'CS2_36', 'CS2_37', 'CS2_38']
+    },
+    'CX2': {
+        'type_1': ['CX2_16', 'CX2_31', 'CX2_33', 'CX2_35'],
+        'type_2': ['CX2_34', 'CX2_36', 'CX2_37', 'CX2_38']
+    }
+}
+
+print("\nCell grouping by type:")
+for family, types in cell_info.items():
+    print(f"\n{family} cells:")
+    for test_type, cells in types.items():
+        print(f"  {test_type}: {', '.join(cells)}")
+
+# ============================================================================
+# 5. LOAD AND UNDERSTAND A COMPLETE CELL'S DATA
+# ============================================================================
+print("\n" + "=" * 80)
+print("5. COMPLETE CELL DATA ANALYSIS")
+print("=" * 80)
+
+def load_complete_cell_data(cell_id, dataset_path):
+    """Load all data files for a specific cell"""
+    cell_files = []
+    cell_path = None
+    
+    # Find all files for this cell
+    for root, dirs, files in os.walk(dataset_path):
+        if cell_id in root:
+            cell_path = Path(root)
+            for file in files:
+                if file.endswith(('.txt', '.xlsx', '.xls')):
+                    cell_files.append(cell_path / file)
+    
+    if not cell_files:
         return None
     
-    def analyze_timeseries_file(self, file_path):
-        """Analyze a timeseries file in detail"""
-        print(f"\n Analyzing timeseries file: {Path(file_path).name}")
-        
+    # Sort by date (from filename)
+    def extract_date(filename):
+        # Extract date from filename (e.g., CS2_8_1_19_10.txt -> Jan 19, 2010)
+        parts = filename.stem.split('_')
+        if len(parts) >= 4:
+            try:
+                month = int(parts[-3])
+                day = int(parts[-2])
+                year = 2000 + int(parts[-1])
+                return datetime(year, month, day)
+            except:
+                pass
+        return datetime.min
+    
+    cell_files.sort(key=lambda x: extract_date(x))
+    
+    # Load each file
+    all_data = []
+    for file_path in cell_files:
         try:
-            # Load the full timeseries data
-            df = pd.read_csv(file_path)
+            if file_path.suffix == '.txt':
+                df = pd.read_csv(file_path, delim_whitespace=True, 
+                                encoding='utf-8', engine='python', on_bad_lines='skip')
+            else:  # Excel
+                df = pd.read_excel(file_path)
             
-            print(f"\n   Basic Statistics:")
-            print(f"   Total data points: {len(df):,}")
-            print(f"   Time range: {df['Test_Time(s)'].min():.2f} to {df['Test_Time(s)'].max():.2f} seconds")
-            print(f"   Duration: {(df['Test_Time(s)'].max() - df['Test_Time(s)'].min()) / 3600:.2f} hours")
-            
-            # Voltage statistics
-            if 'Voltage(V)' in df.columns:
-                print(f"\n   Voltage (V):")
-                print(f"     Min: {df['Voltage(V)'].min():.3f}")
-                print(f"     Max: {df['Voltage(V)'].max():.3f}")
-                print(f"     Mean: {df['Voltage(V)'].mean():.3f}")
-                print(f"     Std: {df['Voltage(V)'].std():.3f}")
-            
-            # Current statistics
-            if 'Current(A)' in df.columns:
-                print(f"\n   Current (A):")
-                print(f"     Min: {df['Current(A)'].min():.3f}")
-                print(f"     Max: {df['Current(A)'].max():.3f}")
-                print(f"     Mean: {df['Current(A)'].mean():.3f}")
-                
-                # Charging/Discharging analysis
-                charging = df[df['Current(A)'] > 0]
-                discharging = df[df['Current(A)'] < 0]
-                resting = df[df['Current(A)'] == 0]
-                
-                print(f"\n   Operating Modes:")
-                print(f"     Charging: {len(charging)} points ({len(charging)/len(df)*100:.1f}%)")
-                print(f"     Discharging: {len(discharging)} points ({len(discharging)/len(df)*100:.1f}%)")
-                print(f"     Resting: {len(resting)} points ({len(resting)/len(df)*100:.1f}%)")
-            
-            # Step analysis
-            if 'Step_Index' in df.columns:
-                n_steps = df['Step_Index'].nunique()
-                print(f"\n   Test Steps: {n_steps} unique steps")
-                step_durations = df.groupby('Step_Index')['Test_Time(s)'].agg(['min', 'max'])
-                step_durations['duration'] = step_durations['max'] - step_durations['min']
-                print(f"     Avg step duration: {step_durations['duration'].mean()/60:.2f} minutes")
-            
-            return df
-            
+            # Add metadata
+            df['file_name'] = file_path.name
+            df['cell_id'] = cell_id
+            all_data.append(df)
         except Exception as e:
-            print(f"    Error analyzing file: {e}")
-            return None
+            print(f"  Error loading {file_path.name}: {e}")
     
-    def analyze_cycle_data_file(self, file_path):
-        """Analyze a cycle data file in detail"""
-        print(f"\n Analyzing cycle data file: {Path(file_path).name}")
-        
-        try:
-            # Load the cycle data
-            df = pd.read_csv(file_path)
-            
-            print(f"\n   Basic Statistics:")
-            print(f"   Total cycles: {len(df)}")
-            print(f"   Cycle range: {df['Cycle_Index'].min()} to {df['Cycle_Index'].max()}")
-            
-            # Discharge capacity analysis (key degradation metric)
-            if 'Discharge_Capacity(Ah)' in df.columns:
-                cap_col = 'Discharge_Capacity(Ah)'
-                
-                print(f"\n   Discharge Capacity (Ah):")
-                print(f"     Initial: {df[cap_col].iloc[0]:.4f}")
-                print(f"     Final: {df[cap_col].iloc[-1]:.4f}")
-                print(f"     Max: {df[cap_col].max():.4f}")
-                print(f"     Min: {df[cap_col].min():.4f}")
-                print(f"     Mean: {df[cap_col].mean():.4f}")
-                
-                # Calculate degradation if enough cycles
-                if len(df) > 10:
-                    total_degradation = df[cap_col].iloc[0] - df[cap_col].iloc[-1]
-                    degradation_percent = (total_degradation / df[cap_col].iloc[0]) * 100
-                    print(f"\n   Degradation Analysis:")
-                    print(f"     Total capacity loss: {total_degradation:.4f} Ah")
-                    print(f"     Degradation: {degradation_percent:.2f}%")
-                    
-                    # Calculate degradation rate
-                    cycles = len(df)
-                    deg_per_cycle = total_degradation / cycles
-                    deg_per_100_cycles = deg_per_cycle * 100
-                    print(f"     Degradation rate: {deg_per_cycle:.6f} Ah/cycle")
-                    print(f"     Degradation per 100 cycles: {deg_per_100_cycles:.4f} Ah")
-            
-            # Coulombic efficiency analysis
-            if 'Coulombic_Efficiency(%)' in df.columns:
-                print(f"\n   Coulombic Efficiency (%):")
-                print(f"     Min: {df['Coulombic_Efficiency(%)'].min():.2f}")
-                print(f"     Max: {df['Coulombic_Efficiency(%)'].max():.2f}")
-                print(f"     Mean: {df['Coulombic_Efficiency(%)'].mean():.2f}")
-                print(f"     Std: {df['Coulombic_Efficiency(%)'].std():.2f}")
-            
-            return df
-            
-        except Exception as e:
-            print(f"    Error analyzing file: {e}")
-            return None
-    
-    def plot_capacity_degradation(self, cell_id=None):
-        """Plot capacity degradation for one or all cells"""
-        print("\n Generating capacity degradation plots...")
-        
-        # Find cycle data files
-        if cell_id:
-            files = [f for f in self.cycle_data_files if cell_id.lower() in f.name.lower()]
-        else:
-            files = self.cycle_data_files
-        
-        if not files:
-            print("    No cycle data files found!")
-            return
-        
-        plt.figure(figsize=(14, 8))
-        
-        for file_path in files[:5]:  # Limit to 5 cells to avoid overcrowding
-            try:
-                df = pd.read_csv(file_path)
-                if 'Discharge_Capacity(Ah)' in df.columns and 'Cycle_Index' in df.columns:
-                    cell_name = self.parse_filename(Path(file_path)).get('cell_id', 'unknown')
-                    plt.plot(df['Cycle_Index'], df['Discharge_Capacity(Ah)'], 
-                            marker='.', markersize=3, linewidth=1.5, 
-                            label=f'{cell_name}')
-            except Exception as e:
-                print(f"    Could not plot {file_path.name}: {e}")
-        
-        plt.xlabel('Cycle Number', fontsize=12)
-        plt.ylabel('Discharge Capacity (Ah)', fontsize=12)
-        plt.title('Battery Capacity Degradation Over Cycles', fontsize=14, fontweight='bold')
-        plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
-        plt.grid(True, alpha=0.3)
-        plt.tight_layout()
-        
-        # Save the plot
-        output_path = self.data_path / 'capacity_degradation_plot.png'
-        plt.savefig(output_path, dpi=150, bbox_inches='tight')
-        print(f"    Plot saved to: {output_path}")
-        plt.show()
-    
-    def plot_voltage_profile(self, sample_file=None):
-        """Plot voltage profile from a sample timeseries file"""
-        print("\n Generating voltage profile plot...")
-        
-        if sample_file is None and len(self.timeseries_files) > 0:
-            sample_file = self.timeseries_files[0]
-        
-        if sample_file:
-            try:
-                df = pd.read_csv(sample_file)
-                
-                if 'Voltage(V)' in df.columns and 'Test_Time(s)' in df.columns:
-                    fig, axes = plt.subplots(2, 1, figsize=(14, 10))
-                    
-                    # Plot 1: Voltage vs Time
-                    axes[0].plot(df['Test_Time(s)']/3600, df['Voltage(V)'], 
-                               linewidth=1, color='blue')
-                    axes[0].set_xlabel('Time (hours)', fontsize=12)
-                    axes[0].set_ylabel('Voltage (V)', fontsize=12)
-                    axes[0].set_title(f'Voltage Profile - {Path(sample_file).name}', 
-                                     fontsize=14, fontweight='bold')
-                    axes[0].grid(True, alpha=0.3)
-                    
-                    # Plot 2: Current vs Time (if available)
-                    if 'Current(A)' in df.columns:
-                        axes[1].plot(df['Test_Time(s)']/3600, df['Current(A)'], 
-                                   linewidth=1, color='red')
-                        axes[1].set_xlabel('Time (hours)', fontsize=12)
-                        axes[1].set_ylabel('Current (A)', fontsize=12)
-                        axes[1].set_title('Current Profile', fontsize=14, fontweight='bold')
-                        axes[1].grid(True, alpha=0.3)
-                        axes[1].axhline(y=0, color='black', linestyle='-', linewidth=0.5)
-                    
-                    plt.tight_layout()
-                    
-                    # Save the plot
-                    output_path = self.data_path / 'voltage_profile_plot.png'
-                    plt.savefig(output_path, dpi=150, bbox_inches='tight')
-                    print(f"   Plot saved to: {output_path}")
-                    plt.show()
-                else:
-                    print("    Required columns not found in file")
-                    
-            except Exception as e:
-                print(f"   Error creating plot: {e}")
-        else:
-            print("   No timeseries files found!")
-    
-    def generate_full_report(self):
-        """Generate a comprehensive report of the entire dataset"""
-        print("\n" + "="*60)
-        print(" GENERATING COMPREHENSIVE DATASET REPORT")
-        print("="*60)
-        
-        # Step 1: Scan dataset
-        if not self.scan_dataset():
-            return
-        
-        # Step 2: Create summary
-        self.create_dataset_summary()
-        
-        # Step 3: Display dataset overview
-        print("\n" + "-"*40)
-        print("DATASET OVERVIEW")
-        print("-"*40)
-        print(f"\nTotal Files: {len(self.summary_df)}")
-        print(f"\nFiles by Type:")
-        print(self.summary_df['file_type'].value_counts().to_string())
-        
-        print(f"\nCells in Dataset:")
-        print(self.summary_df['cell_id'].value_counts().to_string())
-        
-        print(f"\nTemperature Conditions:")
-        print(self.summary_df['temperature'].value_counts().to_string())
-        
-        print(f"\nC-Rates:")
-        print(self.summary_df['c_rate'].value_counts().to_string())
-        
-        # Step 4: Explore file structure
-        self.explore_file_structure()
-        
-        # Step 5: Analyze a sample timeseries file
-        if self.timeseries_files:
-            print("\n" + "-"*40)
-            print("SAMPLE TIMESERIES ANALYSIS")
-            print("-"*40)
-            self.analyze_timeseries_file(self.timeseries_files[0])
-        
-        # Step 6: Analyze a sample cycle data file
-        if self.cycle_data_files:
-            print("\n" + "-"*40)
-            print("SAMPLE CYCLE DATA ANALYSIS")
-            print("-"*40)
-            self.analyze_cycle_data_file(self.cycle_data_files[0])
-        
-        # Step 7: Generate visualizations
-        print("\n" + "-"*40)
-        print("GENERATING VISUALIZATIONS")
-        print("-"*40)
-        self.plot_capacity_degradation()
-        self.plot_voltage_profile()
-        
-        # Step 8: Save summary to CSV
-        if self.summary_df is not None:
-            output_summary = self.data_path / 'dataset_summary.csv'
-            self.summary_df.to_csv(output_summary, index=False)
-            print(f"\n✅ Dataset summary saved to: {output_summary}")
-        
-        print("\n" + "="*60)
-        print("✅ REPORT COMPLETE")
-        print("="*60)
+    if all_data:
+        return pd.concat(all_data, ignore_index=True)
+    return None
 
-def main():
-    """Main function to run the explorer"""
-    
-    # Set your dataset path here
-    dataset_path = r"C:\Users\admin\Desktop\DR2\11 All Datasets\10 Battery Archive Datasets\Battery Archive Data\CALCE\CALCE"
-    
-    # Create explorer instance
-    explorer = CALCEExplorer(dataset_path)
-    
-    # Menu for interactive exploration
-    while True:
-        print("\n" + "="*50)
-        print("CALCE DATASET EXPLORER MENU")
-        print("="*50)
-        print("1. Scan dataset and show summary")
-        print("2. Explore file structure")
-        print("3. Analyze a specific timeseries file")
-        print("4. Analyze a specific cycle data file")
-        print("5. Plot capacity degradation")
-        print("6. Plot voltage profile")
-        print("7. Generate full report")
-        print("8. Exit")
-        print("-"*50)
-        
-        choice = input("Enter your choice (1-8): ").strip()
-        
-        if choice == '1':
-            explorer.scan_dataset()
-            explorer.create_dataset_summary()
-            
-        elif choice == '2':
-            explorer.explore_file_structure()
-            
-        elif choice == '3':
-            if not explorer.timeseries_files:
-                print("No timeseries files found. Scan dataset first.")
-                continue
-            
-            print("\nAvailable timeseries files:")
-            for i, file in enumerate(explorer.timeseries_files[:10], 1):
-                print(f"{i}. {file.name}")
-            
-            if len(explorer.timeseries_files) > 10:
-                print(f"... and {len(explorer.timeseries_files)-10} more")
-            
-            try:
-                idx = int(input("\nEnter file number: ")) - 1
-                if 0 <= idx < len(explorer.timeseries_files):
-                    explorer.analyze_timeseries_file(explorer.timeseries_files[idx])
-                else:
-                    print("Invalid file number")
-            except ValueError:
-                print("Invalid input")
-                
-        elif choice == '4':
-            if not explorer.cycle_data_files:
-                print("No cycle data files found. Scan dataset first.")
-                continue
-            
-            print("\nAvailable cycle data files:")
-            for i, file in enumerate(explorer.cycle_data_files[:10], 1):
-                print(f"{i}. {file.name}")
-            
-            if len(explorer.cycle_data_files) > 10:
-                print(f"... and {len(explorer.cycle_data_files)-10} more")
-            
-            try:
-                idx = int(input("\nEnter file number: ")) - 1
-                if 0 <= idx < len(explorer.cycle_data_files):
-                    explorer.analyze_cycle_data_file(explorer.cycle_data_files[idx])
-                else:
-                    print("Invalid file number")
-            except ValueError:
-                print("Invalid input")
-                
-        elif choice == '5':
-            explorer.plot_capacity_degradation()
-            
-        elif choice == '6':
-            explorer.plot_voltage_profile()
-            
-        elif choice == '7':
-            explorer.generate_full_report()
-            
-        elif choice == '8':
-            print("\n👋 Exiting explorer. Goodbye!")
-            break
-            
-        else:
-            print("Invalid choice. Please enter 1-8")
+# Load one cell from each type for comparison
+print("\nLoading CS2_8 (CS2 type 1)...")
+cs2_8_data = load_complete_cell_data('CS2_8', DATASET_PATH)
+if cs2_8_data is not None:
+    print(f"  Total rows: {len(cs2_8_data):,}")
+    print(f"  Columns: {list(cs2_8_data.columns)}")
+    print(f"  Date range: {cs2_8_data['file_name'].iloc[0]} to {cs2_8_data['file_name'].iloc[-1]}")
+    print(f"  Number of files: {cs2_8_data['file_name'].nunique()}")
+    print(f"\n  Data sample:")
+    print(cs2_8_data.head(10).to_string())
+    print(f"\n  Data types:")
+    print(cs2_8_data.dtypes)
 
-if __name__ == "__main__":
-    main()
+print("\nLoading CS2_35 (CS2 type 2)...")
+cs2_35_data = load_complete_cell_data('CS2_35', DATASET_PATH)
+if cs2_35_data is not None:
+    print(f"  Total rows: {len(cs2_35_data):,}")
+    print(f"  Columns: {list(cs2_35_data.columns)}")
+    print(f"  Number of files: {cs2_35_data['file_name'].nunique()}")
+
+# ============================================================================
+# 6. UNDERSTAND DATA SCHEMA
+# ============================================================================
+print("\n" + "=" * 80)
+print("6. DATA SCHEMA ANALYSIS")
+print("=" * 80)
+
+# Analyze column names across all files
+all_columns = set()
+column_frequency = {}
+
+for file_path in all_files[:50]:  # Sample first 50 files
+    try:
+        if file_path.endswith('.txt'):
+            with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                first_line = f.readline().strip()
+                if first_line and not first_line[0].isdigit():
+                    cols = first_line.split()
+                    for col in cols:
+                        all_columns.add(col)
+                        column_frequency[col] = column_frequency.get(col, 0) + 1
+    except:
+        pass
+
+print("\nCommon column names found:")
+for col, freq in sorted(column_frequency.items(), key=lambda x: x[1], reverse=True)[:20]:
+    print(f"  {col}: appears in {freq} files")
+
+# ============================================================================
+# 7. DATA CHARACTERISTICS SUMMARY
+# ============================================================================
+print("\n" + "=" * 80)
+print("7. DATA CHARACTERISTICS SUMMARY")
+print("=" * 80)
+
+summary = {
+    'total_files': len(all_files),
+    'txt_files': len(txt_files),
+    'xlsx_files': len(xlsx_files),
+    'unique_cells': len(cell_ids),
+    'file_size_range': None,
+    'sample_rate': None,
+    'voltage_range': None,
+    'current_range': None,
+    'temperature_range': None
+}
+
+# Get file size statistics
+file_sizes = [Path(f).stat().st_size for f in all_files]
+summary['file_size_range'] = (min(file_sizes) / 1024, max(file_sizes) / 1024, 
+                               np.mean(file_sizes) / 1024)
+
+# Analyze one data file for value ranges
+if cs2_8_data is not None:
+    # Look for voltage, current, temperature columns
+    possible_voltage_cols = [col for col in cs2_8_data.columns if 'volt' in col.lower()]
+    possible_current_cols = [col for col in cs2_8_data.columns if 'curr' in col.lower()]
+    possible_temp_cols = [col for col in cs2_8_data.columns if 'temp' in col.lower()]
+    
+    if possible_voltage_cols:
+        v_col = possible_voltage_cols[0]
+        summary['voltage_range'] = (cs2_8_data[v_col].min(), cs2_8_data[v_col].max())
+    
+    if possible_current_cols:
+        i_col = possible_current_cols[0]
+        summary['current_range'] = (cs2_8_data[i_col].min(), cs2_8_data[i_col].max())
+    
+    if possible_temp_cols:
+        t_col = possible_temp_cols[0]
+        summary['temperature_range'] = (cs2_8_data[t_col].min(), cs2_8_data[t_col].max())
+
+print("\nDataset Summary:")
+for key, value in summary.items():
+    if isinstance(value, tuple):
+        print(f"  {key}: {value}")
+    else:
+        print(f"  {key}: {value}")
+
+# ============================================================================
+# 8. GENERATE EXPLORATION REPORT
+# ============================================================================
+print("\n" + "=" * 80)
+print("8. GENERATING EXPLORATION REPORT")
+print("=" * 80)
+
+# Create a markdown report
+report_path = OUTPUT_DIR / "CALCE_dataset_exploration_report.md"
+
+with open(report_path, 'w', encoding='utf-8') as f:
+    f.write("# CALCE Battery Dataset Exploration Report\n\n")
+    f.write(f"**Date**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
+    
+    f.write("## 1. Dataset Overview\n\n")
+    f.write(f"- **Total files**: {summary['total_files']}\n")
+    f.write(f"- **TXT files**: {summary['txt_files']}\n")
+    f.write(f"- **XLSX files**: {summary['xlsx_files']}\n")
+    f.write(f"- **Unique cells**: {summary['unique_cells']}\n")
+    f.write(f"- **File size range**: {summary['file_size_range'][0]:.1f} KB - {summary['file_size_range'][1]:.1f} KB (avg: {summary['file_size_range'][2]:.1f} KB)\n\n")
+    
+    f.write("## 2. Cell Types and Test Conditions\n\n")
+    f.write("### CS2 Cells (CS2_xxx format)\n")
+    f.write("- **Type 1**: CS2_8, CS2_21, CS2_33, CS2_34\n")
+    f.write("- **Type 2**: CS2_35, CS2_36, CS2_37, CS2_38\n\n")
+    f.write("### CX2 Cells (CX2_xxx format)\n")
+    f.write("- **Type 1**: CX2_16, CX2_31, CX2_33, CX2_35\n")
+    f.write("- **Type 2**: CX2_34, CX2_36, CX2_37, CX2_38\n\n")
+    
+    f.write("## 3. Data Format\n\n")
+    f.write("- **TXT files**: Space-separated or tab-separated values\n")
+    f.write("- **XLSX files**: Excel format with multiple sheets possible\n")
+    f.write("- **File naming**: `CELLID_MM_DD_YY.ext` (e.g., CS2_8_1_19_10.txt)\n\n")
+    
+    if cs2_8_data is not None:
+        f.write("## 4. Sample Data (CS2_8)\n\n")
+        f.write(f"- **Total rows**: {len(cs2_8_data):,}\n")
+        f.write(f"- **Number of files**: {cs2_8_data['file_name'].nunique()}\n")
+        f.write(f"- **Columns**: {', '.join(cs2_8_data.columns)}\n\n")
+        
+        if summary['voltage_range']:
+            f.write(f"## 5. Measurement Ranges\n\n")
+            f.write(f"- **Voltage range**: {summary['voltage_range'][0]:.3f} V - {summary['voltage_range'][1]:.3f} V\n")
+        if summary['current_range']:
+            f.write(f"- **Current range**: {summary['current_range'][0]:.3f} A - {summary['current_range'][1]:.3f} A\n")
+        if summary['temperature_range']:
+            f.write(f"- **Temperature range**: {summary['temperature_range'][0]:.1f}°C - {summary['temperature_range'][1]:.1f}°C\n\n")
+    
+    f.write("## 6. Next Steps\n\n")
+    f.write("1. Identify consistent column names across all files\n")
+    f.write("2. Determine cycle numbers and SOH calculation method\n")
+    f.write("3. Create unified data loading function\n")
+    f.write("4. Perform quality assessment per defined criteria\n")
+
+print(f"\nReport saved to: {report_path}")
+
+# ============================================================================
+# 9. VISUALIZATION (if data available)
+# ============================================================================
+print("\n" + "=" * 80)
+print("9. CREATING VISUALIZATIONS")
+print("=" * 80)
+
+if cs2_8_data is not None and possible_voltage_cols and possible_current_cols:
+    fig, axes = plt.subplots(2, 2, figsize=(12, 10))
+    
+    # Voltage over time (first 1000 points)
+    v_col = possible_voltage_cols[0]
+    axes[0, 0].plot(cs2_8_data[v_col].head(1000))
+    axes[0, 0].set_title('Voltage (first 1000 samples)')
+    axes[0, 0].set_ylabel('Voltage (V)')
+    axes[0, 0].set_xlabel('Sample index')
+    axes[0, 0].grid(True, alpha=0.3)
+    
+    # Current over time
+    i_col = possible_current_cols[0]
+    axes[0, 1].plot(cs2_8_data[i_col].head(1000))
+    axes[0, 1].set_title('Current (first 1000 samples)')
+    axes[0, 1].set_ylabel('Current (A)')
+    axes[0, 1].set_xlabel('Sample index')
+    axes[0, 1].grid(True, alpha=0.3)
+    
+    # Voltage vs Current
+    axes[1, 0].scatter(cs2_8_data[v_col].head(5000), cs2_8_data[i_col].head(5000), 
+                       s=1, alpha=0.5)
+    axes[1, 0].set_title('Voltage vs Current')
+    axes[1, 0].set_xlabel('Voltage (V)')
+    axes[1, 0].set_ylabel('Current (A)')
+    axes[1, 0].grid(True, alpha=0.3)
+    
+    # Histogram of voltage
+    axes[1, 1].hist(cs2_8_data[v_col].dropna(), bins=50, alpha=0.7)
+    axes[1, 1].set_title('Voltage Distribution')
+    axes[1, 1].set_xlabel('Voltage (V)')
+    axes[1, 1].set_ylabel('Frequency')
+    axes[1, 1].grid(True, alpha=0.3)
+    
+    plt.tight_layout()
+    plt.savefig(OUTPUT_DIR / 'calce_sample_visualization.png', dpi=150)
+    plt.close()
+    print(f"Visualization saved to: {OUTPUT_DIR / 'calce_sample_visualization.png'}")
+
+print("\n" + "=" * 80)
+print("EXPLORATION COMPLETE!")
+print("=" * 80)
+print(f"\nOutput files saved to: {OUTPUT_DIR}")
+print("\nKey findings:")
+print("1. The dataset contains both TXT and XLSX files")
+print("2. Files are organized by cell ID and test type")
+print("3. CS2_8 appears to be a representative cell with complete data")
+print("4. Need to identify column names (they vary between file formats)")
+print("5. Ready for quality assessment phase")
